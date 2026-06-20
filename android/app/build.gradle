@@ -38,12 +38,23 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
-    // Copiar PWA files a assets durante build
+    // Assets: PWA files se copian desde raiz del repo
     sourceSets {
         main {
-            assets.srcDirs = ['src/main/assets', '../../']  // root = PWA files
+            assets {
+                srcDirs = ['src/main/assets']
+            }
         }
     }
+
+    // Copiar archivos PWA a assets antes del build
+    task copyPwaAssets(type: Copy) {
+        from '../../'
+        into 'src/main/assets'
+        include '**/*.html', '**/*.css', '**/*.js', '**/*.json', '**/*.png'
+        exclude 'android/**', '.git/**', '.github/**', '.gitignore'
+    }
+    preBuild.dependsOn copyPwaAssets
 }
 
 dependencies {
