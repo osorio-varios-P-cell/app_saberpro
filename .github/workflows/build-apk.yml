@@ -48,8 +48,31 @@ jobs:
       - name: Build APK
         working-directory: android
         run: |
-          gradle assembleDebug --no-daemon --stacktrace --warning-mode all > build.log 2>&1 || true
-          cat build.log
+          gradle assembleDebug --no-daemon --stacktrace --warning-mode all > build.log 2>&1
+          GRADLE_EXIT=$?
+          echo "=== Gradle exit code: $GRADLE_EXIT ==="
+          echo ""
+          echo "=== Buscando APK ==="
+          find . -name "*.apk" -type f -exec ls -lh {} \; 2>/dev/null || echo "No se encontro APK"
+          echo ""
+          echo "=== Ultimas 50 lineas del log ==="
+          tail -50 build.log
+          # Si Gradle fallo, mostrar error y salir
+          if [ $GRADLE_EXIT -ne 0 ]; then
+            echo ""
+            echo "=== ERROR DETECTADO ==="
+            grep -i "error\|fail\|exception\|BUILD FAILED" build.log || true
+          fi
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: SaberPro-APK-v2.1
+          path: |
+            android/app/build/outputs/**/*.apk
+            android/**/*.apk
+          retention-days: 90
+          if-no-files-found: warn
 
       - name: Upload build log
         if: always()
@@ -59,10 +82,12 @@ jobs:
           path: android/build.log
           retention-days: 7
 
-      - name: Upload APK (if exists)
-        if: success()
+      - name: Upload APK (if found)
         uses: actions/upload-artifact@v4
         with:
           name: SaberPro-APK-v2.1
-          path: android/app/build/outputs/apk/debug/*.apk
+          path: |
+            android/app/build/outputs/**/*.apk
+            android/**/*.apk
           retention-days: 90
+          if-no-files-found: warn
