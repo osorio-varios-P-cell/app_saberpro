@@ -6,59 +6,31 @@ android {
 
     defaultConfig {
         applicationId "com.saberpro.app"
-        minSdk 21       // Android 5.0 Lollipop — cubre 99%+ de dispositivos
-        targetSdk 34    // Android 14
+        minSdk 21
+        targetSdk 34
         versionCode 3
         versionName "2.1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
-        release {
-            minifyEnabled false
-            shrinkResources false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-        debug {
-            debuggable true
-        }
-    }
-
-    // Universal APK — todas las arquitecturas en un solo archivo
-    splits {
-        abi {
-            enable false
-            universalApk true
-        }
+        release { minifyEnabled false }
+        debug { debuggable true }
     }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
-    // Assets: PWA files se copian desde raiz del repo
-    sourceSets {
-        main {
-            assets {
-                srcDirs = ['src/main/assets']
-            }
-        }
-    }
-
-    // Copiar archivos PWA a assets antes del build
-    task copyPwaAssets(type: Copy) {
-        from '../../'
-        into 'src/main/assets'
-        include '**/*.html', '**/*.css', '**/*.js', '**/*.json', '**/*.png'
-        exclude 'android/**', '.git/**', '.github/**', '.gitignore'
-    }
-    preBuild.dependsOn copyPwaAssets
 }
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'androidx.webkit:webkit:1.8.0'
-    implementation 'com.google.android.material:material:1.10.0'
 }
+
+// Copiar archivos PWA al directorio de assets antes del build
+task copyPwaAssets(type: Copy) {
+    from fileTree(dir: '../../', excludes: ['android/**', '.git/**', '.github/**', '.gitignore'])
+    into 'src/main/assets'
+}
+preBuild.dependsOn copyPwaAssets

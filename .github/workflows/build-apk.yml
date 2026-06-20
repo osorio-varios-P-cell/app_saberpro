@@ -3,6 +3,8 @@ name: Compilar APK SaberPro
 on:
   push:
     branches: [main, master]
+    paths-ignore:
+      - '**.md'
   workflow_dispatch:
 
 jobs:
@@ -21,7 +23,17 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
         with:
-          packages: 'platforms;android-34 build-tools;34.0.0'
+          packages: 'platforms;android-34 build-tools;34.0.0 platforms;android-33'
+
+      - name: Show Android SDK path
+        run: echo "ANDROID_HOME=$ANDROID_HOME" && echo "ANDROID_SDK_ROOT=$ANDROID_SDK_ROOT" && ls $ANDROID_HOME || true
+
+      - name: Create local.properties
+        working-directory: android
+        run: |
+          echo "sdk.dir=$ANDROID_HOME" > local.properties
+          echo "sdk.dir=$ANDROID_SDK_ROOT" >> local.properties
+          cat local.properties
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
@@ -30,54 +42,39 @@ jobs:
 
       - name: Build Debug APK
         working-directory: android
-        run: gradle assembleDebug --no-daemon --stacktrace
+        run: gradle assembleDebug --no-daemon --stacktrace --info 2>&1 | tail -200
 
       - name: Copy APK to root
+        if: success()
         run: |
           APK=$(find android -name "*.apk" -type f | head -1)
-          echo "APK found: $APK"
-          cp "$APK" saberpro-v2.1-debug.apk
-          ls -lh saberpro-v2.1-debug.apk
+          echo "APK: $APK"
+          cp "$APK" saberpro-v2.1.apk
+          ls -lh saberpro-v2.1.apk
 
       - name: Upload APK Artifact
+        if: success()
         uses: actions/upload-artifact@v4
         with:
           name: SaberPro-APK-v2.1
-          path: saberpro-v2.1-debug.apk
+          path: saberpro-v2.1.apk
           retention-days: 90
-          compression-level: 0
 
-      - name: Create Release with APK
+      - name: Create Release
+        if: success() && github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: softprops/action-gh-release@v2
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         with:
           tag_name: v2.1.0
-          name: "SaberPro v2.1.0"
+          name: "SaberPro v2.1.0 — Android 5.0+"
           body: |
-            ## 📱 SaberPro v2.1.0 — APK Universal
+            ## 📱 SaberPro APK v2.1.0
             
-            ✅ **Compatible con todos los celulares Android 5.0+**
+            ✅ **Android 5.0 Lollipop → Android 14**
+            ✅ **APK universal** — todos los procesadores
+            ✅ **5,011 preguntas** ICFES · 5 áreas · Gamificación
             
-            ### 📦 Incluye
-            - 5,011 preguntas ICFES Saber 11 (5 áreas)
-            - Simulacros cronometrados de 2 horas
-            - Sistema de XP, niveles y 15 insignias
-            - 11 temas visuales
-            - Rachas diarias y estadísticas
-            - Modo offline (sin internet)
-            - Actualizaciones vía WiFi local
-            
-            ### 📱 Compatibilidad
-            - 🤖 Android 5.0 Lollipop (API 21) → Android 14 (API 34)
-            - 📱 APK universal — todos los procesadores
-            - 💾 ~2 MB de descarga
-            
-            ### 🔧 Instalación
+            ### Instalación
             1. Descarga el APK
-            2. Activa "Orígenes desconocidos" en Ajustes → Seguridad
-            3. Abre el APK e instala
-            4. ¡Listo!
-          files: saberpro-v2.1-debug.apk
-          draft: false
-          prerelease: false
-          generate_release_notes: false
+            2. Permite instalar apps de fuentes desconocidas
+            3. Abre y estudia
+          files: saberpro-v2.1.apk
