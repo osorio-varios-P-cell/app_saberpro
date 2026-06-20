@@ -1,4 +1,4 @@
-name: Compilar APK SaberPro
+name: Compilar APK
 
 on:
   push:
@@ -6,76 +6,45 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-apk:
+  build:
     runs-on: ubuntu-latest
+    container:
+      image: cimg/android:2024.01
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Setup Java
-        uses: actions/setup-java@v4
-        with:
-          distribution: 'temurin'
-          java-version: '17'
-
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
-        with:
-          packages: 'platforms;android-34 build-tools;34.0.0'
-
-      - name: Install Bubblewrap
-        run: npm install -g @bubblewrap/cli
-
-      - name: Extract repo owner and name
-        id: repo
+      - name: Install Node + Bubblewrap
         run: |
-          OWNER=$(echo "$GITHUB_REPOSITORY" | cut -d/ -f1)
-          REPO=$(echo "$GITHUB_REPOSITORY" | cut -d/ -f2)
-          BRANCH=${GITHUB_REF#refs/heads/}
-          echo "owner=$OWNER" >> $GITHUB_OUTPUT
-          echo "repo=$REPO" >> $GITHUB_OUTPUT
-          echo "branch=$BRANCH" >> $GITHUB_OUTPUT
-          echo "MANIFEST_URL=https://raw.githubusercontent.com/$OWNER/$REPO/$BRANCH/manifest.json"
+          curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+          sudo apt-get install -y nodejs
+          sudo npm install -g @bubblewrap/cli
 
-      - name: Initialize TWA project
+      - name: Init TWA from repo URL
         run: |
           OWNER=$(echo "$GITHUB_REPOSITORY" | cut -d/ -f1)
           REPO=$(echo "$GITHUB_REPOSITORY" | cut -d/ -f2)
           BRANCH=${GITHUB_REF#refs/heads/}
           URL="https://raw.githubusercontent.com/$OWNER/$REPO/$BRANCH/manifest.json"
-          echo "Using manifest: $URL"
+          echo "Manifest URL: $URL"
           
-          mkdir -p twa-project
-          cd twa-project
-          bubblewrap init --manifest="$URL" --directory=.
+          bubblewrap init --manifest="$URL" --directory=twa
 
-      - name: Configure for max compatibility
+      - name: Set minSdk 21 (old phones)
         run: |
-          cd twa-project
-          echo "sdk.dir=$ANDROID_HOME" > local.properties
-          # Android 5.0+ para cubrir celulares viejos y nuevos
-          sed -i 's/minSdkVersion [0-9]*/minSdkVersion 21/' app/build.gradle 2>/dev/null || true
-          sed -i 's/targetSdkVersion [0-9]*/targetSdkVersion 34/' app/build.gradle 2>/dev/null || true
-          sed -i 's/compileSdkVersion [0-9]*/compileSdkVersion 34/' app/build.gradle 2>/dev/null || true
-          echo "=== build.gradle ==="
-          cat app/build.gradle
+          sed -i 's/minSdkVersion [0-9]*/minSdkVersion 21/' twa/app/build.gradle
+          echo "sdk.dir=$ANDROID_HOME" > twa/local.properties
+          cat twa/app/build.gradle | head -30
 
       - name: Build APK
-        working-directory: twa-project
+        working-directory: twa
         run: |
-          ./gradlew assembleDebug --no-daemon
-          echo "=== APK ==="
+          ./gradlew assembleDebug --no-daemon --stacktrace
           find . -name "*.apk" -exec ls -lh {} \;
+          cp app/build/outputs/apk/debug/app-debug.apk ../saberpro.apk || true
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: SaberPro-APK-v2.1
-          path: twa-project/app/build/outputs/apk/debug/*.apk
-          retention-days: 90
-          if-no-files-found: warn
+          name: SaberPro-APK
+          path: twa/app/build/outputs/apk/debug/*.apk
+          if-no-files-found: error
