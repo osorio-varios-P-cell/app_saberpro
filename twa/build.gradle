@@ -1,6 +1,4 @@
-// Proyecto TWA generado para SaberPro
-// Compatible con Android 5.0+ (API 21)
-
+// Root build.gradle - solo declara el classpath del plugin Android
 buildscript {
     repositories {
         google()
