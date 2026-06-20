@@ -30,7 +30,7 @@ dependencies {
 
 // Copiar archivos PWA al directorio de assets antes del build
 task copyPwaAssets(type: Copy) {
-    from fileTree(dir: '../../', excludes: ['android/**', '.git/**', '.github/**', '.gitignore'])
+    from fileTree(dir: project.rootDir.parent, excludes: ['android/**', '.git/**', '.github/**', '.gitignore'])
     into 'src/main/assets'
 }
 preBuild.dependsOn copyPwaAssets

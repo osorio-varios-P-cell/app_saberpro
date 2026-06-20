@@ -3,8 +3,6 @@ name: Compilar APK SaberPro
 on:
   push:
     branches: [main, master]
-    paths-ignore:
-      - '**.md'
   workflow_dispatch:
 
 jobs:
@@ -13,6 +11,27 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install PWABuilder CLI
+        run: npm install -g @pwabuilder/cli
+
+      - name: Start local server
+        run: |
+          npx http-server . -p 8080 --cors -c-1 -s &
+          sleep 3
+          curl -s -o /dev/null -w "HTTP %{http_code}" http://localhost:8080/manifest.json
+          echo ""
+
+      - name: Generate Android Project
+        run: |
+          npx pwabuilder build --manifest http://localhost:8080/manifest.json --output android-project --platform android --androidOptions.sdkVersion 21
+          echo "=== Proyecto generado ==="
+          ls -la android-project/
 
       - name: Setup Java
         uses: actions/setup-java@v4
@@ -23,57 +42,21 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
         with:
-          packages: 'platforms;android-34 build-tools;34.0.0 platforms;android-33'
+          packages: 'platforms;android-34 build-tools;34.0.0'
 
-      - name: Create local.properties
-        working-directory: android
+      - name: Build APK from generated project
         run: |
+          cd android-project
           echo "sdk.dir=$ANDROID_HOME" > local.properties
-          echo "sdk.dir=$ANDROID_SDK_ROOT" > local.properties
-
-      - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v3
-        with:
-          gradle-version: '8.4'
-
-      - name: Build APK + mostrar salida
-        working-directory: android
-        run: |
-          set +e
-          gradle assembleDebug --no-daemon --stacktrace --warning-mode all 2>&1 | tee build.log
-          GRADLE_EXIT=${PIPESTATUS[0]}
-          echo ""
-          echo "=== Gradle exit code: $GRADLE_EXIT ==="
-          echo ""
-          echo "=== Ultimas 100 lineas del log ==="
-          tail -100 build.log
-          echo ""
-          echo "=== Buscando errores ==="
-          grep -i "error\|fail\|exception\|BUILD FAILED" build.log || echo "(sin errores obvios)"
-          exit $GRADLE_EXIT
+          # Ajustar minSdk a 21 para compatibilidad con celulares viejos
+          sed -i 's/minSdkVersion [0-9]*/minSdkVersion 21/g' app/build.gradle
+          ./gradlew assembleDebug --no-daemon
+          echo "=== APK ==="
+          find . -name "*.apk" -exec ls -lh {} \;
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: SaberPro-APK-v2.1
-          path: android/app/build/outputs/apk/debug/*.apk
+          path: android-project/app/build/outputs/apk/debug/*.apk
           retention-days: 90
-
-      - name: Create Release
-        if: success() && github.event_name == 'push'
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: v2.1.0
-          name: "SaberPro v2.1.0 — Android 5.0+"
-          body: |
-            ## 📱 SaberPro APK v2.1.0
-            
-            ✅ Android 5.0 → Android 14
-            ✅ APK universal — todos los procesadores  
-            ✅ 5,011 preguntas ICFES · 5 áreas
-            
-            ### Instalar
-            1. Descarga el APK
-            2. Permite orígenes desconocidos
-            3. Abre y estudia
-          files: android/app/build/outputs/apk/debug/*.apk
