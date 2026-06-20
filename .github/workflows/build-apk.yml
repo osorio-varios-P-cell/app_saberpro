@@ -12,11 +12,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
@@ -28,110 +23,61 @@ jobs:
         with:
           packages: 'platforms;android-34 build-tools;34.0.0'
 
-      - name: Install Bubblewrap
-        run: npm install -g @bubblewrap/cli
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: '8.4'
 
-      - name: Install http-server
-        run: npm install -g http-server
+      - name: Build Debug APK
+        working-directory: android
+        run: gradle assembleDebug --no-daemon --stacktrace
 
-      - name: Start local server & generate TWA project
+      - name: Copy APK to root
         run: |
-          # Start http-server in background
-          http-server . -p 8080 --cors -c-1 &
-          sleep 3
-
-          # Verify server is running
-          curl -s -o /dev/null -w "%{http_code}" http://localhost:8080/ || true
-
-          # Initialize bubblewrap project
-          mkdir -p android
-          bubblewrap init --manifest http://localhost:8080/manifest.json --directory android
-
-      - name: Configure Android build for max compatibility
-        run: |
-          cd android
-
-          # Set minimum SDK for old devices (API 21 = Android 5.0 Lollipop)
-          cat > gradle.properties << 'GRADLEEOF'
-          android.useAndroidX=true
-          android.enableJetifier=true
-          org.gradle.jvmargs=-Xmx2048m -XX:MaxMetaspaceSize=512m
-          GRADLEEOF
-
-          # Patch build.gradle for universal APK and old device compatibility
-          cat >> app/build.gradle << 'BUILDEOF'
-
-          // === SABERPRO: Max compatibility config ===
-          android {
-              defaultConfig {
-                  minSdkVersion 21
-                  targetSdkVersion 34
-                  compileSdkVersion 34
-                  versionCode 3
-                  versionName "2.1.0"
-              }
-              buildTypes {
-                  release {
-                      minifyEnabled false
-                      shrinkResources false
-                  }
-              }
-              // Generate universal APK (all CPU architectures)
-              splits {
-                  abi {
-                      enable false
-                      universalApk true
-                  }
-              }
-          }
-          BUILDEOF
-
-      - name: Build APK
-        run: |
-          cd android
-          # Build debug APK first (no signing needed for artifact)
-          ./gradlew assembleDebug --no-daemon
-
-          # Find the APK
-          echo "=== APK Built ==="
-          find . -name "*.apk" -type f
-
-          # Copy APK to repo root
-          cp app/build/outputs/apk/debug/app-debug.apk ../saberpro-v2.1.apk
-          ls -lh ../saberpro-v2.1.apk
+          APK=$(find android -name "*.apk" -type f | head -1)
+          echo "APK found: $APK"
+          cp "$APK" saberpro-v2.1-debug.apk
+          ls -lh saberpro-v2.1-debug.apk
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: SaberPro-APK-v2.1
-          path: saberpro-v2.1.apk
+          path: saberpro-v2.1-debug.apk
           retention-days: 90
           compression-level: 0
 
-      - name: Create Release
+      - name: Create Release with APK
         uses: softprops/action-gh-release@v2
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         with:
           tag_name: v2.1.0
-          name: "SaberPro v2.1.0 — APK Compatible"
+          name: "SaberPro v2.1.0"
           body: |
-            ## 📱 SaberPro APK v2.1.0
+            ## 📱 SaberPro v2.1.0 — APK Universal
             
-            ✅ Compatible con **todos los celulares** (Android 5.0 Lollipop en adelante)
-            ✅ **5,011 preguntas** ICFES — 5 áreas
-            ✅ Gamificación, simulacros, 11 temas
+            ✅ **Compatible con todos los celulares Android 5.0+**
             
-            ### Compatibilidad
-            - 📱 Android 5.0 (API 21) → Android 14 (API 34)
-            - 📱 Universal APK — todos los procesadores (ARM, ARM64, x86)
-            - 📱 Mínimo 50 MB libres en el dispositivo
+            ### 📦 Incluye
+            - 5,011 preguntas ICFES Saber 11 (5 áreas)
+            - Simulacros cronometrados de 2 horas
+            - Sistema de XP, niveles y 15 insignias
+            - 11 temas visuales
+            - Rachas diarias y estadísticas
+            - Modo offline (sin internet)
+            - Actualizaciones vía WiFi local
             
-            ### Instalación
+            ### 📱 Compatibilidad
+            - 🤖 Android 5.0 Lollipop (API 21) → Android 14 (API 34)
+            - 📱 APK universal — todos los procesadores
+            - 💾 ~2 MB de descarga
+            
+            ### 🔧 Instalación
             1. Descarga el APK
-            2. Permite "Instalar apps de fuentes desconocidas"
+            2. Activa "Orígenes desconocidos" en Ajustes → Seguridad
             3. Abre el APK e instala
-            4. ¡A estudiar!
-          files: saberpro-v2.1.apk
+            4. ¡Listo!
+          files: saberpro-v2.1-debug.apk
           draft: false
           prerelease: false
           generate_release_notes: false

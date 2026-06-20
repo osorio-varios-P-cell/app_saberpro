@@ -1,0 +1,53 @@
+apply plugin: 'com.android.application'
+
+android {
+    namespace 'com.saberpro.app'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.saberpro.app"
+        minSdk 21       // Android 5.0 Lollipop — cubre 99%+ de dispositivos
+        targetSdk 34    // Android 14
+        versionCode 3
+        versionName "2.1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debuggable true
+        }
+    }
+
+    // Universal APK — todas las arquitecturas en un solo archivo
+    splits {
+        abi {
+            enable false
+            universalApk true
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    // Copiar PWA files a assets durante build
+    sourceSets {
+        main {
+            assets.srcDirs = ['src/main/assets', '../../']  // root = PWA files
+        }
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.webkit:webkit:1.8.0'
+    implementation 'com.google.android.material:material:1.10.0'
+}
