@@ -47,19 +47,27 @@ jobs:
       - name: Copy APK to root
         if: success()
         run: |
-          echo "=== Buscando APK ==="
-          find android -name "*.apk" -type f
-          APK=$(find android -name "*.apk" -type f | head -1)
-          if [ -z "$APK" ]; then
-            echo "No APK found, checking build outputs..."
-            find android -name "*.apk" -o -name "*.aab" 2>/dev/null
-            ls -la android/app/build/outputs/ 2>/dev/null || true
-            exit 1
-          fi
-          echo "APK found: $APK"
-          ls -lh "$APK"
-          cp "$APK" saberpro-v2.1.apk
-          ls -lh saberpro-v2.1.apk
+          echo "=== Buscando APK en outputs ==="
+          ls -laR android/app/build/outputs/apk/ 2>/dev/null || echo "No apk dir"
+          echo ""
+          echo "=== Buscando todos los APK ==="
+          find . -name "*.apk" -type f 2>/dev/null || echo "find failed"
+          echo ""
+          # Rutas comunes donde Gradle deja el APK
+          for path in \
+            "android/app/build/outputs/apk/debug/app-debug.apk" \
+            "app/build/outputs/apk/debug/app-debug.apk" \
+            "build/outputs/apk/debug/app-debug.apk"; do
+            if [ -f "$path" ]; then
+              echo "APK encontrado: $path"
+              ls -lh "$path"
+              cp "$path" saberpro-v2.1.apk
+              ls -lh saberpro-v2.1.apk
+              exit 0
+            fi
+          done
+          echo "ERROR: APK no encontrado"
+          exit 1
 
       - name: Upload APK Artifact
         if: success()
