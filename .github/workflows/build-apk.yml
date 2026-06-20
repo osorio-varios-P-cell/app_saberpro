@@ -12,6 +12,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
@@ -23,77 +28,54 @@ jobs:
         with:
           packages: 'platforms;android-34 build-tools;34.0.0'
 
-      - name: Copy PWA files to Android assets
-        run: |
-          mkdir -p android/app/src/main/assets
-          find . -maxdepth 1 -type f \( -name "*.html" -o -name "*.json" -o -name "*.js" -o -name "*.css" \) -exec cp {} android/app/src/main/assets/ \;
-          cp -r js android/app/src/main/assets/ 2>/dev/null || true
-          cp -r css android/app/src/main/assets/ 2>/dev/null || true
-          cp -r data android/app/src/main/assets/ 2>/dev/null || true
-          cp -r assets android/app/src/main/assets/ 2>/dev/null || true
-          echo "Assets copiados:"
-          ls -la android/app/src/main/assets/ | head -20
+      - name: Install Bubblewrap
+        run: npm install -g @bubblewrap/cli
 
-      - name: Create local.properties
+      - name: Extract repo owner and name
+        id: repo
         run: |
-          echo "sdk.dir=$ANDROID_HOME" > android/local.properties
-          echo "ANDROID_HOME=$ANDROID_HOME"
-          cat android/local.properties
+          OWNER=$(echo "$GITHUB_REPOSITORY" | cut -d/ -f1)
+          REPO=$(echo "$GITHUB_REPOSITORY" | cut -d/ -f2)
+          BRANCH=${GITHUB_REF#refs/heads/}
+          echo "owner=$OWNER" >> $GITHUB_OUTPUT
+          echo "repo=$REPO" >> $GITHUB_OUTPUT
+          echo "branch=$BRANCH" >> $GITHUB_OUTPUT
+          echo "MANIFEST_URL=https://raw.githubusercontent.com/$OWNER/$REPO/$BRANCH/manifest.json"
 
-      - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v3
-        with:
-          gradle-version: '8.4'
+      - name: Initialize TWA project
+        run: |
+          OWNER=$(echo "$GITHUB_REPOSITORY" | cut -d/ -f1)
+          REPO=$(echo "$GITHUB_REPOSITORY" | cut -d/ -f2)
+          BRANCH=${GITHUB_REF#refs/heads/}
+          URL="https://raw.githubusercontent.com/$OWNER/$REPO/$BRANCH/manifest.json"
+          echo "Using manifest: $URL"
+          
+          mkdir -p twa-project
+          cd twa-project
+          bubblewrap init --manifest="$URL" --directory=.
+
+      - name: Configure for max compatibility
+        run: |
+          cd twa-project
+          echo "sdk.dir=$ANDROID_HOME" > local.properties
+          # Android 5.0+ para cubrir celulares viejos y nuevos
+          sed -i 's/minSdkVersion [0-9]*/minSdkVersion 21/' app/build.gradle 2>/dev/null || true
+          sed -i 's/targetSdkVersion [0-9]*/targetSdkVersion 34/' app/build.gradle 2>/dev/null || true
+          sed -i 's/compileSdkVersion [0-9]*/compileSdkVersion 34/' app/build.gradle 2>/dev/null || true
+          echo "=== build.gradle ==="
+          cat app/build.gradle
 
       - name: Build APK
-        working-directory: android
+        working-directory: twa-project
         run: |
-          # Verificar que todo esta en orden
-          echo "=== SDK check ==="
-          echo "ANDROID_HOME=$ANDROID_HOME"
-          cat local.properties
-          echo ""
-          echo "=== Project files ==="
-          ls -la
-          ls -la app/
-          ls -la app/src/main/
-          echo ""
-          echo "=== Assets ==="
-          ls app/src/main/assets/ | head -20
-          echo ""
-          echo "=== Building ==="
-          gradle assembleDebug --no-daemon --stacktrace --warning-mode all 2>&1 | tee build.log
-          GRADLE_EXIT=${PIPESTATUS[0]}
-          echo ""
-          echo "=== Gradle exit: $GRADLE_EXIT ==="
-          echo ""
-          echo "=== Buscando APK ==="
-          find . -name "*.apk" -type f -exec ls -lh {} \; 2>/dev/null || echo "No APK"
+          ./gradlew assembleDebug --no-daemon
+          echo "=== APK ==="
+          find . -name "*.apk" -exec ls -lh {} \;
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: SaberPro-APK-v2.1
-          path: |
-            android/app/build/outputs/**/*.apk
-            android/**/*.apk
-          retention-days: 90
-          if-no-files-found: warn
-
-      - name: Upload build log
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-log
-          path: android/build.log
-          retention-days: 7
-
-      - name: Upload APK (if found)
-        uses: actions/upload-artifact@v4
-        with:
-          name: SaberPro-APK-v2.1
-          path: |
-            android/app/build/outputs/**/*.apk
-            android/**/*.apk
+          path: twa-project/app/build/outputs/apk/debug/*.apk
           retention-days: 90
           if-no-files-found: warn
