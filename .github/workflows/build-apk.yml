@@ -39,10 +39,18 @@ jobs:
       - name: Build APK + mostrar salida
         working-directory: android
         run: |
-          gradle assembleDebug --no-daemon --stacktrace
+          set +e
+          gradle assembleDebug --no-daemon --stacktrace --warning-mode all 2>&1 | tee build.log
+          GRADLE_EXIT=${PIPESTATUS[0]}
           echo ""
-          echo "=== APK generado ==="
-          find . -name "*.apk" -type f -exec ls -lh {} \;
+          echo "=== Gradle exit code: $GRADLE_EXIT ==="
+          echo ""
+          echo "=== Ultimas 100 lineas del log ==="
+          tail -100 build.log
+          echo ""
+          echo "=== Buscando errores ==="
+          grep -i "error\|fail\|exception\|BUILD FAILED" build.log || echo "(sin errores obvios)"
+          exit $GRADLE_EXIT
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
