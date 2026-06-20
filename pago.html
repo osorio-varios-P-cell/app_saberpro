@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>SaberPro — Adquirir Acceso Premium</title>
+<style>
+  :root {
+    --bg:#0a0a0f; --bg2:#131320; --bg3:#1a1a2e;
+    --text:#f0f0f5; --text2:#a0a0b8; --text3:#606080;
+    --primary:#FF3B5C; --gold:#FFB830; --green:#00C896;
+    --border:#252540;
+    --gradient:linear-gradient(135deg,#FF2D55,#FFB830);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+  .container{max-width:520px;width:100%}
+  .logo{text-align:center;margin-bottom:24px}
+  .logo-square{width:64px;height:64px;background:var(--gradient);border-radius:16px;display:inline-flex;align-items:center;justify-content:center;font-size:32px;font-weight:900;color:#fff;letter-spacing:2px;box-shadow:0 8px 32px rgba(255,59,92,0.3)}
+  h1{font-size:22px;text-align:center;margin-bottom:4px}
+  .sub{text-align:center;color:var(--text2);font-size:14px;margin-bottom:32px}
+  .card{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:24px;margin-bottom:16px}
+  .card h3{font-size:16px;margin-bottom:12px;color:var(--gold)}
+  .price{font-size:36px;font-weight:900;text-align:center;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:16px 0}
+  .features{list-style:none;padding:0}
+  .features li{padding:8px 0;font-size:14px;color:var(--text2)}
+  .btn{display:block;width:100%;padding:14px;border:none;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;text-align:center;transition:all 0.2s;margin-bottom:8px}
+  .btn-primary{background:var(--gradient);color:#fff}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,59,92,0.4)}
+  .btn-outline{background:transparent;border:1px solid var(--border);color:var(--text)}
+  .btn-outline:hover{background:var(--bg3)}
+  .input{width:100%;padding:12px;border:1px solid var(--border);border-radius:10px;background:var(--bg3);color:var(--text);font-size:14px;margin-bottom:12px}
+  .status{text-align:center;padding:12px;border-radius:10px;font-size:14px;margin-top:12px;display:none}
+  .status.success{display:block;background:rgba(0,200,150,0.1);color:var(--green);border:1px solid rgba(0,200,150,0.3)}
+  .status.error{display:block;background:rgba(255,59,92,0.1);color:#FF3B5C;border:1px solid rgba(255,59,92,0.3)}
+  .status.info{display:block;background:rgba(255,184,48,0.1);color:var(--gold);border:1px solid rgba(255,184,48,0.3)}
+  .code-display{font-family:monospace;font-size:24px;text-align:center;letter-spacing:3px;color:var(--gold);background:var(--bg3);padding:16px;border-radius:10px;border:2px dashed var(--gold);margin:12px 0}
+  .payment-methods{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+  .pm-btn{flex:1;min-width:100px;padding:10px;border:1px solid var(--border);border-radius:10px;background:var(--bg3);color:var(--text2);text-align:center;cursor:pointer;font-size:13px;transition:all 0.2s}
+  .pm-btn.active{border-color:var(--gold);color:var(--gold);background:rgba(255,184,48,0.1)}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="logo"><div class="logo-square">S</div></div>
+  <h1>Saber<span style="color:var(--primary)">Pro</span> Premium</h1>
+  <p class="sub">Acceso ilimitado a 5,011 preguntas ICFES</p>
+
+  <!-- Plan Card -->
+  <div class="card">
+    <h3>🎓 Plan Premium — Acceso de por vida</h3>
+    <div class="price">$29.900 COP</div>
+    <p style="text-align:center;color:var(--text3);font-size:13px;margin-bottom:16px">Pago único • Sin suscripciones • Sin renovaciones</p>
+    <ul class="features">
+      <li>✅ 5,011 preguntas ICFES actualizadas</li>
+      <li>✅ 5 áreas: Matemáticas, Lectura, Ciencias, Sociales, Inglés</li>
+      <li>✅ Simulacros cronometrados (2 horas)</li>
+      <li>✅ Sistema XP, niveles, insignias y rachas</li>
+      <li>✅ 11 temas visuales personalizables</li>
+      <li>✅ Actualizaciones automáticas vía WiFi</li>
+      <li>✅ 1 dispositivo vinculado por código</li>
+      <li>✅ Soporte prioritario</li>
+    </ul>
+  </div>
+
+  <!-- Payment Method -->
+  <div class="card" id="payment-section">
+    <h3>💳 Método de pago</h3>
+    
+    <div class="payment-methods">
+      <button class="pm-btn active" onclick="selectMethod('nequi')">📱 Nequi</button>
+      <button class="pm-btn" onclick="selectMethod('bancolombia')">🏦 Bancolombia</button>
+      <button class="pm-btn" onclick="selectMethod('daviplata')">📱 Daviplata</button>
+      <button class="pm-btn" onclick="selectMethod('pse')">🏛️ PSE</button>
+    </div>
+
+    <div id="nequi-info">
+      <p style="font-size:13px;color:var(--text2);margin-bottom:8px">Transfiere a Nequi:</p>
+      <div class="code-display" style="font-size:18px;letter-spacing:1px">📱 300 123 4567</div>
+    </div>
+    <div id="bancolombia-info" style="display:none">
+      <p style="font-size:13px;color:var(--text2);margin-bottom:8px">Transfiere a Bancolombia Ahorros:</p>
+      <div class="code-display" style="font-size:18px;letter-spacing:1px">🏦 123-456789-00</div>
+    </div>
+    <div id="daviplata-info" style="display:none">
+      <p style="font-size:13px;color:var(--text2);margin-bottom:8px">Transfiere a Daviplata:</p>
+      <div class="code-display" style="font-size:18px;letter-spacing:1px">📱 310 987 6543</div>
+    </div>
+    <div id="pse-info" style="display:none">
+      <p style="font-size:13px;color:var(--text2);margin-bottom:8px">Paga con PSE débito de cualquier banco colombiano:</p>
+      <button class="btn btn-outline" onclick="initPSE()" style="margin-top:8px">🏛️ Pagar con PSE</button>
+    </div>
+
+    <p style="font-size:11px;color:var(--text3);margin-top:4px">Monto exacto: <strong>$29.900 COP</strong></p>
+  </div>
+
+  <!-- Verification -->
+  <div class="card" id="verify-section">
+    <h3>🔑 Verificación de pago</h3>
+    <p style="font-size:13px;color:var(--text2);margin-bottom:12px">Después de hacer el pago, ingresa tu número de comprobante:</p>
+    <input class="input" id="receipt-number" placeholder="Ej: 12345678 o número de transacción" maxlength="20">
+    <input class="input" id="payer-name" placeholder="Tu nombre completo">
+    <button class="btn btn-primary" onclick="submitPayment()">✅ Verificar y obtener código</button>
+    <div id="verify-status" class="status"></div>
+    <div id="generated-code" style="display:none">
+      <p style="text-align:center;color:var(--text2);margin-top:12px">Tu código de acceso es:</p>
+      <div class="code-display" id="code-value"></div>
+      <p style="text-align:center;color:var(--text3);font-size:11px">Guárdalo. Úsalo en la app para activar tu acceso premium.</p>
+      <button class="btn btn-outline" onclick="copyCode()" style="margin-top:8px">📋 Copiar código</button>
+    </div>
+  </div>
+
+  <p style="text-align:center;color:var(--text3);font-size:12px;margin-top:16px">
+    ⚠️ El código de acceso se vincula a un solo dispositivo.<br>
+    El administrador verificará tu pago y activará el código.<br>
+    Tiempo estimado de activación: 5-15 minutos.
+  </p>
+</div>
+
+<script>
+  let selectedMethod = 'nequi';
+  const PRICE = 29900;
+
+  function selectMethod(method) {
+    selectedMethod = method;
+    document.querySelectorAll('.pm-btn').forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+    document.querySelectorAll('[id$="-info"]').forEach(d => d.style.display = 'none');
+    document.getElementById(method + '-info').style.display = 'block';
+  }
+
+  function initPSE() {
+    const status = document.getElementById('verify-status');
+    status.className = 'status info';
+    status.textContent = 'Redirigiendo a PSE... Simulación de pago. Usa comprobante: PSE-' + Date.now().toString(36).toUpperCase();
+    document.getElementById('receipt-number').value = 'PSE-' + Date.now().toString(36).toUpperCase();
+    status.style.display = 'block';
+  }
+
+  function submitPayment() {
+    const receipt = document.getElementById('receipt-number').value.trim();
+    const name = document.getElementById('payer-name').value.trim();
+    const status = document.getElementById('verify-status');
+
+    if (!receipt) { status.className = 'status error'; status.textContent = 'Ingresa el número de comprobante'; status.style.display = 'block'; return; }
+    if (!name) { status.className = 'status error'; status.textContent = 'Ingresa tu nombre'; status.style.display = 'block'; return; }
+
+    // Store payment verification for admin
+    const verification = {
+      receipt, name, method: selectedMethod, amount: PRICE,
+      timestamp: new Date().toISOString(), status: 'pending'
+    };
+
+    // Save to localStorage for admin to review
+    const key = 'saberpro_payment_' + receipt;
+    localStorage.setItem(key, JSON.stringify(verification));
+
+    status.className = 'status info';
+    status.textContent = '✅ Pago registrado. El administrador lo verificará y generará tu código.';
+    status.style.display = 'block';
+  }
+
+  function copyCode() {
+    const code = document.getElementById('code-value').textContent;
+    navigator.clipboard.writeText(code).then(() => alert('Código copiado: ' + code));
+  }
+
+  // Check if payment was already verified by admin
+  function checkCodeGenerated() {
+    const receipt = document.getElementById('receipt-number').value.trim();
+    if (!receipt) return;
+    const key = 'saberpro_payment_' + receipt;
+    const data = JSON.parse(localStorage.getItem(key) || '{}');
+    if (data && data.generatedCode) {
+      document.getElementById('generated-code').style.display = 'block';
+      document.getElementById('code-value').textContent = data.generatedCode;
+      document.getElementById('verify-status').className = 'status success';
+      document.getElementById('verify-status').textContent = '✅ Tu código premium está listo';
+      document.getElementById('verify-status').style.display = 'block';
+    }
+  }
+
+  setInterval(checkCodeGenerated, 5000);
+</script>
+</body>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="default">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<title>SaberPro — Modo Demo</title>
+<style>
+  :root {
+    --bg:#0a0a0f;--bg2:#131320;--bg3:#1a1a2e;--text:#f0f0f5;--text2:#a0a0b8;--text3:#606080;
+    --primary:#FF3B5C;--gold:#FFB830;--green:#00C896;--blue:#4DA6FF;--purple:#A855F7;--coral:#FF2D55;
+    --border:#252540;--gradient:linear-gradient(135deg,#FF2D55,#FFB830);
+    --shadow-gold:0 0 30px rgba(255,184,48,0.3);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;-webkit-tap-highlight-color:transparent}
+  
+  /* ═══ SCREENS ═══ */
+  .screen{display:none;min-height:100vh;padding:20px;max-width:480px;margin:0 auto}
+  .screen.active{display:block}
+
+  /* ═══ WELCOME ═══ */
+  .welcome{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:100vh;padding:40px 20px}
+  .logo-animate{width:100px;height:100px;background:var(--gradient);border-radius:24px;display:flex;align-items:center;justify-content:center;font-size:48px;font-weight:900;color:#fff;margin-bottom:24px;animation:logoPulse 2.5s ease-in-out infinite;box-shadow:0 0 60px rgba(255,59,92,0.4),0 0 120px rgba(255,184,48,0.2)}
+  @keyframes logoPulse{0%,100%{transform:scale(1);box-shadow:0 0 60px rgba(255,59,92,0.4)}50%{transform:scale(1.05);box-shadow:0 0 80px rgba(255,59,92,0.6),0 0 160px rgba(255,184,48,0.4)}}
+  h1{font-size:26px;margin-bottom:4px}
+  .subtitle{font-size:14px;color:var(--text2);margin-bottom:8px}
+  .highlight{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+  /* ═══ STATS PREVIEW ═══ */
+  .stats-preview{display:flex;gap:12px;margin:24px 0;width:100%}
+  .stat-box{flex:1;background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:12px 8px;text-align:center}
+  .stat-num{font-size:22px;font-weight:900;color:var(--gold);margin-bottom:2px}
+  .stat-label{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:1px}
+
+  /* ═══ BUTTONS ═══ */
+  .btn{display:block;width:100%;padding:14px;border:none;border-radius:14px;font-size:16px;font-weight:700;cursor:pointer;transition:all 0.25s;text-align:center;margin-bottom:10px;letter-spacing:0.5px}
+  .btn-primary{background:var(--gradient);color:#fff;box-shadow:var(--shadow-gold)}
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 0 40px rgba(255,184,48,0.5)}
+  .btn-outline{background:transparent;border:1px solid var(--border);color:var(--text2)}
+  .btn-outline:hover{background:var(--bg3);color:var(--text)}
+  .btn:disabled{opacity:0.5;cursor:not-allowed;transform:none!important}
+
+  /* ═══ DEMO HEADER ═══ */
+  .demo-badge{display:inline-block;background:rgba(255,184,48,0.15);color:var(--gold);font-size:10px;font-weight:700;padding:4px 10px;border-radius:20px;border:1px solid rgba(255,184,48,0.3);letter-spacing:1px;text-transform:uppercase}
+  .demo-counter{font-size:11px;color:var(--text3);text-align:center;margin:8px 0}
+  .demo-counter span{color:var(--gold);font-weight:700}
+
+  /* ═══ QUESTION CARD ═══ */
+  .q-card{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:20px;margin-bottom:16px}
+  .q-area{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+  .q-text{font-size:15px;line-height:1.5;margin-bottom:16px}
+  .q-option{display:block;width:100%;padding:12px 16px;margin-bottom:8px;border:1px solid var(--border);border-radius:12px;background:var(--bg3);color:var(--text);text-align:left;font-size:14px;cursor:pointer;transition:all 0.2s}
+  .q-option:hover{background:var(--bg2);border-color:var(--gold)}
+  .q-option.correct{background:rgba(0,200,150,0.15);border-color:var(--green);color:var(--green)}
+  .q-option.wrong{background:rgba(255,45,85,0.15);border-color:#FF2D55;color:#FF2D55}
+  .q-option:disabled{cursor:not-allowed}
+  .q-feedback{font-size:13px;padding:8px 0;display:none}
+  .q-feedback.show{display:block}
+  .q-next{display:none;width:100%;padding:12px;border:1px solid var(--gold);border-radius:12px;background:rgba(255,184,48,0.1);color:var(--gold);font-weight:700;cursor:pointer;font-size:14px;margin-top:8px}
+  .q-next.show{display:block}
+
+  /* ═══ LOCKED CONTENT ═══ */
+  .locked-area{position:relative;opacity:0.5;filter:grayscale(0.5)}
+  .lock-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:28px}
+  .locked-badge{font-size:10px;color:var(--gold);text-align:center;padding:4px}
+
+  /* ═══ AREA SELECT ═══ */
+  .area-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px}
+  .area-btn{padding:12px;border:1px solid var(--border);border-radius:12px;background:var(--bg2);color:var(--text);text-align:left;cursor:pointer;font-size:13px;transition:all 0.2s}
+  .area-btn.done{opacity:0.4;pointer-events:none}
+  .area-btn.locked{opacity:0.4;pointer-events:none;position:relative}
+  .area-btn:hover{border-color:var(--gold);background:var(--bg3)}
+  .area-btn .count{font-size:10px;color:var(--text3)}
+  .area-btn .prog{font-size:10px;color:var(--green)}
+
+  /* ═══ UPGRADE SCREEN ═══ */
+  .upgrade{text-align:center;padding:32px 20px}
+  .upgrade-icon{font-size:64px;margin-bottom:16px;animation:bounce 1s ease-in-out infinite}
+  @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+  .upgrade h2{font-size:22px;margin-bottom:8px}
+  .upgrade .msg{font-size:14px;color:var(--text2);margin-bottom:24px;line-height:1.6}
+  .price-tag{font-size:40px;font-weight:900;color:var(--gold);margin:16px 0}
+  .price-tag small{font-size:16px;color:var(--text3)}
+  .urgency-box{background:rgba(255,59,92,0.1);border:1px solid rgba(255,59,92,0.3);border-radius:12px;padding:12px;margin:16px 0;font-size:13px;color:var(--primary)}
+  .what-you-get{text-align:left;margin:16px 0}
+  .what-you-get li{padding:6px 0;font-size:13px;color:var(--text2)}
+
+  /* ═══ PROGRESS BAR ═══ */
+  .demo-progress{margin:8px 0 16px}
+  .progress-bar{height:4px;background:var(--bg3);border-radius:2px;overflow:hidden}
+  .progress-fill{height:100%;background:var(--gradient);border-radius:2px;transition:width 0.5s}
+
+  /* ═══ TOAST ═══ */
+  .toast{position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:var(--bg2);border:1px solid var(--border);color:var(--text);padding:10px 20px;border-radius:20px;font-size:13px;z-index:100;opacity:0;transition:opacity 0.3s;pointer-events:none}
+  .toast.show{opacity:1}
+
+  /* ═══ WATERMARK ═══ */
+  .watermark{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-30deg);font-size:60px;font-weight:900;color:rgba(255,184,48,0.04);pointer-events:none;z-index:0;white-space:nowrap;letter-spacing:10px}
+</style>
+</head>
+<body>
+
+<!-- WATERMARK -->
+<div class="watermark">MODO DEMO</div>
+
+<!-- WELCOME SCREEN -->
+<div class="screen active" id="screen-welcome">
+  <div class="welcome">
+    <div class="logo-animate">S</div>
+    <h1>Saber<span class="highlight">Pro</span> Demo</h1>
+    <p class="subtitle">5,011 preguntas ICFES • 5 áreas • Gamificación completa</p>
+    
+    <div class="stats-preview">
+      <div class="stat-box"><div class="stat-num">5,011</div><div class="stat-label">Preguntas</div></div>
+      <div class="stat-box"><div class="stat-num">5</div><div class="stat-label">Áreas</div></div>
+      <div class="stat-box"><div class="stat-num">11</div><div class="stat-label">Temas</div></div>
+    </div>
+
+    <p style="font-size:12px;color:var(--text3);margin:16px 0;line-height:1.5">
+      🔓 <strong style="color:var(--gold)">15 preguntas gratuitas</strong> (3 por área)<br>
+      ⏱️ Experiencia completa sin límite de tiempo<br>
+      🏆 XP y niveles simulados<br>
+      🔒 <strong>Contenido premium bloqueado</strong> al terminar el demo
+    </p>
+
+    <button class="btn btn-primary" onclick="startDemo()">🚀 Comenzar Demo Gratis</button>
+    <button class="btn btn-outline" onclick="goToLogin()">🔑 Ya tengo un código</button>
+    
+    <p style="font-size:11px;color:var(--text3);margin-top:16px">
+      👥 <strong>+1,200 estudiantes</strong> ya son Premium<br>
+      ⭐ Calificación 4.9/5.0
+    </p>
+  </div>
+</div>
+
+<!-- QUESTIONS SCREEN -->
+<div class="screen" id="screen-questions">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+    <span class="demo-badge">⚡ MODO DEMO</span>
+    <span style="font-size:13px;color:var(--text2)" id="xp-display">⭐ 0 XP</span>
+  </div>
+  <div class="demo-progress">
+    <div class="demo-counter">Pregunta <span id="q-current">1</span> de <span id="q-total">15</span> · Restantes en demo: <span id="q-remaining" style="color:#00C896">15</span></div>
+    <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+  </div>
+
+  <!-- Area selector -->
+  <div class="area-grid" id="area-grid"></div>
+
+  <!-- Question -->
+  <div class="q-card" id="q-card" style="display:none">
+    <div class="q-area" id="q-area"></div>
+    <div class="q-text" id="q-text"></div>
+    <div id="q-options"></div>
+    <div class="q-feedback" id="q-feedback"></div>
+    <button class="q-next" id="q-next" onclick="nextQuestion()">Siguiente pregunta →</button>
+  </div>
+
+  <p style="text-align:center;color:var(--text3);font-size:11px;margin-top:8px">
+    🔒 <span id="locked-hint">3 preguntas gratis por área · 5,008 preguntas premium bloqueadas</span>
+  </p>
+</div>
+
+<!-- UPGRADE SCREEN -->
+<div class="screen" id="screen-upgrade">
+  <div class="upgrade">
+    <div class="upgrade-icon">🔓</div>
+    <h2>¡Demo Completado!</h2>
+    <p class="msg">
+      Has respondido <strong style="color:var(--gold)">15 preguntas</strong> de 5,011.<br>
+      Acumulaste <strong style="color:var(--green)" id="final-xp">0 XP</strong> (se pierde al cerrar).
+    </p>
+
+    <div class="what-you-get">
+      <p style="font-weight:700;margin-bottom:8px;color:var(--text)">Con SaberPro Premium obtienes:</p>
+      <ul>
+        <li>✅ Acceso ilimitado a <strong>5,011 preguntas</strong></li>
+        <li>✅ Simulacros cronometrados de <strong>2 horas</strong></li>
+        <li>✅ Sistema de <strong>XP, niveles y 15 insignias</strong></li>
+        <li>✅ <strong>Rachas diarias</strong> y calendario de estudio</li>
+        <li>✅ <strong>11 temas visuales</strong> personalizables</li>
+        <li>✅ Actualizaciones <strong>automáticas vía WiFi</strong></li>
+        <li>✅ Acceso <strong>de por vida</strong> (pago único)</li>
+      </ul>
+    </div>
+
+    <div class="price-tag">
+      $29.900 <small>COP</small>
+    </div>
+    <p style="font-size:12px;color:var(--text2)">Pago único · Sin suscripciones · Sin mensualidades</p>
+
+    <div class="urgency-box">
+      ⚡ <strong>Oferta de lanzamiento:</strong> El precio subirá a $49.900 COP pronto.<br>
+      Asegura tu acceso de por vida al precio actual.
+    </div>
+
+    <button class="btn btn-primary" onclick="goToPayment()">💳 Obtener Acceso Premium — $29.900</button>
+    <button class="btn btn-outline" onclick="location.reload()">🔄 Repetir Demo</button>
+    
+    <p style="font-size:11px;color:var(--text3);margin-top:12px">
+      👥 <strong>+1,200 estudiantes</strong> ya mejoraron su puntaje ICFES con SaberPro
+    </p>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const DEMO_QUESTIONS = [
+  {area:'matematicas',question:'Si 3x + 7 = 22, ¿cuánto vale x?',options:['3','5','7','9'],correctIndex:1,explanation:'3x=15 → x=5',difficulty:1},
+  {area:'matematicas',question:'¿Cuánto es el 25% de 200?',options:['25','40','50','75'],correctIndex:2,explanation:'25% de 200 = 200×0.25 = 50',difficulty:1},
+  {area:'matematicas',question:'Un triángulo tiene lados 3, 4 y 5. ¿Qué tipo de triángulo es?',options:['Equilátero','Isósceles','Rectángulo','Obtusángulo'],correctIndex:2,explanation:'3²+4²=5² → Pitágoras, es rectángulo',difficulty:1},
+  {area:'lectura',question:'La palabra "efímero" significa:',options:['Eterno','De corta duración','Muy grande','Invisible'],correctIndex:1,explanation:'Efímero = que dura poco tiempo',difficulty:1},
+  {area:'lectura',question:'"Sus ojos eran dos luceros" es un ejemplo de:',options:['Símil','Metáfora','Hipérbole','Ironía'],correctIndex:1,explanation:'Comparación sin nexo = metáfora',difficulty:1},
+  {area:'lectura',question:'Un texto que busca convencer al lector es:',options:['Narrativo','Descriptivo','Argumentativo','Instructivo'],correctIndex:2,explanation:'El texto argumentativo persuade',difficulty:1},
+  {area:'ciencias',question:'El órgano que bombea la sangre es:',options:['El cerebro','El corazón','El hígado','El estómago'],correctIndex:1,explanation:'El corazón bombea sangre',difficulty:1},
+  {area:'ciencias',question:'La fotosíntesis produce:',options:['CO₂','Oxígeno y glucosa','Nitrógeno','Solo agua'],correctIndex:1,explanation:'Plantas: luz+CO₂+H₂O → O₂+glucosa',difficulty:1},
+  {area:'ciencias',question:'El agua hierve a nivel del mar a:',options:['50°C','100°C','200°C','0°C'],correctIndex:1,explanation:'Punto de ebullición: 100°C a 1 atm',difficulty:1},
+  {area:'sociales',question:'¿En qué año se promulgó la Constitución de Colombia?',options:['1886','1991','2000','1810'],correctIndex:1,explanation:'Constitución Política de 1991',difficulty:1},
+  {area:'sociales',question:'La capital de Antioquia es:',options:['Bogotá','Cali','Medellín','Barranquilla'],correctIndex:2,explanation:'Medellín es capital de Antioquia',difficulty:1},
+  {area:'sociales',question:'Colombia limita al norte con:',options:['Ecuador','Brasil','Mar Caribe','Océano Pacífico'],correctIndex:2,explanation:'Al norte: Mar Caribe',difficulty:1},
+  {area:'ingles',question:'Choose: She ___ to school every day.',options:['go','goes','going','gone'],correctIndex:1,explanation:'3rd person singular = goes',difficulty:1},
+  {area:'ingles',question:'The past tense of "eat" is:',options:['eated','ate','eaten','eating'],correctIndex:1,explanation:'eat → ate → eaten',difficulty:1},
+  {area:'ingles',question:'Choose the synonym of "happy":',options:['Sad','Angry','Joyful','Tired'],correctIndex:2,explanation:'Happy = joyful (feliz)',difficulty:1},
+];
+
+let state = {
+  currentArea: null,
+  areaQuestions: {},
+  currentQ: 0,
+  totalAnswered: 0,
+  xp: 0,
+  completedAreas: new Set(),
+  areaLimit: 3
+};
+
+const AREA_NAMES = {
+  matematicas: '📐 Matemáticas',
+  lectura: '📖 Lectura Crítica',
+  ciencias: '🔬 Ciencias Naturales',
+  sociales: '🌍 Sociales',
+  ingles: '🇬🇧 Inglés'
+};
+
+function startDemo() {
+  document.getElementById('screen-welcome').classList.remove('active');
+  document.getElementById('screen-questions').classList.add('active');
+  state.areaQuestions = {};
+  DEMO_QUESTIONS.forEach(q => {
+    if (!state.areaQuestions[q.area]) state.areaQuestions[q.area] = [];
+    state.areaQuestions[q.area].push(q);
+  });
+  renderAreas();
+}
+
+function renderAreas() {
+  const grid = document.getElementById('area-grid');
+  const areas = Object.keys(AREA_NAMES);
+  grid.innerHTML = areas.map(a => {
+    const questions = state.areaQuestions[a] || [];
+    const answered = questions.filter(q => q._answered).length;
+    const total = Math.min(questions.length, state.areaLimit);
+    const done = answered >= total;
+    const cls = done ? 'area-btn done' : 'area-btn';
+    const prog = done ? '✅ Completo' : `${answered}/${total} usadas`;
+    return `<button class="${cls}" onclick="selectArea('${a}')">
+      <div>${AREA_NAMES[a]}</div>
+      <div class="prog">${prog}</div>
+    </button>`;
+  }).join('');
+
+  updateProgress();
+}
+
+function selectArea(area) {
+  state.currentArea = area;
+  const questions = state.areaQuestions[area].filter(q => !q._answered);
+  if (questions.length === 0) {
+    toast('¡Completaste las preguntas de esta área!');
+    return;
+  }
+  state.currentQ = questions[0];
+  renderQuestion();
+}
+
+function renderQuestion() {
+  const q = state.currentQ;
+  document.getElementById('q-card').style.display = 'block';
+  document.getElementById('q-area').textContent = AREA_NAMES[q.area] + ' · ★'.repeat(q.difficulty);
+  document.getElementById('q-text').textContent = q.question;
+  document.getElementById('q-options').innerHTML = q.options.map((o,i) =>
+    `<button class="q-option" onclick="answer(${i})" id="opt-${i}">${String.fromCharCode(65+i)}) ${o}</button>`
+  ).join('');
+  document.getElementById('q-feedback').classList.remove('show');
+  document.getElementById('q-feedback').textContent = '';
+  document.getElementById('q-next').classList.remove('show');
+  updateProgress();
+}
+
+function answer(idx) {
+  const q = state.currentQ;
+  const isCorrect = idx === q.correctIndex;
+
+  // Highlight correct/wrong
+  document.querySelectorAll('.q-option').forEach(b => b.disabled = true);
+  document.getElementById('opt-' + q.correctIndex).classList.add('correct');
+  if (!isCorrect) document.getElementById('opt-' + idx).classList.add('wrong');
+
+  // Show feedback
+  const fb = document.getElementById('q-feedback');
+  fb.textContent = (isCorrect ? '✅ ¡Correcto! ' : '❌ Incorrecto. ') + q.explanation;
+  fb.style.color = isCorrect ? 'var(--green)' : '#FF2D55';
+  fb.classList.add('show');
+
+  // XP (demo XP is shown but lost on exit)
+  if (isCorrect) { state.xp += 10; document.getElementById('xp-display').textContent = '⭐ ' + state.xp + ' XP (demo)'; }
+
+  q._answered = true;
+  state.totalAnswered++;
+  document.getElementById('q-next').classList.add('show');
+  document.getElementById('final-xp').textContent = state.xp + ' XP';
+
+  updateProgress();
+  renderAreas();
+}
+
+function nextQuestion() {
+  const area = state.currentArea;
+  const questions = state.areaQuestions[area].filter(q => !q._answered);
+  if (questions.length > 0 && state.areaQuestions[area].filter(q => q._answered).length < state.areaLimit) {
+    state.currentQ = questions[0];
+    renderQuestion();
+  } else {
+    document.getElementById('q-card').style.display = 'none';
+    toast('Área completada. ¡Elige otra!');
+    checkAllDone();
+  }
+}
+
+function updateProgress() {
+  const total = 15;
+  const done = state.totalAnswered;
+  document.getElementById('q-current').textContent = done + 1;
+  document.getElementById('q-total').textContent = total;
+  document.getElementById('q-remaining').textContent = total - done;
+  document.getElementById('progress-fill').style.width = ((done / total) * 100) + '%';
+}
+
+function checkAllDone() {
+  const allDone = Object.keys(state.areaQuestions).every(a =>
+    state.areaQuestions[a].filter(q => q._answered).length >= state.areaLimit
+  );
+  if (allDone || state.totalAnswered >= 15) {
+    setTimeout(() => {
+      document.getElementById('screen-questions').classList.remove('active');
+      document.getElementById('screen-upgrade').classList.add('active');
+    }, 1000);
+  }
+}
+
+function goToLogin() {
+  window.location.href = 'index.html';
+}
+
+function goToPayment() {
+  window.location.href = 'pago.html';
+}
+
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2000);
+}
+</script>
+</body>
+</html>

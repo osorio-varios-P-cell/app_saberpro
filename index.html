@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <meta name="theme-color" content="#0a0a1a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="/manifest.json">
+  <title>SaberPro — Tu camino al 500</title>
+  <link rel="stylesheet" href="css/user.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23FF3B5C'/><stop offset='1' stop-color='%23FFB830'/></linearGradient></defs><rect width='100' height='100' rx='24' fill='url(%23g)'/><text x='50' y='72' text-anchor='middle' fill='white' font-size='62' font-weight='900'>S</text></svg>">
+</head>
+<body>
+
+  <!-- ═══════════ CINEMATIC INTRO v4 ═══════════ -->
+  <div id="splash">
+    <canvas id="splash-canvas"></canvas>
+    <div class="splash-stage">
+      <div class="logo-cluster">
+        <div class="logo-ring ring-1"></div><div class="logo-ring ring-2"></div>
+        <div class="splash-logo">S</div>
+        <div class="logo-sheen"></div>
+      </div>
+      <div class="title-cluster">
+        <span class="tchar" style="--d:0">S</span><span class="tchar" style="--d:1">A</span><span class="tchar" style="--d:2">B</span><span class="tchar" style="--d:3">E</span><span class="tchar" style="--d:4">R</span>
+        <span class="tchar tchar-space" style="--d:5">P</span><span class="tchar" style="--d:6">R</span><span class="tchar tchar-last" style="--d:7">O</span>
+      </div>
+      <div class="hero-500">500</div>
+      <div class="tagline-final">tu camino comienza aqui</div>
+      <div class="golden-dot"></div>
+    </div>
+  </div>
+
+  <canvas id="bg-particles"></canvas>
+  <div class="toast" id="toast"></div>
+
+  <!-- ═══ LOGIN ═══ -->
+  <div class="screen" id="login-screen">
+    <div class="login-card">
+      <div class="login-icon">S</div>
+      <div class="login-title">SABERPRO</div>
+      <div class="login-desc">Preparate para el ICFES con la app mas completa</div>
+      <input type="text" class="input-premium" id="login-name" placeholder="Tu nombre" autocomplete="off">
+      <input type="text" class="input-premium" id="login-code" placeholder="CODIGO DE ACCESO" autocomplete="off" style="text-transform:uppercase;letter-spacing:3px;text-align:center;font-weight:700">
+      <div class="status-msg" id="login-status"></div>
+      <button class="btn-premium btn-coral" onclick="App.doLogin()">Ingresar a SaberPro</button>
+      <button class="btn-premium" style="background:transparent;border:1px solid var(--gold);color:var(--gold);margin-top:8px" onclick="window.location.href='demo.html'">🔮 Probar Demo Gratis (15 preguntas)</button>
+    </div>
+  </div>
+
+  <!-- ═══ MAIN APP ═══ -->
+  <div class="screen" id="app-screen">
+    <!-- Header -->
+    <div class="app-header">
+      <div class="header-left">
+        <div class="app-logo">S</div>
+        <div>
+          <div class="header-greeting">Hola, <span id="h-name">estudiante</span> 👋</div>
+          <div class="header-name">A estudiar!</div>
+        </div>
+      </div>
+      <div class="header-right">
+        <span class="pill pill-streak">🔥 <span id="h-streak">0d</span></span>
+        <span class="pill pill-xp">⭐ <span id="h-xp">0</span> XP</span>
+      </div>
+    </div>
+
+    <!-- XP Bar -->
+    <div class="xp-bar-wrap">
+      <div class="xp-bar-card">
+        <div class="xp-level-circle" id="xp-level">1</div>
+        <div class="xp-bar-info">
+          <div class="xp-bar-row"><span id="xp-cur">0</span><span>Nivel <span id="xp-level-txt">1</span></span><span id="xp-max">500</span></div>
+          <div class="xp-bar-track"><div class="xp-bar-fill" id="xp-fill" style="width:0%"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ HOME ═══ -->
+    <div class="tab-content active" id="tab-home" style="padding:16px 20px 90px">
+      <div class="section-title">Plan de hoy</div>
+      <div class="section-sub">Tus areas que mas necesitas practicar</div>
+      <div id="home-areas" style="display:flex;flex-direction:column;gap:10px;margin-bottom:16px"></div>
+      <!-- Neuro tip -->
+      <div class="neuro-tip" id="neuro-tip"></div>
+      <div class="simulacro-card" onclick="App.switchTab('simulacro')" style="margin-top:14px">
+        <h3>Simulacro ICFES</h3>
+        <p>20 preguntas · Todas las areas · Puntaje sobre 500</p>
+      </div>
+      <div class="stats-row" style="margin-top:16px">
+        <div class="stat-item"><div class="stat-value" style="color:var(--blue)" id="s-preguntas">0</div><div class="stat-label">Preguntas</div></div>
+        <div class="stat-divider"></div>
+        <div class="stat-item"><div class="stat-value" style="color:var(--gold)" id="s-simulacros">0</div><div class="stat-label">Simulacros</div></div>
+        <div class="stat-divider"></div>
+        <div class="stat-item"><div class="stat-value" style="color:var(--green)" id="s-logros">0</div><div class="stat-label">Logros</div></div>
+      </div>
+    </div>
+
+    <!-- ═══ PRACTICA ═══ -->
+    <div class="tab-content" id="tab-practica" style="padding:16px 20px 90px">
+      <div id="practica-area-view">
+        <div class="section-title">Elegir area</div>
+        <div class="section-sub">Selecciona el area que quieres practicar</div>
+        <div class="area-grid" id="practica-area-grid"></div>
+        <button class="btn-premium btn-gold btn-sm" style="width:100%;margin-top:16px" onclick="App.diagnoticoRapido()">Diagnostico Rapido (15 preguntas)</button>
+      </div>
+
+      <div id="practica-q-view" style="display:none">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+          <span id="pq-area-icon" style="font-size:22px"></span>
+          <span style="font-size:16px;font-weight:800" id="pq-area-name"></span>
+          <span class="diff-stars" id="pq-diff"></span>
+          <button class="bookmark-btn" id="pq-bookmark" onclick="App.toggleSave(state.practice.questions[state.practice.index].id)" title="Guardar pregunta">🏷</button>
+          <span style="margin-left:auto;font-size:12px;color:var(--text3)"><span id="pq-num">1</span>/<span id="pq-total">10</span></span>
+        </div>
+        <div class="q-progress" id="pq-progress"></div>
+        <div class="q-card">
+          <span class="q-area-tag" id="pq-tag"></span>
+          <p class="q-text" id="pq-text"></p>
+          <p class="q-source" id="pq-source"></p>
+          <div id="pq-options" style="display:flex;flex-direction:column;gap:8px"></div>
+          <div class="expl-box" id="pq-expl"><h4>Explicacion</h4><p id="pq-expl-text"></p></div>
+        </div>
+        <div id="pq-next" style="text-align:center;display:none">
+          <button class="btn-premium btn-coral" onclick="App.pNext()"><span id="pq-next-label">Siguiente</span></button>
+        </div>
+        <button class="btn-premium btn-outline btn-sm" style="width:100%;margin-top:8px" onclick="App.pBack()">Cancelar</button>
+      </div>
+
+      <div id="practica-results" style="display:none;text-align:center">
+        <div class="results-circle"><span class="results-score" id="res-pct">0%</span><span class="results-label">aciertos</span></div>
+        <div class="results-grade" id="res-grade"></div>
+        <div style="font-size:32px;font-weight:900;margin-bottom:8px" id="res-score"></div>
+        <div class="results-xp" id="res-xp"></div>
+        <div style="display:flex;gap:10px">
+          <button class="btn-premium btn-outline btn-sm" style="flex:1" onclick="App.pBack()">Ver areas</button>
+          <button class="btn-premium btn-gold btn-sm" style="flex:1" onclick="App.pAgain()">Otra sesion</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SIMULACRO ═══ -->
+    <div class="tab-content" id="tab-simulacro" style="padding:16px 20px 90px">
+      <div id="sim-home-view">
+        <div class="section-title">Simulacro ICFES</div>
+        <div class="section-sub">Pon a prueba tu conocimiento con un simulacro real</div>
+        <div class="simulacro-card" onclick="App.startSimulacro()"><h3>Iniciar Simulacro</h3><p>20 preguntas · Todas las areas · 2 horas</p></div>
+        <div class="section-title" style="margin-top:20px">Historial</div>
+        <div id="sim-history"></div>
+      </div>
+
+      <div id="sim-q-view" style="display:none">
+        <!-- Timer -->
+        <div class="timer-wrap" id="timer-wrap" style="display:none">
+          <span class="timer-icon">⏱</span>
+          <span class="timer-display" id="timer-display">120:00</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+          <span class="q-area-tag" id="sq-tag"></span>
+          <span class="diff-stars" id="sq-diff"></span>
+          <span style="margin-left:auto;font-size:12px;color:var(--text3)"><span id="sq-num">1</span>/<span id="sq-total">20</span></span>
+        </div>
+        <div class="q-progress" id="sq-progress"></div>
+        <div class="q-card">
+          <p class="q-text" id="sq-text"></p>
+          <div id="sq-options" style="display:flex;flex-direction:column;gap:8px"></div>
+          <div class="expl-box" id="sq-expl"><h4>Explicacion</h4><p id="sq-expl-text"></p></div>
+        </div>
+        <div id="sq-next" style="text-align:center;display:none">
+          <button class="btn-premium btn-coral" onclick="App.sNext()"><span id="sq-next-label">Siguiente</span></button>
+        </div>
+        <button class="btn-premium btn-outline btn-sm" style="width:100%;margin-top:8px" onclick="App.sBack()">Cancelar</button>
+      </div>
+
+      <div id="sim-results" style="display:none;text-align:center">
+        <div class="results-circle"><span class="results-score" id="sres-score">0</span><span class="results-label">puntaje</span></div>
+        <div class="results-grade" id="sres-grade"></div>
+        <div style="font-size:18px;margin-bottom:8px;color:var(--text2)" id="sres-correct"></div>
+        <div class="results-xp" id="sres-xp"></div>
+        <button class="btn-premium btn-outline btn-sm" style="width:100%;margin-top:12px" onclick="App.sBack()">Volver</button>
+      </div>
+    </div>
+
+    <!-- ═══ PROGRESO ═══ -->
+    <div class="tab-content" id="tab-progreso" style="padding:16px 20px 90px">
+      <div class="section-title">Mi Progreso</div>
+      <!-- Streak calendar -->
+      <div class="streak-wrap" style="margin-bottom:20px">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+          <span style="font-size:13px;font-weight:700">Racha de estudio</span>
+          <span style="font-size:12px;color:var(--coral);font-weight:700">Max: <span id="streak-max">0d</span></span>
+        </div>
+        <div id="streak-cal"></div>
+      </div>
+      <div id="prog-areas" style="margin-bottom:20px"></div>
+      <div class="section-title">Logros</div>
+      <div class="badge-grid" id="badge-grid" style="margin-top:12px"></div>
+      <div style="text-align:center;margin-top:16px">
+        <button class="btn-premium btn-outline btn-sm" onclick="App.switchTab('practica');App.savedFilter=true;">Preguntas guardadas (<span id="saved-count">0</span>)</button>
+      </div>
+    </div>
+
+    <!-- ═══ PERFIL ═══ -->
+    <div class="tab-content" id="tab-perfil" style="padding:16px 20px 90px">
+      <div class="profile-card">
+        <div class="profile-avatar">S</div>
+        <div class="profile-name" id="prof-name">Estudiante</div>
+        <div class="profile-stats">
+          <div class="stat-item"><div class="stat-value" style="color:var(--gold)" id="prof-xp">0</div><div class="stat-label">XP</div></div>
+          <div class="stat-item"><div class="stat-value" style="color:var(--coral)" id="prof-level">1</div><div class="stat-label">Nivel</div></div>
+          <div class="stat-item"><div class="stat-value" style="color:var(--blue)" id="prof-streak">0</div><div class="stat-label">Racha</div></div>
+          <div class="stat-item"><div class="stat-value" style="color:var(--green)" id="prof-badges">0</div><div class="stat-label">Logros</div></div>
+        </div>
+        <button class="btn-premium btn-outline btn-sm" style="width:100%;color:var(--coral)" onclick="App.logout()">Cerrar Sesion</button>
+      </div>
+      <div style="text-align:center;font-size:10px;color:var(--text3);padding:16px">SaberPro v<span id="prof-version">2.1</span> · Hecho con ❤️</div>
+    </div>
+
+    <!-- ═══ ACTUALIZAR ═══ -->
+    <div class="tab-content" id="tab-actualizar" style="padding:16px 20px 90px">
+      <div class="section-title">Actualizar Contenido</div>
+      <div class="section-sub">Recibe nuevas preguntas y codigos desde el Admin</div>
+      <div class="update-card">
+        <h3>Cargar archivo de actualizacion</h3>
+        <p style="font-size:13px;color:var(--text2);margin-bottom:12px">Selecciona el archivo JSON generado por el panel Admin</p>
+        <button class="btn-premium btn-coral btn-sm" style="width:100%" onclick="App.loadUpdateFile()">Seleccionar archivo</button>
+      </div>
+      <div class="update-card">
+        <h3>Actualizacion remota (WiFi)</h3>
+        <p style="font-size:13px;color:var(--text2);margin-bottom:8px">URL del servidor de actualizacion:</p>
+        <input type="text" id="update-url-input" placeholder="http://192.168.X.X:8001/updates/update.json" style="width:100%;padding:10px;border:1px solid var(--border);border-radius:8px;font-size:12px;background:var(--bg2);color:var(--text);margin-bottom:10px" onchange="App.saveUpdateURL(this.value)">
+        <p style="font-size:10px;color:var(--text3);margin-bottom:10px">Copia la URL que aparece en el panel Admin → Actualizaciones</p>
+        <button class="btn-premium btn-gold btn-sm" style="width:100%" onclick="App.tryRemoteUpdate()">Conectar al servidor</button>
+        <p style="font-size:10px;color:var(--text3);margin-top:8px">El PC y el celular deben estar en la misma red WiFi</p>
+      </div>
+      <div class="update-card">
+        <h3>Apariencia</h3>
+        <p style="font-size:12px;color:var(--text2);margin-bottom:8px">Elige un tema para personalizar la app</p>
+        <div class="theme-grid" id="theme-grid"></div>
+      </div>
+      <div class="update-card">
+        <h3>Version actual</h3>
+        <div class="stats-row">
+          <div class="stat-item"><div class="stat-value" style="color:var(--purple)" id="upd-version">2.1</div><div class="stat-label">Version</div></div>
+          <div class="stat-item"><div class="stat-value" style="color:var(--blue)" id="upd-q-count">--</div><div class="stat-label">Preguntas</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ BOTTOM NAV ═══ -->
+    <div class="down-nav">
+      <button class="nav-item active" data-tab="home" onclick="App.switchTab('home')"><span class="nav-icon">🏠</span>Inicio</button>
+      <button class="nav-item" data-tab="practica" onclick="App.switchTab('practica')"><span class="nav-icon">📚</span>Practicar</button>
+      <button class="nav-item" data-tab="simulacro" onclick="App.switchTab('simulacro')"><span class="nav-icon">📝</span>Simulacro</button>
+      <button class="nav-item" data-tab="progreso" onclick="App.switchTab('progreso')"><span class="nav-icon">📈</span>Progreso</button>
+      <button class="nav-item" data-tab="actualizar" onclick="App.switchTab('actualizar')"><span class="nav-icon">🔄</span>Actualizar</button>
+    </div>
+  </div>
+
+  <script src="js/device.js"></script>
+  <script src="js/registry.js"></script>
+  <script src="js/transfer.js"></script>
+  <script src="js/user.js"></script>
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/service-worker.js');}</script>
+</body>
+</html>
