@@ -17,22 +17,6 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install PWABuilder CLI
-        run: npm install -g @pwabuilder/cli
-
-      - name: Start local server
-        run: |
-          npx http-server . -p 8080 --cors -c-1 -s &
-          sleep 3
-          curl -s -o /dev/null -w "HTTP %{http_code}" http://localhost:8080/manifest.json
-          echo ""
-
-      - name: Generate Android Project
-        run: |
-          npx pwabuilder build --manifest http://localhost:8080/manifest.json --output android-project --platform android --androidOptions.sdkVersion 21
-          echo "=== Proyecto generado ==="
-          ls -la android-project/
-
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
@@ -44,12 +28,34 @@ jobs:
         with:
           packages: 'platforms;android-34 build-tools;34.0.0'
 
-      - name: Build APK from generated project
+      - name: Install PWABuilder
+        run: npm install -g pwabuilder
+
+      - name: Start local server
         run: |
-          cd android-project
-          echo "sdk.dir=$ANDROID_HOME" > local.properties
-          # Ajustar minSdk a 21 para compatibilidad con celulares viejos
-          sed -i 's/minSdkVersion [0-9]*/minSdkVersion 21/g' app/build.gradle
+          npx http-server . -p 8080 -c-1 &
+          sleep 3
+          curl -s http://localhost:8080/manifest.json | head -5
+          echo ""
+
+      - name: Generate Android project with PWABuilder
+        run: |
+          pwabuilder --manifest http://localhost:8080/manifest.json --output android-gen
+
+      - name: Patch minSdk for old devices
+        run: |
+          if [ -f android-gen/app/build.gradle ]; then
+            sed -i 's/minSdkVersion [0-9]*/minSdkVersion 21/' android-gen/app/build.gradle
+          fi
+          if [ -f android-gen/local.properties ]; then
+            echo "sdk.dir=$ANDROID_HOME" >> android-gen/local.properties
+          else
+            echo "sdk.dir=$ANDROID_HOME" > android-gen/local.properties
+          fi
+
+      - name: Build APK
+        working-directory: android-gen
+        run: |
           ./gradlew assembleDebug --no-daemon
           echo "=== APK ==="
           find . -name "*.apk" -exec ls -lh {} \;
@@ -58,5 +64,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: SaberPro-APK-v2.1
-          path: android-project/app/build/outputs/apk/debug/*.apk
+          path: android-gen/app/build/outputs/apk/debug/*.apk
           retention-days: 90
