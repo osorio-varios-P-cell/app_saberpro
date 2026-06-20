@@ -48,21 +48,27 @@ jobs:
       - name: Build APK
         working-directory: android
         run: |
-          gradle assembleDebug --no-daemon --stacktrace --warning-mode all > build.log 2>&1
-          GRADLE_EXIT=$?
-          echo "=== Gradle exit code: $GRADLE_EXIT ==="
+          # Verificar que todo esta en orden
+          echo "=== SDK check ==="
+          echo "ANDROID_HOME=$ANDROID_HOME"
+          cat local.properties
+          echo ""
+          echo "=== Project files ==="
+          ls -la
+          ls -la app/
+          ls -la app/src/main/
+          echo ""
+          echo "=== Assets ==="
+          ls app/src/main/assets/ | head -20
+          echo ""
+          echo "=== Building ==="
+          gradle assembleDebug --no-daemon --stacktrace --warning-mode all 2>&1 | tee build.log
+          GRADLE_EXIT=${PIPESTATUS[0]}
+          echo ""
+          echo "=== Gradle exit: $GRADLE_EXIT ==="
           echo ""
           echo "=== Buscando APK ==="
-          find . -name "*.apk" -type f -exec ls -lh {} \; 2>/dev/null || echo "No se encontro APK"
-          echo ""
-          echo "=== Ultimas 50 lineas del log ==="
-          tail -50 build.log
-          # Si Gradle fallo, mostrar error y salir
-          if [ $GRADLE_EXIT -ne 0 ]; then
-            echo ""
-            echo "=== ERROR DETECTADO ==="
-            grep -i "error\|fail\|exception\|BUILD FAILED" build.log || true
-          fi
+          find . -name "*.apk" -type f -exec ls -lh {} \; 2>/dev/null || echo "No APK"
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
