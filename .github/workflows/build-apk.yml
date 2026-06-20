@@ -1,4 +1,4 @@
-name: Compilar APK
+name: Compilar APK via PWABuilder Cloud
 
 on:
   push:
@@ -8,56 +8,58 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container:
-      image: cimg/android:2024.01
-    env:
-      ANDROID_HOME: /home/circleci/android-sdk
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Debug environment
-        run: |
-          echo "ANDROID_HOME=$ANDROID_HOME"
-          echo "JAVA_HOME=$JAVA_HOME"
-          ls $ANDROID_HOME/platforms/ 2>/dev/null || echo "No platforms dir"
-          ls $ANDROID_HOME/build-tools/ 2>/dev/null || echo "No build-tools dir"
-          java -version 2>&1
-          whoami
-
-      - name: Install Bubblewrap
-        run: npm install -g @bubblewrap/cli
-
-      - name: Init TWA project
+      - name: Build APK via PWABuilder API
         run: |
           OWNER=$(echo "$GITHUB_REPOSITORY" | cut -d/ -f1)
           REPO=$(echo "$GITHUB_REPOSITORY" | cut -d/ -f2)
           BRANCH=${GITHUB_REF#refs/heads/}
-          URL="https://raw.githubusercontent.com/$OWNER/$REPO/$BRANCH/manifest.json"
-          echo "URL: $URL"
-          bubblewrap init --manifest="$URL" --directory=twa
-
-      - name: Configure build
-        run: |
-          cd twa
-          echo "sdk.dir=$ANDROID_HOME" > local.properties
-          sed -i 's/minSdkVersion [0-9]*/minSdkVersion 21/' app/build.gradle
-          echo "=== app/build.gradle ==="
-          head -40 app/build.gradle
-
-      - name: Build APK
-        working-directory: twa
-        run: |
-          ./gradlew assembleDebug --no-daemon --stacktrace
-          echo "=== RESULTADO ==="
-          find . -name "*.apk" -exec ls -lh {} \;
+          MANIFEST_URL="https://raw.githubusercontent.com/$OWNER/$REPO/$BRANCH/manifest.json"
+          echo "Manifest: $MANIFEST_URL"
+          
+          # PWABuilder cloud API - submit manifest for Android build
+          RESPONSE=$(curl -s -X POST "https://pwabuilder-apiv2.azurewebsites.net/packages/create" \
+            -H "Content-Type: application/json" \
+            -d "{\"url\": \"$MANIFEST_URL\"}")
+          
+          echo "Response: $RESPONSE"
+          
+          # The API returns a package ID we can poll
+          PACKAGE_ID=$(echo "$RESPONSE" | grep -o '"id":"[^"]*"' | head -1 | cut -d'"' -f4)
+          echo "Package ID: $PACKAGE_ID"
+          
+          if [ -z "$PACKAGE_ID" ]; then
+            echo "ERROR: No package ID returned"
+            echo "Full response:"
+            curl -s "https://pwabuilder-apiv2.azurewebsites.net/packages/create" \
+              -H "Content-Type: application/json" \
+              -d "{\"url\": \"$MANIFEST_URL\"}"
+            exit 1
+          fi
+          
+          # Poll for completion
+          for i in $(seq 1 30); do
+            sleep 10
+            STATUS=$(curl -s "https://pwabuilder-apiv2.azurewebsites.net/packages/$PACKAGE_ID")
+            echo "[$i] Status: $STATUS" | head -c 200
+            echo ""
+            
+            if echo "$STATUS" | grep -q '"status":"complete"'; then
+              DOWNLOAD_URL=$(echo "$STATUS" | grep -o '"downloadUrl":"[^"]*"' | head -1 | cut -d'"' -f4)
+              echo "Download URL: $DOWNLOAD_URL"
+              curl -L -o saberpro.apk "$DOWNLOAD_URL" || curl -L -o saberpro.apk "${DOWNLOAD_URL//\\/}"
+              ls -lh saberpro.apk
+              exit 0
+            fi
+          done
+          echo "Timeout waiting for build"
+          exit 1
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: SaberPro-APK
-          path: twa/app/build/outputs/apk/debug/*.apk
+          path: saberpro.apk
           if-no-files-found: error
