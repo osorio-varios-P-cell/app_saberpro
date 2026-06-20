@@ -47,8 +47,17 @@ jobs:
       - name: Copy APK to root
         if: success()
         run: |
+          echo "=== Buscando APK ==="
+          find android -name "*.apk" -type f
           APK=$(find android -name "*.apk" -type f | head -1)
-          echo "APK: $APK"
+          if [ -z "$APK" ]; then
+            echo "No APK found, checking build outputs..."
+            find android -name "*.apk" -o -name "*.aab" 2>/dev/null
+            ls -la android/app/build/outputs/ 2>/dev/null || true
+            exit 1
+          fi
+          echo "APK found: $APK"
+          ls -lh "$APK"
           cp "$APK" saberpro-v2.1.apk
           ls -lh saberpro-v2.1.apk
 
