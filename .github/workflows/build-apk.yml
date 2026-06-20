@@ -25,60 +25,34 @@ jobs:
         with:
           packages: 'platforms;android-34 build-tools;34.0.0 platforms;android-33'
 
-      - name: Show Android SDK path
-        run: echo "ANDROID_HOME=$ANDROID_HOME" && echo "ANDROID_SDK_ROOT=$ANDROID_SDK_ROOT" && ls $ANDROID_HOME || true
-
       - name: Create local.properties
         working-directory: android
         run: |
           echo "sdk.dir=$ANDROID_HOME" > local.properties
-          echo "sdk.dir=$ANDROID_SDK_ROOT" >> local.properties
-          cat local.properties
+          echo "sdk.dir=$ANDROID_SDK_ROOT" > local.properties
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
         with:
           gradle-version: '8.4'
 
-      - name: Build Debug APK
+      - name: Build APK + mostrar salida
         working-directory: android
-        run: gradle assembleDebug --no-daemon --stacktrace --info 2>&1 | tail -200
-
-      - name: Copy APK to root
-        if: success()
         run: |
-          echo "=== Buscando APK en outputs ==="
-          ls -laR android/app/build/outputs/apk/ 2>/dev/null || echo "No apk dir"
+          gradle assembleDebug --no-daemon --stacktrace
           echo ""
-          echo "=== Buscando todos los APK ==="
-          find . -name "*.apk" -type f 2>/dev/null || echo "find failed"
-          echo ""
-          # Rutas comunes donde Gradle deja el APK
-          for path in \
-            "android/app/build/outputs/apk/debug/app-debug.apk" \
-            "app/build/outputs/apk/debug/app-debug.apk" \
-            "build/outputs/apk/debug/app-debug.apk"; do
-            if [ -f "$path" ]; then
-              echo "APK encontrado: $path"
-              ls -lh "$path"
-              cp "$path" saberpro-v2.1.apk
-              ls -lh saberpro-v2.1.apk
-              exit 0
-            fi
-          done
-          echo "ERROR: APK no encontrado"
-          exit 1
+          echo "=== APK generado ==="
+          find . -name "*.apk" -type f -exec ls -lh {} \;
 
       - name: Upload APK Artifact
-        if: success()
         uses: actions/upload-artifact@v4
         with:
           name: SaberPro-APK-v2.1
-          path: saberpro-v2.1.apk
+          path: android/app/build/outputs/apk/debug/*.apk
           retention-days: 90
 
       - name: Create Release
-        if: success() && github.event_name == 'push' && github.ref == 'refs/heads/main'
+        if: success() && github.event_name == 'push'
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v2.1.0
@@ -86,12 +60,12 @@ jobs:
           body: |
             ## 📱 SaberPro APK v2.1.0
             
-            ✅ **Android 5.0 Lollipop → Android 14**
-            ✅ **APK universal** — todos los procesadores
-            ✅ **5,011 preguntas** ICFES · 5 áreas · Gamificación
+            ✅ Android 5.0 → Android 14
+            ✅ APK universal — todos los procesadores  
+            ✅ 5,011 preguntas ICFES · 5 áreas
             
-            ### Instalación
+            ### Instalar
             1. Descarga el APK
-            2. Permite instalar apps de fuentes desconocidas
+            2. Permite orígenes desconocidos
             3. Abre y estudia
-          files: saberpro-v2.1.apk
+          files: android/app/build/outputs/apk/debug/*.apk
