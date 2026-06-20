@@ -1,0 +1,12 @@
+// Proyecto TWA generado para SaberPro
+// Compatible con Android 5.0+ (API 21)
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.2.0'
+    }
+}
