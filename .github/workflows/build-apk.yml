@@ -26,20 +26,19 @@ jobs:
       - name: Copy PWA files to Android assets
         run: |
           mkdir -p android/app/src/main/assets
-          # Copiar todos los archivos de la app excepto android/ y .git/
           find . -maxdepth 1 -type f \( -name "*.html" -o -name "*.json" -o -name "*.js" -o -name "*.css" \) -exec cp {} android/app/src/main/assets/ \;
           cp -r js android/app/src/main/assets/ 2>/dev/null || true
           cp -r css android/app/src/main/assets/ 2>/dev/null || true
           cp -r data android/app/src/main/assets/ 2>/dev/null || true
           cp -r assets android/app/src/main/assets/ 2>/dev/null || true
-          echo "=== Assets copiados ==="
-          ls -la android/app/src/main/assets/
-          echo ""
-          ls -laR android/app/src/main/assets/js/ 2>/dev/null | head -20
+          echo "Assets copiados:"
+          ls -la android/app/src/main/assets/ | head -20
 
       - name: Create local.properties
         run: |
           echo "sdk.dir=$ANDROID_HOME" > android/local.properties
+          echo "ANDROID_HOME=$ANDROID_HOME"
+          cat android/local.properties
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
@@ -49,11 +48,19 @@ jobs:
       - name: Build APK
         working-directory: android
         run: |
-          gradle assembleDebug --no-daemon --stacktrace
-          echo "=== APK generado ==="
-          find . -name "*.apk" -exec ls -lh {} \;
+          gradle assembleDebug --no-daemon --stacktrace --warning-mode all > build.log 2>&1 || true
+          cat build.log
 
-      - name: Upload APK Artifact
+      - name: Upload build log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-log
+          path: android/build.log
+          retention-days: 7
+
+      - name: Upload APK (if exists)
+        if: success()
         uses: actions/upload-artifact@v4
         with:
           name: SaberPro-APK-v2.1
