@@ -12,11 +12,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
@@ -28,41 +23,39 @@ jobs:
         with:
           packages: 'platforms;android-34 build-tools;34.0.0'
 
-      - name: Install PWABuilder
-        run: npm install -g pwabuilder
-
-      - name: Start local server
+      - name: Copy PWA files to Android assets
         run: |
-          npx http-server . -p 8080 -c-1 &
-          sleep 3
-          curl -s http://localhost:8080/manifest.json | head -5
+          mkdir -p android/app/src/main/assets
+          # Copiar todos los archivos de la app excepto android/ y .git/
+          find . -maxdepth 1 -type f \( -name "*.html" -o -name "*.json" -o -name "*.js" -o -name "*.css" \) -exec cp {} android/app/src/main/assets/ \;
+          cp -r js android/app/src/main/assets/ 2>/dev/null || true
+          cp -r css android/app/src/main/assets/ 2>/dev/null || true
+          cp -r data android/app/src/main/assets/ 2>/dev/null || true
+          cp -r assets android/app/src/main/assets/ 2>/dev/null || true
+          echo "=== Assets copiados ==="
+          ls -la android/app/src/main/assets/
           echo ""
+          ls -laR android/app/src/main/assets/js/ 2>/dev/null | head -20
 
-      - name: Generate Android project with PWABuilder
+      - name: Create local.properties
         run: |
-          pwabuilder --manifest http://localhost:8080/manifest.json --output android-gen
+          echo "sdk.dir=$ANDROID_HOME" > android/local.properties
 
-      - name: Patch minSdk for old devices
-        run: |
-          if [ -f android-gen/app/build.gradle ]; then
-            sed -i 's/minSdkVersion [0-9]*/minSdkVersion 21/' android-gen/app/build.gradle
-          fi
-          if [ -f android-gen/local.properties ]; then
-            echo "sdk.dir=$ANDROID_HOME" >> android-gen/local.properties
-          else
-            echo "sdk.dir=$ANDROID_HOME" > android-gen/local.properties
-          fi
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: '8.4'
 
       - name: Build APK
-        working-directory: android-gen
+        working-directory: android
         run: |
-          ./gradlew assembleDebug --no-daemon
-          echo "=== APK ==="
+          gradle assembleDebug --no-daemon --stacktrace
+          echo "=== APK generado ==="
           find . -name "*.apk" -exec ls -lh {} \;
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: SaberPro-APK-v2.1
-          path: android-gen/app/build/outputs/apk/debug/*.apk
+          path: android/app/build/outputs/apk/debug/*.apk
           retention-days: 90

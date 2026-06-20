@@ -27,10 +27,3 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'androidx.webkit:webkit:1.8.0'
 }
-
-// Copiar archivos PWA al directorio de assets antes del build
-task copyPwaAssets(type: Copy) {
-    from fileTree(dir: project.rootDir.parent, excludes: ['android/**', '.git/**', '.github/**', '.gitignore'])
-    into 'src/main/assets'
-}
-preBuild.dependsOn copyPwaAssets
