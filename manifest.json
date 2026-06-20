@@ -2,16 +2,12 @@
   "name": "SaberPro",
   "short_name": "SaberPro",
   "description": "Preparacion ICFES Saber 11 - 5,011 preguntas con gamificacion",
-  "start_url": "/index.html",
+  "start_url": "index.html",
   "display": "standalone",
   "orientation": "portrait",
   "theme_color": "#FF2D55",
   "background_color": "#0a0a0f",
-  "categories": ["education"],
   "lang": "es-CO",
-  "dir": "ltr",
-  "scope": "/",
-  "prefer_related_applications": false,
   "icons": [
     {
       "src": "assets/icon-192.png",
@@ -24,15 +20,6 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
-    }
-  ],
-  "screenshots": [
-    {
-      "src": "assets/screenshot-home.png",
-      "sizes": "400x800",
-      "type": "image/png",
-      "form_factor": "narrow",
-      "label": "Pantalla principal"
     }
   ]
 }
