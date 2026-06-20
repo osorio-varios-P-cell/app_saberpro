@@ -10,37 +10,50 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: cimg/android:2024.01
+    env:
+      ANDROID_HOME: /home/circleci/android-sdk
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install Node + Bubblewrap
-        run: |
-          curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
-          sudo apt-get install -y nodejs
-          sudo npm install -g @bubblewrap/cli
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
 
-      - name: Init TWA from repo URL
+      - name: Debug environment
+        run: |
+          echo "ANDROID_HOME=$ANDROID_HOME"
+          echo "JAVA_HOME=$JAVA_HOME"
+          ls $ANDROID_HOME/platforms/ 2>/dev/null || echo "No platforms dir"
+          ls $ANDROID_HOME/build-tools/ 2>/dev/null || echo "No build-tools dir"
+          java -version 2>&1
+          whoami
+
+      - name: Install Bubblewrap
+        run: npm install -g @bubblewrap/cli
+
+      - name: Init TWA project
         run: |
           OWNER=$(echo "$GITHUB_REPOSITORY" | cut -d/ -f1)
           REPO=$(echo "$GITHUB_REPOSITORY" | cut -d/ -f2)
           BRANCH=${GITHUB_REF#refs/heads/}
           URL="https://raw.githubusercontent.com/$OWNER/$REPO/$BRANCH/manifest.json"
-          echo "Manifest URL: $URL"
-          
+          echo "URL: $URL"
           bubblewrap init --manifest="$URL" --directory=twa
 
-      - name: Set minSdk 21 (old phones)
+      - name: Configure build
         run: |
-          sed -i 's/minSdkVersion [0-9]*/minSdkVersion 21/' twa/app/build.gradle
-          echo "sdk.dir=$ANDROID_HOME" > twa/local.properties
-          cat twa/app/build.gradle | head -30
+          cd twa
+          echo "sdk.dir=$ANDROID_HOME" > local.properties
+          sed -i 's/minSdkVersion [0-9]*/minSdkVersion 21/' app/build.gradle
+          echo "=== app/build.gradle ==="
+          head -40 app/build.gradle
 
       - name: Build APK
         working-directory: twa
         run: |
           ./gradlew assembleDebug --no-daemon --stacktrace
+          echo "=== RESULTADO ==="
           find . -name "*.apk" -exec ls -lh {} \;
-          cp app/build/outputs/apk/debug/app-debug.apk ../saberpro.apk || true
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
