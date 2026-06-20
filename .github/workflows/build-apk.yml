@@ -20,6 +20,21 @@ jobs:
         with:
           packages: 'platforms;android-34 build-tools;34.0.0'
 
+      - name: Copy PWA files to assets
+        run: |
+          mkdir -p twa/app/src/main/assets
+          cp index.html twa/app/src/main/assets/
+          cp demo.html twa/app/src/main/assets/
+          cp pago.html twa/app/src/main/assets/
+          cp manifest.json twa/app/src/main/assets/
+          cp service-worker.js twa/app/src/main/assets/
+          cp -r css twa/app/src/main/assets/
+          cp -r js twa/app/src/main/assets/
+          cp -r data twa/app/src/main/assets/
+          cp -r assets twa/app/src/main/assets/ 2>/dev/null || true
+          echo "Assets ready:"
+          ls twa/app/src/main/assets/
+
       - uses: gradle/actions/setup-gradle@v3
         with:
           gradle-version: '8.4'
