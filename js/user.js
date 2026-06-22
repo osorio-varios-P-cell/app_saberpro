@@ -101,6 +101,7 @@ const App = (() => {
     state.user=loadUser();state.progress=loadProgress();
     AREAS.forEach(a=>{if(!state.progress.areaProgress[a.id])state.progress.areaProgress[a.id]={answered:0,correct:0};});
     initTheme();
+    window.addEventListener('scroll',updateScrollHint,{passive:true});
     checkForUpdate();
     setTimeout(()=>{document.getElementById('splash').classList.add('hide');initBackgroundParticles();if(state.user&&state.user.validated){showApp();}else{showLogin();}},3300);
   }
@@ -314,19 +315,18 @@ const App = (() => {
   function showPResults(){
     const correct=state.practice.answers.filter(Boolean).length,total=state.practice.questions.length,pct=Math.round(correct/total*100);
     addXP(CONFIG.XP_SESSION);
-    const aid=state.practice.area;if(aid&&state.progress.areaProgress[aid]){state.progress.areaProgress[aid].answered=(state.progress.areaProgress[aid].answered||0)+total;state.progress.areaProgress[aid].correct=(state.progress.areaProgress[aid].correct||0)+correct;}saveProgress();
     let grade='Sigue practicando',gColor='#FF3B5C',gEmoji='💪';
     if(pct>=80){grade='Excelente!';gColor='#FFB830';gEmoji='🏆';}else if(pct>=60){grade='Buen trabajo!';gColor='#00C896';gEmoji='👏';}else if(pct>=40){grade='Vas por buen camino';gColor='#4DA6FF';gEmoji='📈';}
     document.getElementById('res-grade').textContent=gEmoji+' '+grade;document.getElementById('res-grade').style.color=gColor;
     document.getElementById('res-score').textContent=correct+' / '+total;document.getElementById('res-pct').textContent=pct+'%';
     document.getElementById('res-xp').textContent='+ '+(state.practice.xp+CONFIG.XP_SESSION)+' XP ganados';
-    const area=AREAS.find(a=>a.id===aid),ap2=state.progress.areaProgress[aid]||{answered:0,correct:0},totalArea2=state.questions.filter(q=>q.area===aid).length,coverage2=totalArea2>0?Math.round(ap2.answered/totalArea2*100):0;document.getElementById('res-progress').innerHTML='<span style=color:'+area.color+'>'+area.icon+' '+area.name+':</span> '+ap2.answered+' de '+totalArea2+' preguntas ('+coverage2+'% del banco)';document.getElementById('res-progress-bar').innerHTML='<div style="height:4px;background:var(--border);border-radius:2px;overflow:hidden;margin-top:4px"><div style="height:100%;width:'+coverage2+'%;background:'+area.color+';border-radius:2px"></div></div>';document.getElementById('practica-q-view').style.display='none';document.getElementById('practica-results').classList.add('active');
+    const ap2=state.progress.areaProgress[aid]||{answered:0,correct:0};ap2.answered+=state.practice.answers.length;ap2.correct+=correct;state.progress.areaProgress[aid]=ap2;saveProgress();document.getElementById('practica-q-view').style.display='none';document.getElementById('practica-results').classList.add('active');
     if(pct>=80)launchConfetti(30);
     updateHeader();
   }
 
   function pAgain(){document.getElementById('practica-results').classList.remove('active');document.getElementById('practica-q-view').style.display='block';startPractice(state.practice.area);}
-  function pBack(){document.getElementById('practica-results').classList.remove('active');state.practice.area=null;switchTab('home');}
+  function pBack(){document.getElementById('practica-results').classList.remove('active');state.practice.area=null;renderPracticaHome();}
 
   function diagnoticoRapido(){
     const pool=[];AREAS.forEach(a=>{const aq=state.questions.filter(q=>q.area===a.id),s=[...aq].sort(()=>Math.random()-0.5);pool.push(...s);});
@@ -343,9 +343,10 @@ const App = (() => {
     document.getElementById('sim-history').innerHTML=sims.length===0?'<p style="color:var(--text3);text-align:center;padding:20px">Aun no has hecho simulacros</p>':sims.slice(-5).reverse().map(s=>`<div style="display:flex;justify-content:space-between;padding:10px;background:var(--card);border:1px solid var(--border);border-radius:10px;margin-bottom:6px;font-size:12px"><span>${s.date}</span><span style="color:var(--coral);font-weight:700">${Math.round(s.score)} pts</span><span style="color:var(--text3)">${s.correct}/${s.totalQuestions}</span></div>`).join('');
   }
 
-  function startSimulacro(){
-    const pool=[];AREAS.forEach(a=>{const aq=state.questions.filter(q=>q.area===a.id),per=Math.ceil(CONFIG.SIM_SIZE/AREAS.length),s=[...aq].sort(()=>Math.random()-0.5);pool.push(...s.slice(0,per));});
-    state.simulacro={questions:[...pool].sort(()=>Math.random()-0.5).slice(0,CONFIG.SIM_SIZE),index:0,answers:[],selected:null,xp:0,timer:null,timeLeft:CONFIG.SIM_TIME};
+  function startSimulacro(qCount,simTime){
+    qCount=qCount||CONFIG.SIM_SIZE;simTime=simTime||CONFIG.SIM_TIME;
+    const pool=[];AREAS.forEach(a=>{const aq=state.questions.filter(q=>q.area===a.id),per=Math.ceil(qCount/AREAS.length),s=[...aq].sort(()=>Math.random()-0.5);pool.push(...s.slice(0,per));});
+    state.simulacro={questions:[...pool].sort(()=>Math.random()-0.5).slice(0,qCount),index:0,answers:[],selected:null,xp:0,timer:null,timeLeft:simTime};
     document.getElementById('sim-home-view').style.display='none';document.getElementById('sim-q-view').style.display='block';
     document.getElementById('timer-wrap').style.display='flex';startTimer();
     renderSQuestion();
@@ -400,14 +401,12 @@ const App = (() => {
   function showSResults(){
     if(state.simulacro.timer)clearInterval(state.simulacro.timer);
     const correct=state.simulacro.answers.filter(Boolean).length,total=state.simulacro.questions.length,score=Math.round(correct/total*500);
-    addXP(CONFIG.XP_SIMULACRO);
-    const areaStats={};state.simulacro.questions.forEach((q,i)=>{areaStats[q.area]=areaStats[q.area]||{answered:0,correct:0};areaStats[q.area].answered++;if(state.simulacro.answers[i])areaStats[q.area].correct++;});Object.keys(areaStats).forEach(aid=>{if(state.progress.areaProgress[aid]){state.progress.areaProgress[aid].answered=(state.progress.areaProgress[aid].answered||0)+areaStats[aid].answered;state.progress.areaProgress[aid].correct=(state.progress.areaProgress[aid].correct||0)+areaStats[aid].correct;}});
-    state.progress.simulacros.push({date:new Date().toLocaleDateString(),score,correct,totalQuestions:total});saveProgress();
+    const areaStats={};state.simulacro.questions.forEach((q,i)=>{areaStats[q.area]=areaStats[q.area]||{answered:0,correct:0};areaStats[q.area].answered++;if(state.simulacro.answers[i])areaStats[q.area].correct++;});Object.keys(areaStats).forEach(aid2=>{if(state.progress.areaProgress[aid2]){state.progress.areaProgress[aid2].answered=(state.progress.areaProgress[aid2].answered||0)+areaStats[aid2].answered;state.progress.areaProgress[aid2].correct=(state.progress.areaProgress[aid2].correct||0)+areaStats[aid2].correct;}});saveProgress();addXP(CONFIG.XP_SIMULACRO);state.progress.simulacros.push({date:new Date().toLocaleDateString(),score,correct,totalQuestions:total});saveProgress();
     document.getElementById('timer-wrap').style.display='none';
     let grade='Sigue practicando',gColor='#FF3B5C',gEmoji='💪';
     if(score>=400){grade='Excelente!';gColor='#FFB830';gEmoji='🏆';}else if(score>=300){grade='Buen trabajo!';gColor='#00C896';gEmoji='👏';}else if(score>=200){grade='Vas por buen camino';gColor='#4DA6FF';gEmoji='📈';}
     document.getElementById('sres-grade').textContent=gEmoji+' '+grade;document.getElementById('sres-grade').style.color=gColor;
-    document.getElementById('sres-score').textContent=score;const areaBreakdown=AREAS.map(a=>{const as2=areaStats[a.id]||{answered:0,correct:0};const apct=as2.answered>0?Math.round(as2.correct/as2.answered*100):0;return'<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px"><span style="font-size:14px">'+a.icon+'</span><span style="flex:1;font-size:11px;color:var(--text2)">'+a.name+'</span><span style="font-size:12px;font-weight:700;color:'+(apct>=70?'#00C896':apct>=40?'#FFB830':'#FF3B5C')+'">'+as2.correct+'/'+as2.answered+' ('+apct+'%)</span></div>';}).join('');document.getElementById('sres-areas').innerHTML=areaBreakdown;document.getElementById('sres-correct').textContent=correct+' / '+total+' correctas';
+    document.getElementById('sres-score').textContent=score;document.getElementById('sres-correct').textContent=correct+' / '+total+' correctas';
     document.getElementById('sres-xp').textContent='+ '+(state.simulacro.xp+CONFIG.XP_SIMULACRO)+' XP ganados';
     document.getElementById('sim-q-view').style.display='none';document.getElementById('sim-results').style.display='block';
     if(score>=400)launchConfetti(50,'badge');
@@ -429,7 +428,7 @@ const App = (() => {
   // ═══ PROGRESO ═══
   function renderProgreso(){
     const p=state.progress;
-    document.getElementById('prog-areas').innerHTML=AREAS.map(a=>{const ap=p.areaProgress[a.id]||{answered:0,correct:0},acc=ap.answered>0?Math.round(ap.correct/ap.answered*100):0;return`<div class="progress-bar-area"><div class="progress-bar-header"><span class="progress-area-icon">${a.icon}</span><span class="progress-area-name">${a.name}</span><span class="progress-area-pct" style="color:${a.color}">${coverage}%</span></div><div class="progress-area-track"><div class="progress-area-fill" style="width:${acc}%;background:${a.color}"></div></div><div style="font-size:10px;color:var(--text3);margin-top:4px">${ap.answered} de ${totalArea} preguntas · ${accuracy}% acierto</div></div>`;}).join('');
+    document.getElementById('prog-areas').innerHTML=AREAS.map(a=>{const ap=p.areaProgress[a.id]||{answered:0,correct:0},totalArea=state.questions.filter(q=>q.area===a.id).length,coverage=totalArea>0?(ap.correct/totalArea*100).toFixed(1):0;return`<div class="progress-bar-area"><div class="progress-bar-header"><span class="progress-area-icon">${a.icon}</span><span class="progress-area-name">${a.name}</span><span class="progress-area-pct" style="color:${a.color}">${coverage}%</span></div><div class="progress-area-track"><div class="progress-area-fill" style="width:${coverage}%;background:${a.color}"></div></div><div style="font-size:10px;color:var(--text3);margin-top:4px">${ap.answered} preguntas · ${ap.correct} correctas — ${coverage}% de ${totalArea}</div></div>`;}).join('');
     // Streak calendar
     let calHTML='<div class="streak-cal">';
     for(let i=6;i>=0;i--){const d=new Date(Date.now()-i*86400000),ds=d.toDateString(),isToday=ds===new Date().toDateString(),studied=p.lastStudyDate===ds||(isToday&&p.lastStudyDate===new Date().toDateString());calHTML+=`<div class="cal-day${studied?' studied':''}${isToday?' today':''}">${['Do','Lu','Ma','Mi','Ju','Vi','Sa'][d.getDay()]}<div class="cal-dot"></div></div>`;}
@@ -467,6 +466,21 @@ const App = (() => {
   function initTheme(){applyTheme(getTheme());}
 
   // ═══ SWITCH TAB ═══
+  
+  function updateScrollHint(){
+    const hint=document.getElementById('scroll-hint');
+    if(!hint)return;
+    const scrollable=document.scrollingElement||document.documentElement;
+    const maxScroll=scrollable.scrollHeight-scrollable.clientHeight;
+    const scrolled=scrollable.scrollTop;
+    // Show when there's content below, hide only when at bottom (within 40px)
+    if(maxScroll>60&&scrolled<maxScroll-40){
+      hint.classList.remove('hidden');
+    }else{
+      hint.classList.add('hidden');
+    }
+  }
+
   function switchTab(tab){
     state.currentTab=tab;
     document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
@@ -477,6 +491,7 @@ const App = (() => {
     const renderers={home:renderHome,simulacro:renderSimulacro,progreso:renderProgreso,perfil:renderPerfil,actualizar:renderUpdate};
     if(renderers[tab])renderers[tab]();
     updateHeader();
+    setTimeout(updateScrollHint,400);
   }
 
   // ═══ HEADER ═══
@@ -511,7 +526,7 @@ const App = (() => {
   return {
     init,doLogin,switchTab,startPractice,diagnoticoRapido,
     selectPAnswer,pNext,pAgain,pBack,toggleSave,
-    startSimulacro,selectSAnswer,sNext,sBack,sAgain,
+    startSimulacro,selectSAnswer,sNext,sBack,
     loadUpdateFile,tryRemoteUpdate,getUpdateURL,saveUpdateURL,logout,setTheme
   };
 })();

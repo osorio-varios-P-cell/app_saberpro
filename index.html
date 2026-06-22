@@ -133,11 +133,9 @@
         <div class="results-grade" id="res-grade"></div>
         <div style="font-size:32px;font-weight:900;margin-bottom:8px" id="res-score"></div>
         <div class="results-xp" id="res-xp"></div>
-        <div style="margin:12px 0;padding:10px;background:var(--bg2);border-radius:8px;text-align:left;font-size:12px;color:var(--text2)" id="res-progress"></div>
-        <div id="res-progress-bar"></div>
-        <div style="display:flex;gap:10px;margin-top:16px">
-          <button class="btn-premium btn-outline btn-sm" style="flex:1" onclick="App.pBack()">Finalizar</button>
-          <button class="btn-premium btn-gold btn-sm" style="flex:1" onclick="App.pAgain()">Repasar area</button>
+        <div style="display:flex;gap:10px">
+          <button class="btn-premium btn-outline btn-sm" style="flex:1" onclick="App.pBack()">Ver areas</button>
+          <button class="btn-premium btn-gold btn-sm" style="flex:1" onclick="App.pAgain()">Otra sesion</button>
         </div>
       </div>
     </div>
@@ -147,7 +145,15 @@
       <div id="sim-home-view">
         <div class="section-title">Simulacro ICFES</div>
         <div class="section-sub">Pon a prueba tu conocimiento con un simulacro real</div>
-        <div class="simulacro-card" onclick="App.startSimulacro()"><h3>Iniciar Simulacro</h3><p>20 preguntas · Todas las areas · 2 horas</p></div>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-top:12px">
+          <div class="simulacro-card" onclick="App.startSimulacro(20,2580)" style="border-left:3px solid #FF3B5C"><h3 style="color:#FF3B5C;text-shadow:0 -1px 0 rgba(0,0,0,0.4),0 1px 0 rgba(255,255,255,0.06),0 2px 4px rgba(0,0,0,0.3)">Iniciar Simulacro</h3><p>20 preguntas · Todas las areas · 43 min</p></div>
+          <div class="simulacro-card" onclick="App.startSimulacro(50,6360)" style="border-left:3px solid #FFB830"><h3 style="color:#FFB830;text-shadow:0 -1px 0 rgba(0,0,0,0.4),0 1px 0 rgba(255,255,255,0.06),0 2px 4px rgba(0,0,0,0.3)">Iniciar Simulacro</h3><p>50 preguntas · Todas las areas · 1h 46min</p></div>
+          <div class="simulacro-card" onclick="App.startSimulacro(100,12780)" style="border-left:3px solid #FF6030"><h3 style="color:#FF6030;text-shadow:0 -1px 0 rgba(0,0,0,0.4),0 1px 0 rgba(255,255,255,0.06),0 2px 4px rgba(0,0,0,0.3)">Iniciar Simulacro</h3><p>100 preguntas · Todas las areas · 3h 33min</p></div>
+          <div class="simulacro-card" onclick="App.startSimulacro(120,15300)" style="border-left:3px solid #00C896"><h3 style="color:#00C896;text-shadow:0 -1px 0 rgba(0,0,0,0.4),0 1px 0 rgba(255,255,255,0.06),0 2px 4px rgba(0,0,0,0.3)">Iniciar Simulacro</h3><p>120 preguntas · Todas las areas · 4h 15min</p></div>
+          <div class="simulacro-card" onclick="App.startSimulacro(150,19140)" style="border-left:3px solid #4DA6FF"><h3 style="color:#4DA6FF;text-shadow:0 -1px 0 rgba(0,0,0,0.4),0 1px 0 rgba(255,255,255,0.06),0 2px 4px rgba(0,0,0,0.3)">Iniciar Simulacro</h3><p>150 preguntas · Todas las areas · 5h 19min</p></div>
+          <div class="simulacro-card" onclick="App.startSimulacro(200,25500)" style="border-left:3px solid #A855F7"><h3 style="color:#A855F7;text-shadow:0 -1px 0 rgba(0,0,0,0.4),0 1px 0 rgba(255,255,255,0.06),0 2px 4px rgba(0,0,0,0.3)">Iniciar Simulacro</h3><p>200 preguntas · Todas las areas · 7h 5min</p></div>
+          <div class="simulacro-card" onclick="App.startSimulacro(254,32400)" style="border-left:3px solid #FF7099"><h3 style="color:#FF7099;text-shadow:0 -1px 0 rgba(0,0,0,0.4),0 1px 0 rgba(255,255,255,0.06),0 2px 4px rgba(0,0,0,0.3)">Iniciar Simulacro</h3><p>254 preguntas · Todas las areas · 9 horas</p></div>
+        </div>
         <div class="section-title" style="margin-top:20px">Historial</div>
         <div id="sim-history"></div>
       </div>
@@ -180,11 +186,7 @@
         <div class="results-grade" id="sres-grade"></div>
         <div style="font-size:18px;margin-bottom:8px;color:var(--text2)" id="sres-correct"></div>
         <div class="results-xp" id="sres-xp"></div>
-        <div style="margin:12px 0;padding:12px;background:var(--bg2);border-radius:8px;text-align:left" id="sres-areas"></div>
-        <div style="display:flex;gap:10px;margin-top:16px">
-          <button class="btn-premium btn-outline btn-sm" style="flex:1" onclick="App.sBack()">Finalizar</button>
-          <button class="btn-premium btn-gold btn-sm" style="flex:1" onclick="App.sAgain()">Repetir</button>
-        </div>
+        <button class="btn-premium btn-outline btn-sm" style="width:100%;margin-top:12px" onclick="App.sBack()">Volver</button>
       </div>
     </div>
 
@@ -253,6 +255,9 @@
         </div>
       </div>
     </div>
+
+    <!-- ═══ SCROLL HINT ═══ -->
+    <div id="scroll-hint" class="scroll-hint"><i></i><i></i><i></i></div>
 
     <!-- ═══ BOTTOM NAV ═══ -->
     <div class="down-nav">
