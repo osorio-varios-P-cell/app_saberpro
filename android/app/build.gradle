@@ -58,7 +58,7 @@ android {
 
 // Tarea para copiar archivos PWA a assets antes del merge
 task copyPwaAssets(type: Copy) {
-    from file('..')
+    from file('../..')
     include 'index.html', 'pago.html', 'demo.html', 'manifest.json', 'service-worker.js'
     include 'css/**', 'js/**', 'data/**', 'assets/**'
     into 'src/main/assets'
