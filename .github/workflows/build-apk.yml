@@ -8,6 +8,11 @@ on:
 jobs:
   build-apk:
     runs-on: ubuntu-latest
+    env:
+      KEYSTORE_FILE: release.keystore
+      KEYSTORE_PASS: SaberPro2026!
+      KEY_ALIAS: saberpro
+      KEY_PASS: SaberPro2026!
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -28,56 +33,34 @@ jobs:
         with:
           gradle-version: '8.4'
 
-      - name: Build Debug APK
+      - name: Generate Release Keystore
         working-directory: android
-        run: gradle assembleDebug --no-daemon --stacktrace
+        run: |
+          keytool -genkey -v \
+            -keystore release.keystore \
+            -alias saberpro \
+            -keyalg RSA -keysize 2048 -validity 10000 \
+            -storepass SaberPro2026! \
+            -keypass SaberPro2026! \
+            -dname "CN=SaberPro, OU=Education, O=SaberPro, L=Bogota, ST=Cundinamarca, C=CO"
+          echo "Keystore generado"
+          ls -la release.keystore
+
+      - name: Build Release APK
+        working-directory: android
+        run: gradle assembleRelease --no-daemon --stacktrace
 
       - name: Copy APK to root
         run: |
-          APK=$(find android -name "*.apk" -type f | head -1)
-          echo "APK found: $APK"
-          cp "$APK" saberpro-v2.1-debug.apk
-          ls -lh saberpro-v2.1-debug.apk
+          APK=$(find android -name "*.apk" -type f | grep release | head -1)
+          echo "APK: $APK"
+          cp "$APK" saberpro-v2.1-release.apk
+          ls -lh saberpro-v2.1-release.apk
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: SaberPro-APK-v2.1
-          path: saberpro-v2.1-debug.apk
+          name: SaberPro-APK
+          path: saberpro-v2.1-release.apk
           retention-days: 90
           compression-level: 0
-
-      - name: Create Release with APK
-        uses: softprops/action-gh-release@v2
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        with:
-          tag_name: v2.1.0
-          name: "SaberPro v2.1.0"
-          body: |
-            ## 📱 SaberPro v2.1.0 — APK Universal
-            
-            ✅ **Compatible con todos los celulares Android 5.0+**
-            
-            ### 📦 Incluye
-            - 5,011 preguntas ICFES Saber 11 (5 áreas)
-            - Simulacros cronometrados de 2 horas
-            - Sistema de XP, niveles y 15 insignias
-            - 11 temas visuales
-            - Rachas diarias y estadísticas
-            - Modo offline (sin internet)
-            - Actualizaciones vía WiFi local
-            
-            ### 📱 Compatibilidad
-            - 🤖 Android 5.0 Lollipop (API 21) → Android 14 (API 34)
-            - 📱 APK universal — todos los procesadores
-            - 💾 ~2 MB de descarga
-            
-            ### 🔧 Instalación
-            1. Descarga el APK
-            2. Activa "Orígenes desconocidos" en Ajustes → Seguridad
-            3. Abre el APK e instala
-            4. ¡Listo!
-          files: saberpro-v2.1-debug.apk
-          draft: false
-          prerelease: false
-          generate_release_notes: false
