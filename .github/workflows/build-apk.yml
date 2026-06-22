@@ -34,7 +34,7 @@ jobs:
           gradle-version: '8.4'
 
       - name: Generate Release Keystore
-        working-directory: android
+        working-directory: android/app
         run: |
           keytool -genkey -v \
             -keystore release.keystore \
@@ -43,7 +43,7 @@ jobs:
             -storepass SaberPro2026! \
             -keypass SaberPro2026! \
             -dname "CN=SaberPro, OU=Education, O=SaberPro, L=Bogota, ST=Cundinamarca, C=CO"
-          echo "Keystore generado"
+          echo "Keystore generado en android/app/"
           ls -la release.keystore
 
       - name: Build Release APK
