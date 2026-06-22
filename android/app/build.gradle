@@ -48,13 +48,22 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
-    // Copiar PWA files a assets durante build
+    // Copiar PWA files a assets durante build (solo los archivos necesarios, no todo el root)
     sourceSets {
         main {
-            assets.srcDirs = ['src/main/assets', '../../']  // root = PWA files
+            assets.srcDirs = ['src/main/assets']
         }
     }
 }
+
+// Tarea para copiar archivos PWA a assets antes del merge
+task copyPwaAssets(type: Copy) {
+    from rootProject.projectDir
+    include 'index.html', 'pago.html', 'demo.html', 'manifest.json', 'service-worker.js'
+    include 'css/**', 'js/**', 'data/**', 'assets/**'
+    into 'src/main/assets'
+}
+preBuild.dependsOn copyPwaAssets
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
