@@ -251,7 +251,7 @@ const App = (() => {
     document.getElementById('s-simulacros').textContent=p.simulacros.length;
     document.getElementById('s-logros').textContent=p.badges.length;
     const sorted=AREAS.map(a=>{const ap=p.areaProgress[a.id]||{answered:0,correct:0};return{...a,acc:ap.answered>0?ap.correct/ap.answered:1,n:ap.answered};}).sort((a,b)=>a.acc-b.acc);
-    document.getElementById('home-areas').innerHTML=sorted.map(a=>`<div class="area-card" onclick="App.startPractice('${a.id}')" style="border-left:3px solid ${a.color}"><div class="area-icon">${a.icon}</div><div class="area-info"><div class="area-name">${a.name}</div><div class="area-sub">${a.n===0?'Sin practica':Math.round(a.acc*100)+'% acierto'}</div><div style="height:3px;background:var(--border);margin-top:4px;border-radius:2px;overflow:hidden"><div style="height:100%;width:${Math.round(a.acc*100)}%;background:${a.color};border-radius:2px"></div></div></div></div>`).join('');
+    document.getElementById('home-areas').innerHTML=sorted.map(a=>`<div class="area-card" onclick="App.startPractice('${a.id}')" style="border-left:3px solid ${a.color}"><div class="area-icon">${a.icon}</div><div class="area-name">${a.name}</div><div class="area-sub">${a.n===0?'Sin practica':Math.round(a.acc*100)+'% acierto'}</div><div style="height:3px;background:var(--border);margin-top:8px;border-radius:2px;overflow:hidden"><div style="height:100%;width:${Math.round(a.acc*100)}%;background:${a.color};border-radius:2px"></div></div></div>`).join('');
     // Neuro tip
     const tip=NEURO_TIPS[Math.floor(Math.random()*NEURO_TIPS.length)];
     document.getElementById('neuro-tip').innerHTML=`<span style="color:var(--purple)">🧠</span> ${tip}`;
@@ -313,13 +313,6 @@ const App = (() => {
   function showPResults(){
     const correct=state.practice.answers.filter(Boolean).length,total=state.practice.questions.length,pct=Math.round(correct/total*100);
     addXP(CONFIG.XP_SESSION);
-    // Actualizar areaProgress para que Inicio refleje el progreso
-    const aid=state.practice.area;
-    if(aid&&state.progress.areaProgress[aid]){
-      state.progress.areaProgress[aid].answered=(state.progress.areaProgress[aid].answered||0)+total;
-      state.progress.areaProgress[aid].correct=(state.progress.areaProgress[aid].correct||0)+correct;
-    }
-    saveProgress();
     let grade='Sigue practicando',gColor='#FF3B5C',gEmoji='💪';
     if(pct>=80){grade='Excelente!';gColor='#FFB830';gEmoji='🏆';}else if(pct>=60){grade='Buen trabajo!';gColor='#00C896';gEmoji='👏';}else if(pct>=40){grade='Vas por buen camino';gColor='#4DA6FF';gEmoji='📈';}
     document.getElementById('res-grade').textContent=gEmoji+' '+grade;document.getElementById('res-grade').style.color=gColor;
