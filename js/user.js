@@ -320,7 +320,7 @@ const App = (() => {
     document.getElementById('res-grade').textContent=gEmoji+' '+grade;document.getElementById('res-grade').style.color=gColor;
     document.getElementById('res-score').textContent=correct+' / '+total;document.getElementById('res-pct').textContent=pct+'%';
     document.getElementById('res-xp').textContent='+ '+(state.practice.xp+CONFIG.XP_SESSION)+' XP ganados';
-    document.getElementById('practica-q-view').style.display='none';document.getElementById('practica-results').classList.add('active');
+    const area=AREAS.find(a=>a.id===aid),ap2=state.progress.areaProgress[aid]||{answered:0,correct:0},totalArea2=state.questions.filter(q=>q.area===aid).length,coverage2=totalArea2>0?Math.round(ap2.answered/totalArea2*100):0;document.getElementById('res-progress').innerHTML='<span style=color:'+area.color+'>'+area.icon+' '+area.name+':</span> '+ap2.answered+' de '+totalArea2+' preguntas ('+coverage2+'% del banco)';document.getElementById('res-progress-bar').innerHTML='<div style="height:4px;background:var(--border);border-radius:2px;overflow:hidden;margin-top:4px"><div style="height:100%;width:'+coverage2+'%;background:'+area.color+';border-radius:2px"></div></div>';document.getElementById('practica-q-view').style.display='none';document.getElementById('practica-results').classList.add('active');
     if(pct>=80)launchConfetti(30);
     updateHeader();
   }
@@ -407,7 +407,7 @@ const App = (() => {
     let grade='Sigue practicando',gColor='#FF3B5C',gEmoji='💪';
     if(score>=400){grade='Excelente!';gColor='#FFB830';gEmoji='🏆';}else if(score>=300){grade='Buen trabajo!';gColor='#00C896';gEmoji='👏';}else if(score>=200){grade='Vas por buen camino';gColor='#4DA6FF';gEmoji='📈';}
     document.getElementById('sres-grade').textContent=gEmoji+' '+grade;document.getElementById('sres-grade').style.color=gColor;
-    document.getElementById('sres-score').textContent=score;document.getElementById('sres-correct').textContent=correct+' / '+total+' correctas';
+    document.getElementById('sres-score').textContent=score;const areaBreakdown=AREAS.map(a=>{const as2=areaStats[a.id]||{answered:0,correct:0};const apct=as2.answered>0?Math.round(as2.correct/as2.answered*100):0;return'<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px"><span style="font-size:14px">'+a.icon+'</span><span style="flex:1;font-size:11px;color:var(--text2)">'+a.name+'</span><span style="font-size:12px;font-weight:700;color:'+(apct>=70?'#00C896':apct>=40?'#FFB830':'#FF3B5C')+'">'+as2.correct+'/'+as2.answered+' ('+apct+'%)</span></div>';}).join('');document.getElementById('sres-areas').innerHTML=areaBreakdown;document.getElementById('sres-correct').textContent=correct+' / '+total+' correctas';
     document.getElementById('sres-xp').textContent='+ '+(state.simulacro.xp+CONFIG.XP_SIMULACRO)+' XP ganados';
     document.getElementById('sim-q-view').style.display='none';document.getElementById('sim-results').style.display='block';
     if(score>=400)launchConfetti(50,'badge');
@@ -417,7 +417,13 @@ const App = (() => {
   function sBack(){
     if(state.simulacro.timer)clearInterval(state.simulacro.timer);
     document.getElementById('sim-results').style.display='none';document.getElementById('sim-home-view').style.display='block';document.getElementById('sim-q-view').style.display='none';
-    document.getElementById('timer-wrap').style.display='none';renderSimulacro();
+    document.getElementById('timer-wrap').style.display='none';switchTab('home');
+  }
+
+  function sAgain(){
+    document.getElementById('sim-results').style.display='none';
+    document.getElementById('sim-home-view').style.display='none';
+    startSimulacro();
   }
 
   // ═══ PROGRESO ═══
@@ -505,7 +511,7 @@ const App = (() => {
   return {
     init,doLogin,switchTab,startPractice,diagnoticoRapido,
     selectPAnswer,pNext,pAgain,pBack,toggleSave,
-    startSimulacro,selectSAnswer,sNext,sBack,
+    startSimulacro,selectSAnswer,sNext,sBack,sAgain,
     loadUpdateFile,tryRemoteUpdate,getUpdateURL,saveUpdateURL,logout,setTheme
   };
 })();

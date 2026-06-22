@@ -133,9 +133,11 @@
         <div class="results-grade" id="res-grade"></div>
         <div style="font-size:32px;font-weight:900;margin-bottom:8px" id="res-score"></div>
         <div class="results-xp" id="res-xp"></div>
-        <div style="display:flex;gap:10px">
-          <button class="btn-premium btn-outline btn-sm" style="flex:1" onclick="App.pBack()">Ver areas</button>
-          <button class="btn-premium btn-gold btn-sm" style="flex:1" onclick="App.pAgain()">Otra sesion</button>
+        <div style="margin:12px 0;padding:10px;background:var(--bg2);border-radius:8px;text-align:left;font-size:12px;color:var(--text2)" id="res-progress"></div>
+        <div id="res-progress-bar"></div>
+        <div style="display:flex;gap:10px;margin-top:16px">
+          <button class="btn-premium btn-outline btn-sm" style="flex:1" onclick="App.pBack()">Finalizar</button>
+          <button class="btn-premium btn-gold btn-sm" style="flex:1" onclick="App.pAgain()">Repasar area</button>
         </div>
       </div>
     </div>
@@ -178,7 +180,11 @@
         <div class="results-grade" id="sres-grade"></div>
         <div style="font-size:18px;margin-bottom:8px;color:var(--text2)" id="sres-correct"></div>
         <div class="results-xp" id="sres-xp"></div>
-        <button class="btn-premium btn-outline btn-sm" style="width:100%;margin-top:12px" onclick="App.sBack()">Volver</button>
+        <div style="margin:12px 0;padding:12px;background:var(--bg2);border-radius:8px;text-align:left" id="sres-areas"></div>
+        <div style="display:flex;gap:10px;margin-top:16px">
+          <button class="btn-premium btn-outline btn-sm" style="flex:1" onclick="App.sBack()">Finalizar</button>
+          <button class="btn-premium btn-gold btn-sm" style="flex:1" onclick="App.sAgain()">Repetir</button>
+        </div>
       </div>
     </div>
 
