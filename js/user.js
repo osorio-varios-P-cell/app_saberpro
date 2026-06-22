@@ -264,6 +264,7 @@ const App = (() => {
   }
 
   function startPractice(areaId){
+    switchTab('practica');
     const pool=state.questions.filter(q=>q.area===areaId);if(!pool.length){toast('No hay preguntas en esta area');return;}
     const shuffled=[...pool].sort(()=>Math.random()-0.5);
     state.practice={area:areaId,questions:shuffled.slice(0,Math.min(CONFIG.SESSION_SIZE,shuffled.length)),index:0,answers:[],selected:null,xp:0};
@@ -313,6 +314,7 @@ const App = (() => {
   function showPResults(){
     const correct=state.practice.answers.filter(Boolean).length,total=state.practice.questions.length,pct=Math.round(correct/total*100);
     addXP(CONFIG.XP_SESSION);
+    const aid=state.practice.area;if(aid&&state.progress.areaProgress[aid]){state.progress.areaProgress[aid].answered=(state.progress.areaProgress[aid].answered||0)+total;state.progress.areaProgress[aid].correct=(state.progress.areaProgress[aid].correct||0)+correct;}saveProgress();
     let grade='Sigue practicando',gColor='#FF3B5C',gEmoji='💪';
     if(pct>=80){grade='Excelente!';gColor='#FFB830';gEmoji='🏆';}else if(pct>=60){grade='Buen trabajo!';gColor='#00C896';gEmoji='👏';}else if(pct>=40){grade='Vas por buen camino';gColor='#4DA6FF';gEmoji='📈';}
     document.getElementById('res-grade').textContent=gEmoji+' '+grade;document.getElementById('res-grade').style.color=gColor;
@@ -327,7 +329,7 @@ const App = (() => {
   function pBack(){document.getElementById('practica-results').classList.remove('active');state.practice.area=null;switchTab('home');}
 
   function diagnoticoRapido(){
-    const pool=[];AREAS.forEach(a=>{const aq=state.questions.filter(q=>q.area===a.id),s=[...aq].sort(()=>Math.random()-0.5);pool.push(...s.slice(0,3));});
+    const pool=[];AREAS.forEach(a=>{const aq=state.questions.filter(q=>q.area===a.id),s=[...aq].sort(()=>Math.random()-0.5);pool.push(...s);});
     const shuffled=[...pool].sort(()=>Math.random()-0.5);
     state.practice={area:'diagnostic',questions:shuffled,index:0,answers:[],selected:null,xp:0};
     document.getElementById('practica-area-view').style.display='none';document.getElementById('practica-q-view').style.display='block';
@@ -398,7 +400,9 @@ const App = (() => {
   function showSResults(){
     if(state.simulacro.timer)clearInterval(state.simulacro.timer);
     const correct=state.simulacro.answers.filter(Boolean).length,total=state.simulacro.questions.length,score=Math.round(correct/total*500);
-    addXP(CONFIG.XP_SIMULACRO);state.progress.simulacros.push({date:new Date().toLocaleDateString(),score,correct,totalQuestions:total});saveProgress();
+    addXP(CONFIG.XP_SIMULACRO);
+    const areaStats={};state.simulacro.questions.forEach((q,i)=>{areaStats[q.area]=areaStats[q.area]||{answered:0,correct:0};areaStats[q.area].answered++;if(state.simulacro.answers[i])areaStats[q.area].correct++;});Object.keys(areaStats).forEach(aid=>{if(state.progress.areaProgress[aid]){state.progress.areaProgress[aid].answered=(state.progress.areaProgress[aid].answered||0)+areaStats[aid].answered;state.progress.areaProgress[aid].correct=(state.progress.areaProgress[aid].correct||0)+areaStats[aid].correct;}});
+    state.progress.simulacros.push({date:new Date().toLocaleDateString(),score,correct,totalQuestions:total});saveProgress();
     document.getElementById('timer-wrap').style.display='none';
     let grade='Sigue practicando',gColor='#FF3B5C',gEmoji='💪';
     if(score>=400){grade='Excelente!';gColor='#FFB830';gEmoji='🏆';}else if(score>=300){grade='Buen trabajo!';gColor='#00C896';gEmoji='👏';}else if(score>=200){grade='Vas por buen camino';gColor='#4DA6FF';gEmoji='📈';}
@@ -419,7 +423,7 @@ const App = (() => {
   // ═══ PROGRESO ═══
   function renderProgreso(){
     const p=state.progress;
-    document.getElementById('prog-areas').innerHTML=AREAS.map(a=>{const ap=p.areaProgress[a.id]||{answered:0,correct:0},acc=ap.answered>0?Math.round(ap.correct/ap.answered*100):0;return`<div class="progress-bar-area"><div class="progress-bar-header"><span class="progress-area-icon">${a.icon}</span><span class="progress-area-name">${a.name}</span><span class="progress-area-pct" style="color:${a.color}">${acc}%</span></div><div class="progress-area-track"><div class="progress-area-fill" style="width:${acc}%;background:${a.color}"></div></div><div style="font-size:10px;color:var(--text3);margin-top:4px">${ap.answered} preguntas · ${ap.correct} correctas</div></div>`;}).join('');
+    document.getElementById('prog-areas').innerHTML=AREAS.map(a=>{const ap=p.areaProgress[a.id]||{answered:0,correct:0},acc=ap.answered>0?Math.round(ap.correct/ap.answered*100):0;return`<div class="progress-bar-area"><div class="progress-bar-header"><span class="progress-area-icon">${a.icon}</span><span class="progress-area-name">${a.name}</span><span class="progress-area-pct" style="color:${a.color}">${coverage}%</span></div><div class="progress-area-track"><div class="progress-area-fill" style="width:${acc}%;background:${a.color}"></div></div><div style="font-size:10px;color:var(--text3);margin-top:4px">${ap.answered} de ${totalArea} preguntas · ${accuracy}% acierto</div></div>`;}).join('');
     // Streak calendar
     let calHTML='<div class="streak-cal">';
     for(let i=6;i>=0;i--){const d=new Date(Date.now()-i*86400000),ds=d.toDateString(),isToday=ds===new Date().toDateString(),studied=p.lastStudyDate===ds||(isToday&&p.lastStudyDate===new Date().toDateString());calHTML+=`<div class="cal-day${studied?' studied':''}${isToday?' today':''}">${['Do','Lu','Ma','Mi','Ju','Vi','Sa'][d.getDay()]}<div class="cal-dot"></div></div>`;}
