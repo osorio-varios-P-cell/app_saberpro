@@ -8,7 +8,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <link rel="manifest" href="/manifest.json">
   <title>SaberPro — Tu camino al 500</title>
-  <link rel="stylesheet" href="css/user.css">
+  <link rel="stylesheet" href="css/user.css?v=21">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23FF3B5C'/><stop offset='1' stop-color='%23FFB830'/></linearGradient></defs><rect width='100' height='100' rx='24' fill='url(%23g)'/><text x='50' y='72' text-anchor='middle' fill='white' font-size='62' font-weight='900'>S</text></svg>">
 </head>
 <body>
@@ -103,6 +103,7 @@
         <div class="section-title">Elegir area</div>
         <div class="section-sub">Selecciona el area que quieres practicar</div>
         <div class="area-grid" id="practica-area-grid"></div>
+      <button class="btn-premium btn-gold" style="width:100%;margin-top:12px" onclick="App.startGraphPractice()">Practicar solo con graficas y tablas</button>
         <button class="btn-premium btn-gold btn-sm" style="width:100%;margin-top:16px" onclick="App.diagnoticoRapido()">Diagnostico Rapido (15 preguntas)</button>
       </div>
 
@@ -117,10 +118,10 @@
         <div class="q-progress" id="pq-progress"></div>
         <div class="q-card">
           <span class="q-area-tag" id="pq-tag"></span>
-          <p class="q-text" id="pq-text"></p>
+          <div class="q-text" id="pq-text"></div>
           <p class="q-source" id="pq-source"></p>
           <div id="pq-options" style="display:flex;flex-direction:column;gap:8px"></div>
-          <div class="expl-box" id="pq-expl"><h4>Explicacion</h4><p id="pq-expl-text"></p></div>
+          <div class="expl-box" id="pq-expl"><h4>Explicacion</h4><div class="expl-text" id="pq-expl-text"></div></div>
         </div>
         <div id="pq-next" style="text-align:center;display:none">
           <button class="btn-premium btn-coral" onclick="App.pNext()"><span id="pq-next-label">Siguiente</span></button>
@@ -171,9 +172,9 @@
         </div>
         <div class="q-progress" id="sq-progress"></div>
         <div class="q-card">
-          <p class="q-text" id="sq-text"></p>
+          <div class="q-text" id="sq-text"></div>
           <div id="sq-options" style="display:flex;flex-direction:column;gap:8px"></div>
-          <div class="expl-box" id="sq-expl"><h4>Explicacion</h4><p id="sq-expl-text"></p></div>
+          <div class="expl-box" id="sq-expl"><h4>Explicacion</h4><div class="expl-text" id="sq-expl-text"></div></div>
         </div>
         <div id="sq-next" style="text-align:center;display:none">
           <button class="btn-premium btn-coral" onclick="App.sNext()"><span id="sq-next-label">Siguiente</span></button>
@@ -269,10 +270,11 @@
     </div>
   </div>
 
-  <script src="js/device.js"></script>
-  <script src="js/registry.js"></script>
-  <script src="js/transfer.js"></script>
-  <script src="js/user.js"></script>
+  <script src="js/device.js?v=21"></script>
+  <script src="js/registry.js?v=21"></script>
+  <script src="js/transfer.js?v=21"></script>
+  <script src="js/license.js?v=1"></script>
+  <script src="js/user.js?v=21"></script>
 <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/service-worker.js');}</script>
 </body>
 </html>

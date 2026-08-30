@@ -54,13 +54,13 @@ jobs:
         run: |
           APK=$(find android -name "*.apk" -type f | grep release | head -1)
           echo "APK: $APK"
-          cp "$APK" saberpro-v2.1-release.apk
-          ls -lh saberpro-v2.1-release.apk
+          cp "$APK" saberpro-v2.2-release.apk
+          ls -lh saberpro-v2.2-release.apk
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: SaberPro-APK
-          path: saberpro-v2.1-release.apk
+          path: saberpro-v2.2-release.apk
           retention-days: 90
           compression-level: 0
