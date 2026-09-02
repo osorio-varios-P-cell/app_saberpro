@@ -4,7 +4,7 @@ const LicenseClient = (() => {
   'use strict';
 
   // ⚙️ CONFIGURACIÓN: pega aquí la URL de tu Worker desplegado
-  const SERVER = localStorage.getItem('saberpro_license_server') || '';
+  const SERVER = localStorage.getItem('saberpro_license_server') || 'https://saberpro-licenses.saberpro-app.workers.dev';
   // ⚙️ CLAVE PÚBLICA: pega aquí la clave pública generada con gen-keys.mjs
   const LICENSE_PUBLIC_KEY = '';
   const KEY_B64URL = ''; // (opcional, si usas formato raw)
