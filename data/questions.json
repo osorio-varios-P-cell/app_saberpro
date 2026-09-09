@@ -129860,5 +129860,3927 @@
     "subcompetencia": "Identificar contenidos locales",
     "competencia_icfes": "Identificar contenidos locales",
     "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_1",
+    "area": "ingles",
+    "question": "\"A tourist stops you and asks: \"Excuse me, how do I get to the train station?\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "The station is very old",
+      "I train every morning",
+      "You can take my seat",
+      "Go straight and turn left at the lights"
+    ],
+    "correctIndex": 3,
+    "explanation": "The natural and socially appropriate response is: \"Go straight and turn left at the lights\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_2",
+    "area": "ingles",
+    "question": "\"Your friend says: \"I failed my driving test again.\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "Don't worry, you can take it again after more practice",
+      "Congratulations on passing",
+      "I failed mine too last year... wait, I passed",
+      "Where is the test?"
+    ],
+    "correctIndex": 0,
+    "explanation": "The natural and socially appropriate response is: \"Don't worry, you can take it again after more practice\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_3",
+    "area": "ingles",
+    "question": "\"A coworker asks: \"Could you cover my shift on Saturday?\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "Saturday is a day of the week",
+      "Sure, I can do it this time",
+      "My shift is better than yours",
+      "I covered it last year"
+    ],
+    "correctIndex": 1,
+    "explanation": "The natural and socially appropriate response is: \"Sure, I can do it this time\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_4",
+    "area": "ingles",
+    "question": "\"Someone at the bus stop says: \"The buses are always late here.\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "This stop sells tickets",
+      "Yes, I've been waiting for twenty minutes",
+      "Buses fly over traffic",
+      "I prefer trains anyway"
+    ],
+    "correctIndex": 1,
+    "explanation": "The natural and socially appropriate response is: \"Yes, I've been waiting for twenty minutes\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_5",
+    "area": "ingles",
+    "question": "\"Your teacher says: \"Your essay was much better this time.\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "The essay was written by ghosts",
+      "I will do worse next time",
+      "Essays are pointless",
+      "Thank you, I worked hard on it"
+    ],
+    "correctIndex": 3,
+    "explanation": "The natural and socially appropriate response is: \"Thank you, I worked hard on it\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_6",
+    "area": "ingles",
+    "question": "\"A neighbor says: \"We're having a barbecue on Sunday. Want to come?\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "Sunday is far away",
+      "I'd love to, what can I bring?",
+      "Barbecues cause fires",
+      "I hate our neighbors"
+    ],
+    "correctIndex": 1,
+    "explanation": "The natural and socially appropriate response is: \"I'd love to, what can I bring?\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_7",
+    "area": "ingles",
+    "question": "\"A stranger asks: \"Do you know what time this place closes?\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "It opened in 1998",
+      "I think it closes at nine",
+      "Closing is a concept",
+      "Ask the building"
+    ],
+    "correctIndex": 1,
+    "explanation": "The natural and socially appropriate response is: \"I think it closes at nine\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_8",
+    "area": "ingles",
+    "question": "\"Your friend says: \"I got the job I interviewed for!\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "You should quit now",
+      "The interview was boring",
+      "That's fantastic news, congratulations!",
+      "Jobs are overrated"
+    ],
+    "correctIndex": 2,
+    "explanation": "The natural and socially appropriate response is: \"That's fantastic news, congratulations!\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_9",
+    "area": "ingles",
+    "question": "\"A passenger says: \"Is this seat taken?\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "Seats are for sitting",
+      "I paid extra for it",
+      "No, go ahead, it's free",
+      "Yes, by an invisible person"
+    ],
+    "correctIndex": 2,
+    "explanation": "The natural and socially appropriate response is: \"No, go ahead, it's free\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_10",
+    "area": "ingles",
+    "question": "\"Your mom asks: \"Did you remember to buy the bread?\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "I remember everything always",
+      "Bread is baked with yeast",
+      "Oh no, I forgot. I'll go now",
+      "The bakery sells cake"
+    ],
+    "correctIndex": 2,
+    "explanation": "The natural and socially appropriate response is: \"Oh no, I forgot. I'll go now\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_11",
+    "area": "ingles",
+    "question": "\"A friend says: \"I'm thinking of cutting my hair short.\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "That could look great on you",
+      "Hair is illegal here",
+      "Cut it twice for double effect",
+      "Your hair controls your thoughts"
+    ],
+    "correctIndex": 0,
+    "explanation": "The natural and socially appropriate response is: \"That could look great on you\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_12",
+    "area": "ingles",
+    "question": "\"The waiter asks: \"Are you ready to order?\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "Yes, the grilled chicken, please",
+      "Chicken comes from eggs",
+      "We are not hungry ever",
+      "The kitchen is behind you"
+    ],
+    "correctIndex": 0,
+    "explanation": "The natural and socially appropriate response is: \"Yes, the grilled chicken, please\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_13",
+    "area": "ingles",
+    "question": "\"A colleague says: \"I'm leaving early today. See you Monday!\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "Have a good weekend, see you Monday",
+      "Leave through the window",
+      "Mondays don't exist",
+      "Work is optional"
+    ],
+    "correctIndex": 0,
+    "explanation": "The natural and socially appropriate response is: \"Have a good weekend, see you Monday\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_14",
+    "area": "ingles",
+    "question": "\"Someone says: \"Your English has improved a lot.\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "Thanks, I've been practicing every day",
+      "Practice is overrated",
+      "English improved itself",
+      "I speak seven languages badly"
+    ],
+    "correctIndex": 0,
+    "explanation": "The natural and socially appropriate response is: \"Thanks, I've been practicing every day\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_15",
+    "area": "ingles",
+    "question": "\"A friend asks: \"Do you want to join us for dinner tonight?\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "Bring your own food",
+      "Dinner is a myth",
+      "I ate in 2019",
+      "I'd love to. What time?"
+    ],
+    "correctIndex": 3,
+    "explanation": "The natural and socially appropriate response is: \"I'd love to. What time?\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_16",
+    "area": "ingles",
+    "question": "\"Your boss says: \"Great job on the presentation yesterday.\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "I will do it worse next time",
+      "Thank you, I'm glad it went well",
+      "The projector did everything",
+      "Presentations are for amateurs"
+    ],
+    "correctIndex": 1,
+    "explanation": "The natural and socially appropriate response is: \"Thank you, I'm glad it went well\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_17",
+    "area": "ingles",
+    "question": "\"A stranger says: \"You dropped your wallet.\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "Wallets fly away sometimes",
+      "Keep it as a gift",
+      "It's not mine on purpose",
+      "Oh, thank you so much!"
+    ],
+    "correctIndex": 3,
+    "explanation": "The natural and socially appropriate response is: \"Oh, thank you so much!\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_18",
+    "area": "ingles",
+    "question": "\"Your friend says: \"My parents are visiting this weekend.\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "Weekends are long",
+      "Show them the exit",
+      "Nice! Are you going to show them around?",
+      "Parents are optional"
+    ],
+    "correctIndex": 2,
+    "explanation": "The natural and socially appropriate response is: \"Nice! Are you going to show them around?\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_19",
+    "area": "ingles",
+    "question": "\"The receptionist asks: \"Can I have your name, please?\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "I don't have a name",
+      "Sure, it's Carlos Gomez",
+      "My name is a secret code",
+      "Names are private here"
+    ],
+    "correctIndex": 1,
+    "explanation": "The natural and socially appropriate response is: \"Sure, it's Carlos Gomez\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_20",
+    "area": "ingles",
+    "question": "\"A friend says: \"It's raining. Should we cancel the picnic?\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "Picnics are for summer only",
+      "The rain is lying",
+      "Let's move it indoors instead",
+      "Rain cancels everything forever"
+    ],
+    "correctIndex": 2,
+    "explanation": "The natural and socially appropriate response is: \"Let's move it indoors instead\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_21",
+    "area": "ingles",
+    "question": "\"Your sister says: \"I'm nervous about my job interview tomorrow.\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "You'll do great, just be yourself",
+      "Be someone else instead",
+      "Nervous people fail always",
+      "Interviews are illegal"
+    ],
+    "correctIndex": 0,
+    "explanation": "The natural and socially appropriate response is: \"You'll do great, just be yourself\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_22",
+    "area": "ingles",
+    "question": "\"A tourist asks: \"Is this museum worth visiting?\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "Only on Tuesdays",
+      "Museums are all the same",
+      "Yes, the ancient room is amazing",
+      "It burned down last year"
+    ],
+    "correctIndex": 2,
+    "explanation": "The natural and socially appropriate response is: \"Yes, the ancient room is amazing\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_23",
+    "area": "ingles",
+    "question": "\"Your friend says: \"I lost my phone on the bus.\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "The bus ate it",
+      "Did you call the lost and found?",
+      "Phones return by themselves",
+      "Buy seven phones"
+    ],
+    "correctIndex": 1,
+    "explanation": "The natural and socially appropriate response is: \"Did you call the lost and found?\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_24",
+    "area": "ingles",
+    "question": "\"The receptionist says: \"The doctor will see you now.\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "Thank you for waiting",
+      "The doctor is fictional",
+      "Waiting is illegal",
+      "I will see the doctor never"
+    ],
+    "correctIndex": 0,
+    "explanation": "The natural and socially appropriate response is: \"Thank you for waiting\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_25",
+    "area": "ingles",
+    "question": "\"A neighbor asks: \"Could you water my plants next week?\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "Next week is canceled",
+      "Plants water themselves",
+      "I water plants with money",
+      "Of course, no problem"
+    ],
+    "correctIndex": 3,
+    "explanation": "The natural and socially appropriate response is: \"Of course, no problem\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_26",
+    "area": "ingles",
+    "question": "\"Your friend says: \"This traffic is unbearable.\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "Traffic is a social construct",
+      "Cars should fly",
+      "Yes, let's take the next exit and go another way",
+      "Unbearable means fine"
+    ],
+    "correctIndex": 2,
+    "explanation": "The natural and socially appropriate response is: \"Yes, let's take the next exit and go another way\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_27",
+    "area": "ingles",
+    "question": "\"The hotel clerk asks: \"How many nights will you be staying?\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "Three years for sure",
+      "Three nights, please",
+      "Nights are relative",
+      "Staying is a lifestyle"
+    ],
+    "correctIndex": 1,
+    "explanation": "The natural and socially appropriate response is: \"Three nights, please\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_28",
+    "area": "ingles",
+    "question": "\"A friend says: \"I started going to the gym.\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "Gyms are for robots",
+      "Exercise is a myth",
+      "You were perfect before",
+      "Good for you! I should join you sometime"
+    ],
+    "correctIndex": 3,
+    "explanation": "The natural and socially appropriate response is: \"Good for you! I should join you sometime\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_29",
+    "area": "ingles",
+    "question": "\"Someone says: \"This is my first time in Colombia.\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "Colombians don't eat",
+      "The country is fictional",
+      "Go home immediately",
+      "Welcome! You're going to love the food"
+    ],
+    "correctIndex": 3,
+    "explanation": "The natural and socially appropriate response is: \"Welcome! You're going to love the food\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_30",
+    "area": "ingles",
+    "question": "\"Your friend says: \"I can't come to your party, I'm sorry.\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "No worries, we'll catch up another day",
+      "You must attend by law",
+      "The party is canceled forever",
+      "Parties without you are better"
+    ],
+    "correctIndex": 0,
+    "explanation": "The natural and socially appropriate response is: \"No worries, we'll catch up another day\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_31",
+    "area": "ingles",
+    "question": "\"The teacher asks: \"Did everyone understand the lesson?\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "The lesson taught itself",
+      "We understood nothing ever",
+      "Could you explain the last part again?",
+      "Explain it to the wall"
+    ],
+    "correctIndex": 2,
+    "explanation": "The natural and socially appropriate response is: \"Could you explain the last part again?\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_32",
+    "area": "ingles",
+    "question": "\"A colleague says: \"The meeting got moved to 3 pm.\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "Thanks for letting me know",
+      "Meetings happen in dreams",
+      "3 pm is not a time",
+      "I knew before you told me"
+    ],
+    "correctIndex": 0,
+    "explanation": "The natural and socially appropriate response is: \"Thanks for letting me know\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_33",
+    "area": "ingles",
+    "question": "\"Your friend says: \"Guess what? I'm getting married!\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "I knew before you did",
+      "No way! Congratulations!",
+      "Marriage is a myth",
+      "Getting married is illegal"
+    ],
+    "correctIndex": 1,
+    "explanation": "The natural and socially appropriate response is: \"No way! Congratulations!\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_34",
+    "area": "ingles",
+    "question": "\"A stranger asks: \"Is there a pharmacy near here?\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "This is a pharmacy",
+      "Pharmacies treat everything",
+      "Drugs are illegal here",
+      "Yes, two blocks down on the right"
+    ],
+    "correctIndex": 3,
+    "explanation": "The natural and socially appropriate response is: \"Yes, two blocks down on the right\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_35",
+    "area": "ingles",
+    "question": "\"Your friend says: \"The movie was terrible, don't you think?\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "The movie was perfect",
+      "Your opinion is illegal",
+      "I liked it, but I see your point",
+      "Movies cannot be terrible"
+    ],
+    "correctIndex": 2,
+    "explanation": "The natural and socially appropriate response is: \"I liked it, but I see your point\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_36",
+    "area": "ingles",
+    "question": "\"The landlord says: \"The rent is due on the first of each month.\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "The first of the month is fake",
+      "Understood, I'll pay on time",
+      "I'll pay in reverse",
+      "Rent is optional"
+    ],
+    "correctIndex": 1,
+    "explanation": "The natural and socially appropriate response is: \"Understood, I'll pay on time\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_37",
+    "area": "ingles",
+    "question": "\"A friend says: \"I'm on a diet, no desserts for me.\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "Diets are illegal here",
+      "Good luck! They do have fruit salad here",
+      "Good luck with nothing",
+      "Desserts are the only food"
+    ],
+    "correctIndex": 1,
+    "explanation": "The natural and socially appropriate response is: \"Good luck! They do have fruit salad here\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_38",
+    "area": "ingles",
+    "question": "\"The guide says: \"Please stay with the group at all times.\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "Staying is a suggestion",
+      "We will split up and wander",
+      "Sure, we'll stay together",
+      "Groups are optional"
+    ],
+    "correctIndex": 2,
+    "explanation": "The natural and socially appropriate response is: \"Sure, we'll stay together\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_39",
+    "area": "ingles",
+    "question": "\"Your friend says: \"I heard you won the writing contest!\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "You heard wrong on purpose",
+      "Contests are rigged",
+      "Writing is easy money",
+      "Yes! I still can't believe it"
+    ],
+    "correctIndex": 3,
+    "explanation": "The natural and socially appropriate response is: \"Yes! I still can't believe it\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_40",
+    "area": "ingles",
+    "question": "\"A passenger asks: \"Does this bus stop downtown?\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "Ask the wheels",
+      "Yes, it's the fifth stop",
+      "Buses never stop",
+      "Downtown is the start"
+    ],
+    "correctIndex": 1,
+    "explanation": "The natural and socially appropriate response is: \"Yes, it's the fifth stop\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_41",
+    "area": "ingles",
+    "question": "\"Your friend says: \"I finally finished that huge book.\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "Books finish themselves",
+      "Reading is for machines",
+      "Huge books are illegal",
+      "Well done! Was it worth it?"
+    ],
+    "correctIndex": 3,
+    "explanation": "The natural and socially appropriate response is: \"Well done! Was it worth it?\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_42",
+    "area": "ingles",
+    "question": "\"The coach says: \"Try again, you're very close to getting it.\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "The ball hates me",
+      "I quit forever",
+      "OK, one more time",
+      "Close is never good"
+    ],
+    "correctIndex": 2,
+    "explanation": "The natural and socially appropriate response is: \"OK, one more time\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_43",
+    "area": "ingles",
+    "question": "\"A friend says: \"Do you prefer coffee or tea in the morning?\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "Coffee, definitely. And you?",
+      "Drinks choose people",
+      "Tea is coffee's cousin",
+      "Neither exists"
+    ],
+    "correctIndex": 0,
+    "explanation": "The natural and socially appropriate response is: \"Coffee, definitely. And you?\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_44",
+    "area": "ingles",
+    "question": "\"Your neighbor says: \"Sorry for the noise last night, we were moving furniture.\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "I heard everything and I'm furious",
+      "The noise was illegal",
+      "Furniture moves alone",
+      "No problem, I didn't hear much"
+    ],
+    "correctIndex": 3,
+    "explanation": "The natural and socially appropriate response is: \"No problem, I didn't hear much\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_45",
+    "area": "ingles",
+    "question": "\"The cashier says: \"That will be twelve fifty, please.\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "Money is a construct",
+      "Twelve fifty is a rumor",
+      "Pay with poetry",
+      "Here you go, thank you"
+    ],
+    "correctIndex": 3,
+    "explanation": "The natural and socially appropriate response is: \"Here you go, thank you\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_46",
+    "area": "ingles",
+    "question": "\"Your friend says: \"I'm thinking about adopting a dog.\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "Adoption is a myth",
+      "Dogs adopt people legally",
+      "Cats are superior",
+      "That's great, shelters have lovely dogs"
+    ],
+    "correctIndex": 3,
+    "explanation": "The natural and socially appropriate response is: \"That's great, shelters have lovely dogs\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_47",
+    "area": "ingles",
+    "question": "\"A stranger says: \"Nice weather today, isn't it?\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "Nice is subjective",
+      "Weather is a government plot",
+      "It rained in 1850",
+      "Yes, perfect for walking around"
+    ],
+    "correctIndex": 3,
+    "explanation": "The natural and socially appropriate response is: \"Yes, perfect for walking around\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_48",
+    "area": "ingles",
+    "question": "\"Your teacher says: \"Read chapter five for homework.\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "Homework is a myth",
+      "Chapters read themselves",
+      "Five is too many",
+      "Sure, chapter five by tomorrow"
+    ],
+    "correctIndex": 3,
+    "explanation": "The natural and socially appropriate response is: \"Sure, chapter five by tomorrow\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_49",
+    "area": "ingles",
+    "question": "\"A friend says: \"My phone battery dies so fast lately.\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "Maybe you should check the battery settings",
+      "Charge it with salad",
+      "Batteries live forever",
+      "Phones hate their owners"
+    ],
+    "correctIndex": 0,
+    "explanation": "The natural and socially appropriate response is: \"Maybe you should check the battery settings\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_3___conocimiento_comunicativo_50",
+    "area": "ingles",
+    "question": "\"The hotel receptionist says: \"Breakfast is served from 7 to 10 in the dining room.\"\" — ¿cuál es tu mejor respuesta? (Parte 3)",
+    "options": [
+      "Ten is enough",
+      "We eat in the hallway",
+      "Breakfast is canceled",
+      "Thank you, we will be there on time"
+    ],
+    "correctIndex": 3,
+    "explanation": "The natural and socially appropriate response is: \"Thank you, we will be there on time\"",
+    "difficulty": 2,
+    "subcompetencia": "Parte 3 - Conocimiento comunicativo",
+    "competencia_icfes": "Parte 3 - Conocimiento comunicativo",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_1",
+    "area": "ingles",
+    "question": "Parte 5 (texto 1, pregunta 1) - Read: \"The community pool will be closed from March 3 to March 10 for tile repairs. Members can use the gym for free during that week.\" Why will the pool be closed?",
+    "options": [
+      "For a holiday",
+      "For tile repairs",
+      "For a competition"
+    ],
+    "correctIndex": 1,
+    "explanation": "The text says exactly: for tile repairs.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_2",
+    "area": "ingles",
+    "question": "Parte 5 (texto 2, pregunta 2) - Read: \"The community pool will be closed from March 3 to March 10 for tile repairs. Members can use the gym for free during that week.\" For cleaning staff training",
+    "options": [
+      "What can members use during the closure?",
+      "The sauna for free",
+      "The gym for free"
+    ],
+    "correctIndex": 0,
+    "explanation": "The text says exactly: what can members use during the closure?.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_3",
+    "area": "ingles",
+    "question": "Parte 5 (texto 2, pregunta 1) - Read: \"The night market on River Street opens at 6 pm and closes at midnight. Parking is free after 7 pm.\" What time does the night market close?",
+    "options": [
+      "At midnight",
+      "At 6 pm",
+      "At 10 pm"
+    ],
+    "correctIndex": 0,
+    "explanation": "The text says exactly: at midnight.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_4",
+    "area": "ingles",
+    "question": "Parte 5 (texto 3, pregunta 2) - Read: \"The night market on River Street opens at 6 pm and closes at midnight. Parking is free after 7 pm.\" At 9 pm",
+    "options": [
+      "After 7 pm",
+      "When is parking free?",
+      "Before 6 pm"
+    ],
+    "correctIndex": 1,
+    "explanation": "The text says exactly: when is parking free?.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_5",
+    "area": "ingles",
+    "question": "Parte 5 (texto 3, pregunta 1) - Read: \"The city hall will give free trees to the first two hundred families that register online. The event starts on Monday.\" How many families will get free trees?",
+    "options": [
+      "Five families",
+      "The first two hundred",
+      "All families"
+    ],
+    "correctIndex": 1,
+    "explanation": "The text says exactly: the first two hundred.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_6",
+    "area": "ingles",
+    "question": "Parte 5 (texto 4, pregunta 2) - Read: \"The city hall will give free trees to the first two hundred families that register online. The event starts on Monday.\" Twenty families",
+    "options": [
+      "How do families register?",
+      "By phone only",
+      "Online"
+    ],
+    "correctIndex": 0,
+    "explanation": "The text says exactly: how do families register?.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_7",
+    "area": "ingles",
+    "question": "Parte 5 (texto 4, pregunta 1) - Read: \"The train to Santa Rosa leaves at 7:40 am and takes about two hours. There is a stop in the town of Paredes.\" How long is the train trip to Santa Rosa?",
+    "options": [
+      "About twenty minutes",
+      "About two hours",
+      "All morning"
+    ],
+    "correctIndex": 1,
+    "explanation": "The text says exactly: about two hours.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_8",
+    "area": "ingles",
+    "question": "Parte 5 (texto 5, pregunta 2) - Read: \"The train to Santa Rosa leaves at 7:40 am and takes about two hours. There is a stop in the town of Paredes.\" About five hours",
+    "options": [
+      "Where does the train stop?",
+      "In the town of Paredes",
+      "In the mountains"
+    ],
+    "correctIndex": 0,
+    "explanation": "The text says exactly: where does the train stop?.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_9",
+    "area": "ingles",
+    "question": "Parte 5 (texto 5, pregunta 1) - Read: \"The school newspaper needs students who can write or take photos. Interested students should talk to Ms. Rivera in room 12.\" Who should interested students talk to?",
+    "options": [
+      "Ms. Rivera in room 12",
+      "Their parents",
+      "The principal"
+    ],
+    "correctIndex": 0,
+    "explanation": "The text says exactly: ms. rivera in room 12.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_10",
+    "area": "ingles",
+    "question": "Parte 5 (texto 6, pregunta 2) - Read: \"The school newspaper needs students who can write or take photos. Interested students should talk to Ms. Rivera in room 12.\" The janitor",
+    "options": [
+      "What skills does the newspaper need?",
+      "Math only",
+      "Writing or photography"
+    ],
+    "correctIndex": 0,
+    "explanation": "The text says exactly: what skills does the newspaper need?.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_11",
+    "area": "ingles",
+    "question": "Parte 5 (texto 6, pregunta 1) - Read: \"The pharmacy on Central Avenue is open until 10 pm from Monday to Saturday. On Sundays it closes at 2 pm.\" What time does the pharmacy close on Saturdays?",
+    "options": [
+      "At 10 pm",
+      "At 6 pm",
+      "At 2 pm"
+    ],
+    "correctIndex": 0,
+    "explanation": "The text says exactly: at 10 pm.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_12",
+    "area": "ingles",
+    "question": "Parte 5 (texto 7, pregunta 2) - Read: \"The pharmacy on Central Avenue is open until 10 pm from Monday to Saturday. On Sundays it closes at 2 pm.\" It never closes",
+    "options": [
+      "On Sundays",
+      "On Mondays",
+      "When does the pharmacy close at 2 pm?"
+    ],
+    "correctIndex": 2,
+    "explanation": "The text says exactly: when does the pharmacy close at 2 pm?.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_13",
+    "area": "ingles",
+    "question": "Parte 5 (texto 7, pregunta 1) - Read: \"The library gives members access to a digital newspaper archive. To use it, you need your library card number and a password.\" What do members need to use the archive?",
+    "options": [
+      "A doctor note",
+      "A new phone",
+      "A library card number and a password"
+    ],
+    "correctIndex": 2,
+    "explanation": "The text says exactly: a library card number and a password.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_14",
+    "area": "ingles",
+    "question": "Parte 5 (texto 8, pregunta 2) - Read: \"The library gives members access to a digital newspaper archive. To use it, you need your library card number and a password.\" Cash payment",
+    "options": [
+      "Digital newspapers",
+      "What does the archive contain?",
+      "Movies"
+    ],
+    "correctIndex": 1,
+    "explanation": "The text says exactly: what does the archive contain?.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_15",
+    "area": "ingles",
+    "question": "Parte 5 (texto 8, pregunta 1) - Read: \"The bus company reminds passengers that large suitcases must go in the lower compartment, not inside the cabin.\" Where must large suitcases go?",
+    "options": [
+      "Inside the cabin",
+      "On the seats",
+      "In the lower compartment"
+    ],
+    "correctIndex": 2,
+    "explanation": "The text says exactly: in the lower compartment.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_16",
+    "area": "ingles",
+    "question": "Parte 5 (texto 9, pregunta 2) - Read: \"The bus company reminds passengers that large suitcases must go in the lower compartment, not inside the cabin.\" With the driver",
+    "options": [
+      "Passengers",
+      "Mechanics",
+      "Who is the reminder for?"
+    ],
+    "correctIndex": 2,
+    "explanation": "The text says exactly: who is the reminder for?.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_17",
+    "area": "ingles",
+    "question": "Parte 5 (texto 9, pregunta 1) - Read: \"The restaurant will offer a special tasting menu every Thursday of October. Reservations are recommended because tables fill quickly.\" When is the tasting menu offered?",
+    "options": [
+      "Only on Mondays",
+      "Every day of the year",
+      "Every Thursday of October"
+    ],
+    "correctIndex": 2,
+    "explanation": "The text says exactly: every thursday of october.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_18",
+    "area": "ingles",
+    "question": "Parte 5 (texto 10, pregunta 2) - Read: \"The restaurant will offer a special tasting menu every Thursday of October. Reservations are recommended because tables fill quickly.\" In November",
+    "options": [
+      "Why are reservations recommended?",
+      "Because the food is free",
+      "Because tables fill quickly"
+    ],
+    "correctIndex": 0,
+    "explanation": "The text says exactly: why are reservations recommended?.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_19",
+    "area": "ingles",
+    "question": "Parte 5 (texto 10, pregunta 1) - Read: \"The neighborhood app sends alerts about power cuts. Users can choose which streets they want to receive alerts for.\" What does the neighborhood app send?",
+    "options": [
+      "Traffic tickets",
+      "Alerts about power cuts",
+      "Weekly recipes"
+    ],
+    "correctIndex": 1,
+    "explanation": "The text says exactly: alerts about power cuts.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_20",
+    "area": "ingles",
+    "question": "Parte 5 (texto 11, pregunta 2) - Read: \"The neighborhood app sends alerts about power cuts. Users can choose which streets they want to receive alerts for.\" Weather jokes",
+    "options": [
+      "What can users choose?",
+      "The color of the app",
+      "Which streets to receive alerts for"
+    ],
+    "correctIndex": 0,
+    "explanation": "The text says exactly: what can users choose?.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_21",
+    "area": "ingles",
+    "question": "Parte 5 (texto 11, pregunta 1) - Read: \"The cinema replaced all its seats last month. The new seats are wider and have more legroom, according to the manager.\" What did the cinema replace?",
+    "options": [
+      "All its seats",
+      "Its popcorn machines",
+      "Its screen"
+    ],
+    "correctIndex": 0,
+    "explanation": "The text says exactly: all its seats.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_22",
+    "area": "ingles",
+    "question": "Parte 5 (texto 12, pregunta 2) - Read: \"The cinema replaced all its seats last month. The new seats are wider and have more legroom, according to the manager.\" Its ticket system",
+    "options": [
+      "They are wider with more legroom",
+      "They are smaller",
+      "What is different about the new seats?"
+    ],
+    "correctIndex": 2,
+    "explanation": "The text says exactly: what is different about the new seats?.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_23",
+    "area": "ingles",
+    "question": "Parte 5 (texto 12, pregunta 1) - Read: \"The volunteer group cleans the beach every first Sunday of the month. Volunteers receive gloves, bags and free water.\" How often does the group clean the beach?",
+    "options": [
+      "Twice a year",
+      "Every first Sunday of the month",
+      "Every day"
+    ],
+    "correctIndex": 1,
+    "explanation": "The text says exactly: every first sunday of the month.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_24",
+    "area": "ingles",
+    "question": "Parte 5 (texto 13, pregunta 2) - Read: \"The volunteer group cleans the beach every first Sunday of the month. Volunteers receive gloves, bags and free water.\" Never",
+    "options": [
+      "Money and snacks",
+      "Gloves, bags and free water",
+      "What do volunteers receive?"
+    ],
+    "correctIndex": 2,
+    "explanation": "The text says exactly: what do volunteers receive?.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_25",
+    "area": "ingles",
+    "question": "Parte 5 (texto 13, pregunta 1) - Read: \"The bakery will close an hour earlier during the winter months. Winter hours are from 6 am to 5 pm.\" What are the bakery winter hours?",
+    "options": [
+      "From noon to midnight",
+      "From 6 am to 5 pm",
+      "From 7 am to 8 pm"
+    ],
+    "correctIndex": 1,
+    "explanation": "The text says exactly: from 6 am to 5 pm.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_26",
+    "area": "ingles",
+    "question": "Parte 5 (texto 14, pregunta 2) - Read: \"The bakery will close an hour earlier during the winter months. Winter hours are from 6 am to 5 pm.\" It closes all winter",
+    "options": [
+      "Because the baker is sick",
+      "Because of the winter months",
+      "Why do the hours change?"
+    ],
+    "correctIndex": 2,
+    "explanation": "The text says exactly: why do the hours change?.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_27",
+    "area": "ingles",
+    "question": "Parte 5 (texto 14, pregunta 1) - Read: \"The phone company says customers can now pay their bills at any supermarket in the city.\" Where can customers pay their bills now?",
+    "options": [
+      "At any supermarket in the city",
+      "Only at the phone company",
+      "At the airport"
+    ],
+    "correctIndex": 0,
+    "explanation": "The text says exactly: at any supermarket in the city.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_28",
+    "area": "ingles",
+    "question": "Parte 5 (texto 15, pregunta 2) - Read: \"The phone company says customers can now pay their bills at any supermarket in the city.\" By sending letters",
+    "options": [
+      "Who made this change possible?",
+      "The phone company",
+      "The supermarkets"
+    ],
+    "correctIndex": 0,
+    "explanation": "The text says exactly: who made this change possible?.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_29",
+    "area": "ingles",
+    "question": "Parte 5 (texto 15, pregunta 1) - Read: \"The school is looking for a chess coach for the after-school program. Applicants must know the rules and enjoy working with children.\" What position is the school looking for?",
+    "options": [
+      "A chess coach",
+      "A math teacher",
+      "A bus driver"
+    ],
+    "correctIndex": 0,
+    "explanation": "The text says exactly: a chess coach.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_30",
+    "area": "ingles",
+    "question": "Parte 5 (texto 16, pregunta 2) - Read: \"The school is looking for a chess coach for the after-school program. Applicants must know the rules and enjoy working with children.\" A chef",
+    "options": [
+      "What must applicants know?",
+      "How to cook",
+      "The rules of chess and enjoy working with children"
+    ],
+    "correctIndex": 0,
+    "explanation": "The text says exactly: what must applicants know?.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_31",
+    "area": "ingles",
+    "question": "Parte 5 (texto 16, pregunta 1) - Read: \"The town hall moved its customer service office to the second floor of the new building next to the fire station.\" Where is the new customer service office?",
+    "options": [
+      "In the old library",
+      "On the second floor next to the fire station",
+      "At the bus terminal"
+    ],
+    "correctIndex": 1,
+    "explanation": "The text says exactly: on the second floor next to the fire station.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_32",
+    "area": "ingles",
+    "question": "Parte 5 (texto 17, pregunta 2) - Read: \"The town hall moved its customer service office to the second floor of the new building next to the fire station.\" Inside the fire station",
+    "options": [
+      "The town hall customer service office",
+      "What moved to the new building?",
+      "The fire station"
+    ],
+    "correctIndex": 1,
+    "explanation": "The text says exactly: what moved to the new building?.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_33",
+    "area": "ingles",
+    "question": "Parte 5 (texto 17, pregunta 1) - Read: \"The fitness app added a new feature that counts steps without using the phone. Users just need to wear the free band.\" What new feature did the fitness app add?",
+    "options": [
+      "A paid subscription",
+      "Counting steps without the phone",
+      "Video classes"
+    ],
+    "correctIndex": 1,
+    "explanation": "The text says exactly: counting steps without the phone.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_34",
+    "area": "ingles",
+    "question": "Parte 5 (texto 18, pregunta 2) - Read: \"The fitness app added a new feature that counts steps without using the phone. Users just need to wear the free band.\" A music player",
+    "options": [
+      "The free band",
+      "What do users need to wear?",
+      "New shoes"
+    ],
+    "correctIndex": 1,
+    "explanation": "The text says exactly: what do users need to wear?.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_35",
+    "area": "ingles",
+    "question": "Parte 5 (texto 18, pregunta 1) - Read: \"The water company announced that service will be interrupted on Tuesday from 9 am to 1 pm in the northern area.\" When will the water service be interrupted?",
+    "options": [
+      "On Friday all day",
+      "On Tuesday from 9 am to 1 pm",
+      "On Tuesday at night"
+    ],
+    "correctIndex": 1,
+    "explanation": "The text says exactly: on tuesday from 9 am to 1 pm.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_36",
+    "area": "ingles",
+    "question": "Parte 5 (texto 19, pregunta 2) - Read: \"The water company announced that service will be interrupted on Tuesday from 9 am to 1 pm in the northern area.\" Next month",
+    "options": [
+      "The whole city",
+      "The northern area",
+      "Which area will be affected?"
+    ],
+    "correctIndex": 2,
+    "explanation": "The text says exactly: which area will be affected?.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_37",
+    "area": "ingles",
+    "question": "Parte 5 (texto 19, pregunta 1) - Read: \"The bookstore gives a ten percent discount to book club members. Members must show their club card at the register.\" Who gets a discount at the bookstore?",
+    "options": [
+      "All customers",
+      "Book club members",
+      "Teachers only"
+    ],
+    "correctIndex": 1,
+    "explanation": "The text says exactly: book club members.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_38",
+    "area": "ingles",
+    "question": "Parte 5 (texto 20, pregunta 2) - Read: \"The bookstore gives a ten percent discount to book club members. Members must show their club card at the register.\" Tourists",
+    "options": [
+      "Their club card",
+      "What must members show at the register?",
+      "Their passport"
+    ],
+    "correctIndex": 1,
+    "explanation": "The text says exactly: what must members show at the register?.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_39",
+    "area": "ingles",
+    "question": "Parte 5 (texto 20, pregunta 1) - Read: \"The city is adding twenty new bike stations downtown. The stations will work with the same app as the bus system.\" How many new bike stations is the city adding?",
+    "options": [
+      "Two hundred",
+      "Twenty",
+      "Twelve"
+    ],
+    "correctIndex": 1,
+    "explanation": "The text says exactly: twenty.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_40",
+    "area": "ingles",
+    "question": "Parte 5 (texto 21, pregunta 2) - Read: \"The city is adding twenty new bike stations downtown. The stations will work with the same app as the bus system.\" Two",
+    "options": [
+      "Which app will the stations work with?",
+      "The same app as the bus system",
+      "A brand new app"
+    ],
+    "correctIndex": 0,
+    "explanation": "The text says exactly: which app will the stations work with?.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_41",
+    "area": "ingles",
+    "question": "Parte 5 (texto 21, pregunta 1) - Read: \"The restaurant owner says the kitchen will use only local vegetables from now on. The menu will change every season.\" What will the kitchen use from now on?",
+    "options": [
+      "Frozen food",
+      "Only local vegetables",
+      "Imported ingredients"
+    ],
+    "correctIndex": 1,
+    "explanation": "The text says exactly: only local vegetables.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_42",
+    "area": "ingles",
+    "question": "Parte 5 (texto 22, pregunta 2) - Read: \"The restaurant owner says the kitchen will use only local vegetables from now on. The menu will change every season.\" Canned soup",
+    "options": [
+      "Every day",
+      "How often will the menu change?",
+      "Every season"
+    ],
+    "correctIndex": 1,
+    "explanation": "The text says exactly: how often will the menu change?.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_43",
+    "area": "ingles",
+    "question": "Parte 5 (texto 22, pregunta 1) - Read: \"The airline allows one personal item for free. Personal items must fit under the seat in front of you.\" What is free on this airline?",
+    "options": [
+      "One personal item",
+      "Two checked bags",
+      "Unlimited snacks"
+    ],
+    "correctIndex": 0,
+    "explanation": "The text says exactly: one personal item.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_44",
+    "area": "ingles",
+    "question": "Parte 5 (texto 23, pregunta 2) - Read: \"The airline allows one personal item for free. Personal items must fit under the seat in front of you.\" Seat selection",
+    "options": [
+      "In the overhead bin",
+      "Where must personal items fit?",
+      "Under the seat in front of you"
+    ],
+    "correctIndex": 1,
+    "explanation": "The text says exactly: where must personal items fit?.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_45",
+    "area": "ingles",
+    "question": "Parte 5 (texto 23, pregunta 1) - Read: \"The school announced that the science fair will be on April 15. Projects must be registered by April 1.\" When is the science fair?",
+    "options": [
+      "On April 1",
+      "On April 15",
+      "In March"
+    ],
+    "correctIndex": 1,
+    "explanation": "The text says exactly: on april 15.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_46",
+    "area": "ingles",
+    "question": "Parte 5 (texto 24, pregunta 2) - Read: \"The school announced that the science fair will be on April 15. Projects must be registered by April 1.\" In June",
+    "options": [
+      "April 30",
+      "What is the deadline to register projects?",
+      "April 1"
+    ],
+    "correctIndex": 1,
+    "explanation": "The text says exactly: what is the deadline to register projects?.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_47",
+    "area": "ingles",
+    "question": "Parte 5 (texto 24, pregunta 1) - Read: \"The gym will offer swim lessons for beginners on weekends. Classes have a maximum of six students per instructor.\" Who are the swim lessons for?",
+    "options": [
+      "Babies only",
+      "Professional swimmers",
+      "Beginners"
+    ],
+    "correctIndex": 2,
+    "explanation": "The text says exactly: beginners.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_48",
+    "area": "ingles",
+    "question": "Parte 5 (texto 25, pregunta 2) - Read: \"The gym will offer swim lessons for beginners on weekends. Classes have a maximum of six students per instructor.\" The instructors",
+    "options": [
+      "Sixty students",
+      "What is the maximum class size?",
+      "Six students per instructor"
+    ],
+    "correctIndex": 1,
+    "explanation": "The text says exactly: what is the maximum class size?.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_49",
+    "area": "ingles",
+    "question": "Parte 5 (texto 25, pregunta 1) - Read: \"The post office reminds customers that packages over 20 kg must be brought to the counter with help from staff.\" What must customers do with packages over 20 kg?",
+    "options": [
+      "Mail them to themselves",
+      "Leave them at the door",
+      "Bring them to the counter with staff help"
+    ],
+    "correctIndex": 2,
+    "explanation": "The text says exactly: bring them to the counter with staff help.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_50",
+    "area": "ingles",
+    "question": "Parte 5 (texto 26, pregunta 2) - Read: \"The post office reminds customers that packages over 20 kg must be brought to the counter with help from staff.\" Carry them alone always",
+    "options": [
+      "20 kg",
+      "2 kg",
+      "What is the weight limit for normal drop-off?"
+    ],
+    "correctIndex": 2,
+    "explanation": "The text says exactly: what is the weight limit for normal drop-off?.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_51",
+    "area": "ingles",
+    "question": "Parte 5 (texto 26, pregunta 1) - Read: \"The café will host a poetry reading on the last Friday of the month. Anyone can read their own poems for up to five minutes.\" What will the café host?",
+    "options": [
+      "A business meeting",
+      "A cooking class",
+      "A poetry reading"
+    ],
+    "correctIndex": 2,
+    "explanation": "The text says exactly: a poetry reading.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_52",
+    "area": "ingles",
+    "question": "Parte 5 (texto 27, pregunta 2) - Read: \"The café will host a poetry reading on the last Friday of the month. Anyone can read their own poems for up to five minutes.\" A chess tournament",
+    "options": [
+      "Up to one hour",
+      "How long can each person read?",
+      "Up to five minutes"
+    ],
+    "correctIndex": 1,
+    "explanation": "The text says exactly: how long can each person read?.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_53",
+    "area": "ingles",
+    "question": "Parte 5 (texto 27, pregunta 1) - Read: \"The parking garage on Second Street now accepts card payments at every level. The old cash machines were removed last week.\" What payment does the parking garage accept now?",
+    "options": [
+      "Cards at every level",
+      "Cash only",
+      "Cryptocurrency"
+    ],
+    "correctIndex": 0,
+    "explanation": "The text says exactly: cards at every level.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_54",
+    "area": "ingles",
+    "question": "Parte 5 (texto 28, pregunta 2) - Read: \"The parking garage on Second Street now accepts card payments at every level. The old cash machines were removed last week.\" Barter",
+    "options": [
+      "The old cash machines",
+      "What was removed last week?",
+      "The second level"
+    ],
+    "correctIndex": 1,
+    "explanation": "The text says exactly: what was removed last week?.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_55",
+    "area": "ingles",
+    "question": "Parte 5 (texto 28, pregunta 1) - Read: \"The animal shelter will hold an adoption day this Saturday. Adoption includes vaccines and a free first vet visit.\" What does adoption include?",
+    "options": [
+      "A paid subscription",
+      "Only a leash",
+      "Vaccines and a free first vet visit"
+    ],
+    "correctIndex": 2,
+    "explanation": "The text says exactly: vaccines and a free first vet visit.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_56",
+    "area": "ingles",
+    "question": "Parte 5 (texto 29, pregunta 1) - Read: \"The music school is giving a free instrument rental to new students during September. Instruments available include guitar, violin and flute.\" What is free for new students during September?",
+    "options": [
+      "Sheet music",
+      "Full courses",
+      "Instrument rental"
+    ],
+    "correctIndex": 2,
+    "explanation": "The text says exactly: instrument rental.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_57",
+    "area": "ingles",
+    "question": "Parte 5 (texto 30, pregunta 2) - Read: \"The music school is giving a free instrument rental to new students during September. Instruments available include guitar, violin and flute.\" Uniforms",
+    "options": [
+      "Drums and trumpet",
+      "Which instruments are mentioned?",
+      "Guitar, violin and flute"
+    ],
+    "correctIndex": 1,
+    "explanation": "The text says exactly: which instruments are mentioned?.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_58",
+    "area": "ingles",
+    "question": "Parte 5 (texto 30, pregunta 1) - Read: \"The bus stop in front of the school will be relocated twenty meters north to improve safety at the crossing.\" What will happen to the bus stop?",
+    "options": [
+      "It will be relocated twenty meters north",
+      "It will become a store",
+      "It will be removed forever"
+    ],
+    "correctIndex": 0,
+    "explanation": "The text says exactly: it will be relocated twenty meters north.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_5___comprensión_literal_59",
+    "area": "ingles",
+    "question": "Parte 5 (texto 31, pregunta 2) - Read: \"The bus stop in front of the school will be relocated twenty meters north to improve safety at the crossing.\" It stays the same",
+    "options": [
+      "Why is the bus stop moving?",
+      "Because the bus company asked",
+      "To improve safety at the crossing"
+    ],
+    "correctIndex": 0,
+    "explanation": "The text says exactly: why is the bus stop moving?.",
+    "difficulty": 1,
+    "subcompetencia": "Parte 5 - Comprensión literal",
+    "competencia_icfes": "Parte 5 - Comprensión literal",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_1",
+    "area": "ingles",
+    "question": "Parte 7 (familia verb_gerund, caso 1) - Complete: \"I enjoy ____ music in my free time.\"",
+    "options": [
+      "listen",
+      "listening",
+      "listened"
+    ],
+    "correctIndex": 1,
+    "explanation": "In this context, \"listening\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_2",
+    "area": "ingles",
+    "question": "Parte 7 (familia verb_gerund, caso 2) - Complete: \"She avoided ____ the question during the interview.\"",
+    "options": [
+      "answering",
+      "answered",
+      "answer"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"answering\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_3",
+    "area": "ingles",
+    "question": "Parte 7 (familia verb_gerund, caso 3) - Complete: \"We finished ____ the report yesterday.\"",
+    "options": [
+      "writing",
+      "wrote",
+      "write"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"writing\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_4",
+    "area": "ingles",
+    "question": "Parte 7 (familia verb_gerund, caso 4) - Complete: \"He keeps ____ the same mistake.\"",
+    "options": [
+      "makes",
+      "make",
+      "making"
+    ],
+    "correctIndex": 2,
+    "explanation": "In this context, \"making\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_5",
+    "area": "ingles",
+    "question": "Parte 7 (familia verb_gerund, caso 5) - Complete: \"They suggested ____ early to avoid traffic.\"",
+    "options": [
+      "leaving",
+      "leave",
+      "left"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"leaving\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_6",
+    "area": "ingles",
+    "question": "Parte 7 (familia verb_gerund, caso 6) - Complete: \"Do you mind ____ the window?\"",
+    "options": [
+      "opened",
+      "opening",
+      "open"
+    ],
+    "correctIndex": 1,
+    "explanation": "In this context, \"opening\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_7",
+    "area": "ingles",
+    "question": "Parte 7 (familia verb_gerund, caso 7) - Complete: \"My coach recommended ____ every morning.\"",
+    "options": [
+      "swam",
+      "swimming",
+      "swim"
+    ],
+    "correctIndex": 1,
+    "explanation": "In this context, \"swimming\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_8",
+    "area": "ingles",
+    "question": "Parte 7 (familia prepositions, caso 1) - Complete: \"The meeting is ____ Monday morning.\"",
+    "options": [
+      "in",
+      "at",
+      "on"
+    ],
+    "correctIndex": 2,
+    "explanation": "In this context, \"on\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_9",
+    "area": "ingles",
+    "question": "Parte 7 (familia prepositions, caso 2) - Complete: \"She is good ____ solving problems.\"",
+    "options": [
+      "at",
+      "on",
+      "in"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"at\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_10",
+    "area": "ingles",
+    "question": "Parte 7 (familia prepositions, caso 3) - Complete: \"The keys are ____ the drawer.\"",
+    "options": [
+      "on",
+      "to",
+      "in"
+    ],
+    "correctIndex": 2,
+    "explanation": "In this context, \"in\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_11",
+    "area": "ingles",
+    "question": "Parte 7 (familia prepositions, caso 4) - Complete: \"We arrived ____ the airport at noon.\"",
+    "options": [
+      "at",
+      "to",
+      "in"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"at\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_12",
+    "area": "ingles",
+    "question": "Parte 7 (familia prepositions, caso 5) - Complete: \"This gift is ____ my best friend.\"",
+    "options": [
+      "of",
+      "for",
+      "from"
+    ],
+    "correctIndex": 2,
+    "explanation": "In this context, \"from\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_13",
+    "area": "ingles",
+    "question": "Parte 7 (familia prepositions, caso 6) - Complete: \"The cat jumped ____ the table.\"",
+    "options": [
+      "onto",
+      "at",
+      "between"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"onto\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_14",
+    "area": "ingles",
+    "question": "Parte 7 (familia prepositions, caso 7) - Complete: \"They waited ____ the doctor for an hour.\"",
+    "options": [
+      "since",
+      "for",
+      "during"
+    ],
+    "correctIndex": 1,
+    "explanation": "In this context, \"for\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_15",
+    "area": "ingles",
+    "question": "Parte 7 (familia comparatives, caso 1) - Complete: \"This exercise is ____ than the last one.\"",
+    "options": [
+      "easiest",
+      "easier",
+      "more easy"
+    ],
+    "correctIndex": 1,
+    "explanation": "In this context, \"easier\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_16",
+    "area": "ingles",
+    "question": "Parte 7 (familia comparatives, caso 2) - Complete: \"Today feels ____ than yesterday.\"",
+    "options": [
+      "nicest",
+      "nicer",
+      "more nice"
+    ],
+    "correctIndex": 1,
+    "explanation": "In this context, \"nicer\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_17",
+    "area": "ingles",
+    "question": "Parte 7 (familia comparatives, caso 3) - Complete: \"Her explanation was ____ than his.\"",
+    "options": [
+      "clearer",
+      "clearest",
+      "more clear"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"clearer\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_18",
+    "area": "ingles",
+    "question": "Parte 7 (familia comparatives, caso 4) - Complete: \"The bus is ____ than walking? No, walking is slower.\"",
+    "options": [
+      "fastest",
+      "more fast",
+      "faster"
+    ],
+    "correctIndex": 2,
+    "explanation": "In this context, \"faster\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_19",
+    "area": "ingles",
+    "question": "Parte 7 (familia comparatives, caso 5) - Complete: \"This path is ____ than the highway.\"",
+    "options": [
+      "safer",
+      "more safe",
+      "safest"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"safer\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_20",
+    "area": "ingles",
+    "question": "Parte 7 (familia comparatives, caso 6) - Complete: \"My new phone is ____ than the old one.\"",
+    "options": [
+      "better",
+      "more good",
+      "gooder"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"better\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_21",
+    "area": "ingles",
+    "question": "Parte 7 (familia comparatives, caso 7) - Complete: \"The test was ____ than expected.\"",
+    "options": [
+      "hardest",
+      "harder",
+      "hard"
+    ],
+    "correctIndex": 1,
+    "explanation": "In this context, \"harder\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_22",
+    "area": "ingles",
+    "question": "Parte 7 (familia superlatives, caso 1) - Complete: \"That was ____ movie of the year.\"",
+    "options": [
+      "the better",
+      "the goodest",
+      "the best"
+    ],
+    "correctIndex": 2,
+    "explanation": "In this context, \"the best\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_23",
+    "area": "ingles",
+    "question": "Parte 7 (familia superlatives, caso 2) - Complete: \"She is ____ player on the team.\"",
+    "options": [
+      "the talentest",
+      "the most talented",
+      "more talented"
+    ],
+    "correctIndex": 1,
+    "explanation": "In this context, \"the most talented\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_24",
+    "area": "ingles",
+    "question": "Parte 7 (familia superlatives, caso 3) - Complete: \"This is ____ coffee in town.\"",
+    "options": [
+      "the baddest",
+      "the worst",
+      "the worse"
+    ],
+    "correctIndex": 1,
+    "explanation": "In this context, \"the worst\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_25",
+    "area": "ingles",
+    "question": "Parte 7 (familia superlatives, caso 4) - Complete: \"It was ____ day of my life.\"",
+    "options": [
+      "the happiest",
+      "the most happy",
+      "the happier"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"the happiest\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_26",
+    "area": "ingles",
+    "question": "Parte 7 (familia superlatives, caso 5) - Complete: \"He is ____ driver I know.\"",
+    "options": [
+      "the more careful",
+      "the most careful",
+      "the carefulest"
+    ],
+    "correctIndex": 1,
+    "explanation": "In this context, \"the most careful\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_27",
+    "area": "ingles",
+    "question": "Parte 7 (familia superlatives, caso 6) - Complete: \"That is ____ mountain in the range.\"",
+    "options": [
+      "the most high",
+      "the highest",
+      "the higher"
+    ],
+    "correctIndex": 1,
+    "explanation": "In this context, \"the highest\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_28",
+    "area": "ingles",
+    "question": "Parte 7 (familia superlatives, caso 7) - Complete: \"They chose ____ option available.\"",
+    "options": [
+      "the cheapest",
+      "the cheaper",
+      "the more cheap"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"the cheapest\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_29",
+    "area": "ingles",
+    "question": "Parte 7 (familia quantifiers, caso 1) - Complete: \"There are too ____ cars in this street.\"",
+    "options": [
+      "many",
+      "much",
+      "a lot"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"many\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_30",
+    "area": "ingles",
+    "question": "Parte 7 (familia quantifiers, caso 2) - Complete: \"How ____ sugar do you need?\"",
+    "options": [
+      "much",
+      "more",
+      "many"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"much\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_31",
+    "area": "ingles",
+    "question": "Parte 7 (familia quantifiers, caso 3) - Complete: \"There were ____ people at the concert.\"",
+    "options": [
+      "hundred of",
+      "hundreds",
+      "hundred"
+    ],
+    "correctIndex": 1,
+    "explanation": "In this context, \"hundreds\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_32",
+    "area": "ingles",
+    "question": "Parte 7 (familia quantifiers, caso 4) - Complete: \"I don't have ____ time for questions.\"",
+    "options": [
+      "many",
+      "enough",
+      "much"
+    ],
+    "correctIndex": 1,
+    "explanation": "In this context, \"enough\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_33",
+    "area": "ingles",
+    "question": "Parte 7 (familia quantifiers, caso 5) - Complete: \"How ____ books did you read?\"",
+    "options": [
+      "much",
+      "few",
+      "many"
+    ],
+    "correctIndex": 2,
+    "explanation": "In this context, \"many\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_34",
+    "area": "ingles",
+    "question": "Parte 7 (familia quantifiers, caso 6) - Complete: \"We have ____ information to decide.\"",
+    "options": [
+      "many",
+      "enough",
+      "a few of"
+    ],
+    "correctIndex": 1,
+    "explanation": "In this context, \"enough\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_35",
+    "area": "ingles",
+    "question": "Parte 7 (familia quantifiers, caso 7) - Complete: \"She has ____ friends in this city.\"",
+    "options": [
+      "much",
+      "a few",
+      "a little"
+    ],
+    "correctIndex": 1,
+    "explanation": "In this context, \"a few\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_36",
+    "area": "ingles",
+    "question": "Parte 7 (familia some_any, caso 1) - Complete: \"Would you like ____ help with that?\"",
+    "options": [
+      "some",
+      "any",
+      "many"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"some\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_37",
+    "area": "ingles",
+    "question": "Parte 7 (familia some_any, caso 2) - Complete: \"There isn't ____ milk left.\"",
+    "options": [
+      "some",
+      "any",
+      "no one"
+    ],
+    "correctIndex": 1,
+    "explanation": "In this context, \"any\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_38",
+    "area": "ingles",
+    "question": "Parte 7 (familia some_any, caso 3) - Complete: \"I saw ____ interesting at the market.\"",
+    "options": [
+      "anything",
+      "something",
+      "nothing"
+    ],
+    "correctIndex": 1,
+    "explanation": "In this context, \"something\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_39",
+    "area": "ingles",
+    "question": "Parte 7 (familia some_any, caso 4) - Complete: \"Do you have ____ questions?\"",
+    "options": [
+      "nothing",
+      "some",
+      "any"
+    ],
+    "correctIndex": 2,
+    "explanation": "In this context, \"any\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_40",
+    "area": "ingles",
+    "question": "Parte 7 (familia some_any, caso 5) - Complete: \"She bought ____ flowers for the table.\"",
+    "options": [
+      "any of",
+      "much",
+      "some"
+    ],
+    "correctIndex": 2,
+    "explanation": "In this context, \"some\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_41",
+    "area": "ingles",
+    "question": "Parte 7 (familia some_any, caso 6) - Complete: \"Is there ____ reason to worry?\"",
+    "options": [
+      "any",
+      "one",
+      "some"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"any\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_42",
+    "area": "ingles",
+    "question": "Parte 7 (familia some_any, caso 7) - Complete: \"They didn't find ____ evidence.\"",
+    "options": [
+      "some",
+      "any",
+      "everything"
+    ],
+    "correctIndex": 1,
+    "explanation": "In this context, \"any\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_43",
+    "area": "ingles",
+    "question": "Parte 7 (familia since_for, caso 1) - Complete: \"I have lived here ____ 2015.\"",
+    "options": [
+      "for",
+      "from",
+      "since"
+    ],
+    "correctIndex": 2,
+    "explanation": "In this context, \"since\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_44",
+    "area": "ingles",
+    "question": "Parte 7 (familia since_for, caso 2) - Complete: \"We have known each other ____ ten years.\"",
+    "options": [
+      "since",
+      "during",
+      "for"
+    ],
+    "correctIndex": 2,
+    "explanation": "In this context, \"for\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_45",
+    "area": "ingles",
+    "question": "Parte 7 (familia since_for, caso 3) - Complete: \"She has worked there ____ March.\"",
+    "options": [
+      "for",
+      "from",
+      "since"
+    ],
+    "correctIndex": 2,
+    "explanation": "In this context, \"since\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_46",
+    "area": "ingles",
+    "question": "Parte 7 (familia since_for, caso 4) - Complete: \"They have been married ____ two decades.\"",
+    "options": [
+      "since",
+      "during",
+      "for"
+    ],
+    "correctIndex": 2,
+    "explanation": "In this context, \"for\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_47",
+    "area": "ingles",
+    "question": "Parte 7 (familia since_for, caso 5) - Complete: \"He has studied ____ three hours.\"",
+    "options": [
+      "from",
+      "for",
+      "since"
+    ],
+    "correctIndex": 1,
+    "explanation": "In this context, \"for\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_48",
+    "area": "ingles",
+    "question": "Parte 7 (familia since_for, caso 6) - Complete: \"It has been open ____ 1990.\"",
+    "options": [
+      "since",
+      "for",
+      "during"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"since\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_49",
+    "area": "ingles",
+    "question": "Parte 7 (familia since_for, caso 7) - Complete: \"I haven't seen her ____ last week.\"",
+    "options": [
+      "since",
+      "at",
+      "for"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"since\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_50",
+    "area": "ingles",
+    "question": "Parte 7 (familia future, caso 1) - Complete: \"Look at those clouds! It ____ rain soon.\"",
+    "options": [
+      "is going to",
+      "would",
+      "will"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"is going to\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_51",
+    "area": "ingles",
+    "question": "Parte 7 (familia future, caso 2) - Complete: \"I ____ visit my grandmother this weekend, I already bought the tickets.\"",
+    "options": [
+      "am going to",
+      "will to",
+      "will going"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"am going to\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_52",
+    "area": "ingles",
+    "question": "Parte 7 (familia future, caso 3) - Complete: \"She thinks the team ____ win the final.\"",
+    "options": [
+      "goes to",
+      "is",
+      "will"
+    ],
+    "correctIndex": 2,
+    "explanation": "In this context, \"will\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_53",
+    "area": "ingles",
+    "question": "Parte 7 (familia future, caso 4) - Complete: \"We ____ announce the results tomorrow morning.\"",
+    "options": [
+      "are",
+      "will",
+      "was"
+    ],
+    "correctIndex": 1,
+    "explanation": "In this context, \"will\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_54",
+    "area": "ingles",
+    "question": "Parte 7 (familia future, caso 5) - Complete: \"Watch out! You ____ drop the tray.\"",
+    "options": [
+      "are going to",
+      "goes to",
+      "will going"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"are going to\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_55",
+    "area": "ingles",
+    "question": "Parte 7 (familia future, caso 6) - Complete: \"They ____ move to Lima in June.\"",
+    "options": [
+      "will have",
+      "was",
+      "are going to"
+    ],
+    "correctIndex": 2,
+    "explanation": "In this context, \"are going to\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_56",
+    "area": "ingles",
+    "question": "Parte 7 (familia future, caso 7) - Complete: \"I promise I ____ call you later.\"",
+    "options": [
+      "will",
+      "am going",
+      "would"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"will\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_57",
+    "area": "ingles",
+    "question": "Parte 7 (familia obligation, caso 1) - Complete: \"Students ____ wear the uniform every day.\"",
+    "options": [
+      "must to",
+      "must",
+      "may"
+    ],
+    "correctIndex": 1,
+    "explanation": "In this context, \"must\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_58",
+    "area": "ingles",
+    "question": "Parte 7 (familia obligation, caso 2) - Complete: \"You ____ see a doctor if the pain continues.\"",
+    "options": [
+      "should to",
+      "would",
+      "should"
+    ],
+    "correctIndex": 2,
+    "explanation": "In this context, \"should\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_59",
+    "area": "ingles",
+    "question": "Parte 7 (familia obligation, caso 3) - Complete: \"Visitors ____ register at the front desk.\"",
+    "options": [
+      "must",
+      "may be",
+      "musts"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"must\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_60",
+    "area": "ingles",
+    "question": "Parte 7 (familia obligation, caso 4) - Complete: \"I ____ finish this tonight, the deadline is tomorrow.\"",
+    "options": [
+      "has to",
+      "having to",
+      "have to"
+    ],
+    "correctIndex": 2,
+    "explanation": "In this context, \"have to\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_61",
+    "area": "ingles",
+    "question": "Parte 7 (familia obligation, caso 5) - Complete: \"Employees ____ not share their passwords.\"",
+    "options": [
+      "can",
+      "musts to",
+      "must"
+    ],
+    "correctIndex": 2,
+    "explanation": "In this context, \"must\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_62",
+    "area": "ingles",
+    "question": "Parte 7 (familia obligation, caso 6) - Complete: \"Passengers ____ fasten their seatbelts.\"",
+    "options": [
+      "musts",
+      "must",
+      "should to"
+    ],
+    "correctIndex": 1,
+    "explanation": "In this context, \"must\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_63",
+    "area": "ingles",
+    "question": "Parte 7 (familia obligation, caso 7) - Complete: \"We ____ respect the rules if we want to stay.\"",
+    "options": [
+      "must",
+      "may to",
+      "have"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"must\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_64",
+    "area": "ingles",
+    "question": "Parte 7 (familia its_theyre, caso 1) - Complete: \"____ car is the red one near the gate.\"",
+    "options": [
+      "They're",
+      "Their",
+      "There"
+    ],
+    "correctIndex": 1,
+    "explanation": "In this context, \"Their\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_65",
+    "area": "ingles",
+    "question": "Parte 7 (familia its_theyre, caso 2) - Complete: \"____ coming to the meeting later.\"",
+    "options": [
+      "Their",
+      "There",
+      "They're"
+    ],
+    "correctIndex": 2,
+    "explanation": "In this context, \"They're\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_66",
+    "area": "ingles",
+    "question": "Parte 7 (familia its_theyre, caso 3) - Complete: \"The dog wagged ____ tail happily.\"",
+    "options": [
+      "it's",
+      "its",
+      "their"
+    ],
+    "correctIndex": 1,
+    "explanation": "In this context, \"its\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_67",
+    "area": "ingles",
+    "question": "Parte 7 (familia its_theyre, caso 4) - Complete: \"____ going to be a great party.\"",
+    "options": [
+      "There is",
+      "Its",
+      "It's"
+    ],
+    "correctIndex": 2,
+    "explanation": "In this context, \"It's\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_68",
+    "area": "ingles",
+    "question": "Parte 7 (familia its_theyre, caso 5) - Complete: \"The team finished ____ training early.\"",
+    "options": [
+      "their",
+      "its",
+      "they're"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"their\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_69",
+    "area": "ingles",
+    "question": "Parte 7 (familia its_theyre, caso 6) - Complete: \"____ are three reasons to celebrate.\"",
+    "options": [
+      "There",
+      "Their",
+      "They're"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"There\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_70",
+    "area": "ingles",
+    "question": "Parte 7 (familia its_theyre, caso 7) - Complete: \"Every country has ____ own traditions.\"",
+    "options": [
+      "it's",
+      "their",
+      "its"
+    ],
+    "correctIndex": 2,
+    "explanation": "In this context, \"its\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_71",
+    "area": "ingles",
+    "question": "Parte 7 (familia borrow_lend, caso 1) - Complete: \"Can you ____ me your pen for a second?\"",
+    "options": [
+      "loan to",
+      "borrow",
+      "lend"
+    ],
+    "correctIndex": 2,
+    "explanation": "In this context, \"lend\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_72",
+    "area": "ingles",
+    "question": "Parte 7 (familia borrow_lend, caso 2) - Complete: \"The library lets you ____ books for two weeks.\"",
+    "options": [
+      "lend",
+      "rent",
+      "borrow"
+    ],
+    "correctIndex": 2,
+    "explanation": "In this context, \"borrow\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_73",
+    "area": "ingles",
+    "question": "Parte 7 (familia borrow_lend, caso 3) - Complete: \"I need to ____ some money from the bank.\"",
+    "options": [
+      "borrow",
+      "lent",
+      "lend"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"borrow\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_74",
+    "area": "ingles",
+    "question": "Parte 7 (familia borrow_lend, caso 4) - Complete: \"She ____ her notes to everyone before the exam.\"",
+    "options": [
+      "borrows",
+      "lends",
+      "lent"
+    ],
+    "correctIndex": 1,
+    "explanation": "In this context, \"lends\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_75",
+    "area": "ingles",
+    "question": "Parte 7 (familia borrow_lend, caso 5) - Complete: \"Banks ____ money with interest.\"",
+    "options": [
+      "lending",
+      "lend",
+      "borrow"
+    ],
+    "correctIndex": 1,
+    "explanation": "In this context, \"lend\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_76",
+    "area": "ingles",
+    "question": "Parte 7 (familia borrow_lend, caso 6) - Complete: \"He never returns what I ____ him.\"",
+    "options": [
+      "borrowed",
+      "borrow",
+      "lent"
+    ],
+    "correctIndex": 2,
+    "explanation": "In this context, \"lent\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_77",
+    "area": "ingles",
+    "question": "Parte 7 (familia borrow_lend, caso 7) - Complete: \"Could I ____ your umbrella until tomorrow?\"",
+    "options": [
+      "borrow",
+      "lend",
+      "lending"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"borrow\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_78",
+    "area": "ingles",
+    "question": "Parte 7 (familia say_tell, caso 1) - Complete: \"Can you ____ me the truth?\"",
+    "options": [
+      "say to",
+      "tell",
+      "say"
+    ],
+    "correctIndex": 1,
+    "explanation": "In this context, \"tell\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_79",
+    "area": "ingles",
+    "question": "Parte 7 (familia say_tell, caso 2) - Complete: \"She ____ that she was tired.\"",
+    "options": [
+      "said",
+      "telled",
+      "told"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"said\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_80",
+    "area": "ingles",
+    "question": "Parte 7 (familia say_tell, caso 3) - Complete: \"He never ____ jokes at work.\"",
+    "options": [
+      "says",
+      "telled",
+      "tells"
+    ],
+    "correctIndex": 2,
+    "explanation": "In this context, \"tells\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_81",
+    "area": "ingles",
+    "question": "Parte 7 (familia say_tell, caso 4) - Complete: \"They ____ the police everything they saw.\"",
+    "options": [
+      "telled",
+      "said",
+      "told"
+    ],
+    "correctIndex": 2,
+    "explanation": "In this context, \"told\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_82",
+    "area": "ingles",
+    "question": "Parte 7 (familia say_tell, caso 5) - Complete: \"My grandmother used to ____ stories about the village.\"",
+    "options": [
+      "say",
+      "tell",
+      "told"
+    ],
+    "correctIndex": 1,
+    "explanation": "In this context, \"tell\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_83",
+    "area": "ingles",
+    "question": "Parte 7 (familia say_tell, caso 6) - Complete: \"The sign ____ no parking.\"",
+    "options": [
+      "say",
+      "tells",
+      "says"
+    ],
+    "correctIndex": 2,
+    "explanation": "In this context, \"says\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_84",
+    "area": "ingles",
+    "question": "Parte 7 (familia say_tell, caso 7) - Complete: \"Did you ____ him about the meeting?\"",
+    "options": [
+      "tell",
+      "telled",
+      "say"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"tell\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_85",
+    "area": "ingles",
+    "question": "Parte 7 (familia make_do, caso 1) - Complete: \"I need to ____ a decision today.\"",
+    "options": [
+      "made",
+      "make",
+      "do"
+    ],
+    "correctIndex": 1,
+    "explanation": "In this context, \"make\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_86",
+    "area": "ingles",
+    "question": "Parte 7 (familia make_do, caso 2) - Complete: \"Can you ____ me a favor?\"",
+    "options": [
+      "does",
+      "make",
+      "do"
+    ],
+    "correctIndex": 2,
+    "explanation": "In this context, \"do\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_87",
+    "area": "ingles",
+    "question": "Parte 7 (familia make_do, caso 3) - Complete: \"She ____ her homework every afternoon.\"",
+    "options": [
+      "do",
+      "does",
+      "makes"
+    ],
+    "correctIndex": 1,
+    "explanation": "In this context, \"does\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_88",
+    "area": "ingles",
+    "question": "Parte 7 (familia make_do, caso 4) - Complete: \"They ____ a lot of noise at night.\"",
+    "options": [
+      "made",
+      "do",
+      "make"
+    ],
+    "correctIndex": 2,
+    "explanation": "In this context, \"make\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_89",
+    "area": "ingles",
+    "question": "Parte 7 (familia make_do, caso 5) - Complete: \"He ____ the dishes after dinner.\"",
+    "options": [
+      "making",
+      "do",
+      "does"
+    ],
+    "correctIndex": 2,
+    "explanation": "In this context, \"does\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_90",
+    "area": "ingles",
+    "question": "Parte 7 (familia make_do, caso 6) - Complete: \"We should ____ plans for the weekend.\"",
+    "options": [
+      "making",
+      "make",
+      "do"
+    ],
+    "correctIndex": 1,
+    "explanation": "In this context, \"make\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_91",
+    "area": "ingles",
+    "question": "Parte 7 (familia make_do, caso 7) - Complete: \"The company ____ business in five countries.\"",
+    "options": [
+      "does",
+      "do",
+      "doing"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"does\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_92",
+    "area": "ingles",
+    "question": "Parte 7 (familia ed_ing, caso 1) - Complete: \"The movie was so ____ that I fell asleep.\"",
+    "options": [
+      "boring",
+      "bore",
+      "bored"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"boring\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_93",
+    "area": "ingles",
+    "question": "Parte 7 (familia ed_ing, caso 2) - Complete: \"The news was ____.\"",
+    "options": [
+      "shock",
+      "shocking",
+      "shocked"
+    ],
+    "correctIndex": 1,
+    "explanation": "In this context, \"shocking\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_94",
+    "area": "ingles",
+    "question": "Parte 7 (familia ed_ing, caso 3) - Complete: \"I am ____ in ancient history.\"",
+    "options": [
+      "interesting",
+      "interest",
+      "interested"
+    ],
+    "correctIndex": 2,
+    "explanation": "In this context, \"interested\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_95",
+    "area": "ingles",
+    "question": "Parte 7 (familia ed_ing, caso 4) - Complete: \"The trip was ____, we loved it.\"",
+    "options": [
+      "excited",
+      "exciting",
+      "excite"
+    ],
+    "correctIndex": 1,
+    "explanation": "In this context, \"exciting\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_96",
+    "area": "ingles",
+    "question": "Parte 7 (familia ed_ing, caso 5) - Complete: \"Her words were ____.\"",
+    "options": [
+      "encouraging",
+      "encourage",
+      "encouraged"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"encouraging\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_97",
+    "area": "ingles",
+    "question": "Parte 7 (familia ed_ing, caso 6) - Complete: \"He felt ____ after the interview.\"",
+    "options": [
+      "nervousness",
+      "nervous",
+      "nervously"
+    ],
+    "correctIndex": 1,
+    "explanation": "In this context, \"nervous\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_98",
+    "area": "ingles",
+    "question": "Parte 7 (familia ed_ing, caso 7) - Complete: \"The game is ____ for the whole family.\"",
+    "options": [
+      "entertainment",
+      "entertained",
+      "entertaining"
+    ],
+    "correctIndex": 2,
+    "explanation": "In this context, \"entertaining\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_99",
+    "area": "ingles",
+    "question": "Parte 7 (familia so_such, caso 1) - Complete: \"It was ____ a good movie that I saw it twice.\"",
+    "options": [
+      "so",
+      "such",
+      "very"
+    ],
+    "correctIndex": 1,
+    "explanation": "In this context, \"such\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_100",
+    "area": "ingles",
+    "question": "Parte 7 (familia so_such, caso 2) - Complete: \"The box was ____ heavy that I dropped it.\"",
+    "options": [
+      "too",
+      "so",
+      "such"
+    ],
+    "correctIndex": 1,
+    "explanation": "In this context, \"so\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_101",
+    "area": "ingles",
+    "question": "Parte 7 (familia so_such, caso 3) - Complete: \"They are ____ kind people.\"",
+    "options": [
+      "such",
+      "so",
+      "too"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"such\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_102",
+    "area": "ingles",
+    "question": "Parte 7 (familia so_such, caso 4) - Complete: \"She speaks ____ fast that I get lost.\"",
+    "options": [
+      "too",
+      "such",
+      "so"
+    ],
+    "correctIndex": 2,
+    "explanation": "In this context, \"so\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_103",
+    "area": "ingles",
+    "question": "Parte 7 (familia so_such, caso 5) - Complete: \"It was ____ an amazing trip.\"",
+    "options": [
+      "very",
+      "so",
+      "such"
+    ],
+    "correctIndex": 2,
+    "explanation": "In this context, \"such\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_104",
+    "area": "ingles",
+    "question": "Parte 7 (familia so_such, caso 6) - Complete: \"There was ____ much traffic that we arrived late.\"",
+    "options": [
+      "so",
+      "such",
+      "much"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"so\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_105",
+    "area": "ingles",
+    "question": "Parte 7 (familia so_such, caso 7) - Complete: \"He is ____ a funny guy.\"",
+    "options": [
+      "such",
+      "so",
+      "too"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"such\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_106",
+    "area": "ingles",
+    "question": "Parte 7 (familia too_enough, caso 1) - Complete: \"This coffee is ____ hot to drink.\"",
+    "options": [
+      "enough",
+      "very",
+      "too"
+    ],
+    "correctIndex": 2,
+    "explanation": "In this context, \"too\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_107",
+    "area": "ingles",
+    "question": "Parte 7 (familia too_enough, caso 2) - Complete: \"She is old ____ to drive alone.\"",
+    "options": [
+      "too",
+      "enough",
+      "very"
+    ],
+    "correctIndex": 1,
+    "explanation": "In this context, \"enough\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_108",
+    "area": "ingles",
+    "question": "Parte 7 (familia too_enough, caso 3) - Complete: \"We don't have ____ chairs for everyone.\"",
+    "options": [
+      "too",
+      "much",
+      "enough"
+    ],
+    "correctIndex": 2,
+    "explanation": "In this context, \"enough\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_109",
+    "area": "ingles",
+    "question": "Parte 7 (familia too_enough, caso 4) - Complete: \"The box is ____ small for all the books.\"",
+    "options": [
+      "too",
+      "enough",
+      "very"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"too\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_110",
+    "area": "ingles",
+    "question": "Parte 7 (familia too_enough, caso 5) - Complete: \"He is tall ____ to play basketball.\"",
+    "options": [
+      "too",
+      "enough",
+      "much"
+    ],
+    "correctIndex": 1,
+    "explanation": "In this context, \"enough\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_111",
+    "area": "ingles",
+    "question": "Parte 7 (familia too_enough, caso 6) - Complete: \"There isn't ____ time to explain.\"",
+    "options": [
+      "too",
+      "many",
+      "enough"
+    ],
+    "correctIndex": 2,
+    "explanation": "In this context, \"enough\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_112",
+    "area": "ingles",
+    "question": "Parte 7 (familia too_enough, caso 7) - Complete: \"The soup is not ____ for me.\"",
+    "options": [
+      "hot enough",
+      "hotter",
+      "too hot"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"hot enough\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_113",
+    "area": "ingles",
+    "question": "Parte 7 (familia articles, caso 1) - Complete: \"She is ____ engineer from Bogota.\"",
+    "options": [
+      "an",
+      "and",
+      "a"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"an\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_114",
+    "area": "ingles",
+    "question": "Parte 7 (familia articles, caso 2) - Complete: \"He bought ____ uniform for school.\"",
+    "options": [
+      "the",
+      "an",
+      "a"
+    ],
+    "correctIndex": 2,
+    "explanation": "In this context, \"a\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_115",
+    "area": "ingles",
+    "question": "Parte 7 (familia articles, caso 3) - Complete: \"That is ____ honest answer.\"",
+    "options": [
+      "an",
+      "the",
+      "a"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"an\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_116",
+    "area": "ingles",
+    "question": "Parte 7 (familia articles, caso 4) - Complete: \"We saw ____ eagle near the lake.\"",
+    "options": [
+      "and",
+      "a",
+      "an"
+    ],
+    "correctIndex": 2,
+    "explanation": "In this context, \"an\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_117",
+    "area": "ingles",
+    "question": "Parte 7 (familia articles, caso 5) - Complete: \"It was ____ unique experience.\"",
+    "options": [
+      "the",
+      "an",
+      "a"
+    ],
+    "correctIndex": 2,
+    "explanation": "In this context, \"a\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_118",
+    "area": "ingles",
+    "question": "Parte 7 (familia articles, caso 6) - Complete: \"They live in ____ old house.\"",
+    "options": [
+      "and",
+      "a",
+      "an"
+    ],
+    "correctIndex": 2,
+    "explanation": "In this context, \"an\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_119",
+    "area": "ingles",
+    "question": "Parte 7 (familia articles, caso 7) - Complete: \"I need ____ hour to finish.\"",
+    "options": [
+      "and",
+      "an",
+      "a"
+    ],
+    "correctIndex": 1,
+    "explanation": "In this context, \"an\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_120",
+    "area": "ingles",
+    "question": "Parte 7 (familia irregular_past, caso 1) - Complete: \"Yesterday she ____ home early.\"",
+    "options": [
+      "goed",
+      "went",
+      "gone"
+    ],
+    "correctIndex": 1,
+    "explanation": "In this context, \"went\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_121",
+    "area": "ingles",
+    "question": "Parte 7 (familia irregular_past, caso 2) - Complete: \"The children ____ in the park all afternoon.\"",
+    "options": [
+      "played",
+      "play",
+      "playing"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"played\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_122",
+    "area": "ingles",
+    "question": "Parte 7 (familia irregular_past, caso 3) - Complete: \"He ____ his keys on the table.\"",
+    "options": [
+      "left",
+      "leaved",
+      "leave"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"left\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_123",
+    "area": "ingles",
+    "question": "Parte 7 (familia irregular_past, caso 4) - Complete: \"We ____ the museum on Sunday.\"",
+    "options": [
+      "visited",
+      "visit",
+      "visiting"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"visited\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_124",
+    "area": "ingles",
+    "question": "Parte 7 (familia irregular_past, caso 5) - Complete: \"They ____ dinner at eight.\"",
+    "options": [
+      "had",
+      "has",
+      "haved"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"had\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_125",
+    "area": "ingles",
+    "question": "Parte 7 (familia irregular_past, caso 6) - Complete: \"I ____ that movie last week.\"",
+    "options": [
+      "saw",
+      "see",
+      "seed"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"saw\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_126",
+    "area": "ingles",
+    "question": "Parte 7 (familia irregular_past, caso 7) - Complete: \"The dog ____ the ball and ran away.\"",
+    "options": [
+      "taken",
+      "took",
+      "taked"
+    ],
+    "correctIndex": 1,
+    "explanation": "In this context, \"took\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_127",
+    "area": "ingles",
+    "question": "Parte 7 (familia question_words, caso 1) - Complete: \"____ did you go last night? To the cinema.\"",
+    "options": [
+      "Who",
+      "Where",
+      "When"
+    ],
+    "correctIndex": 1,
+    "explanation": "In this context, \"Where\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_128",
+    "area": "ingles",
+    "question": "Parte 7 (familia question_words, caso 2) - Complete: \"____ many people attended the meeting?\"",
+    "options": [
+      "How",
+      "Which",
+      "What"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"How\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_129",
+    "area": "ingles",
+    "question": "Parte 7 (familia question_words, caso 3) - Complete: \"____ is calling me at this hour?\"",
+    "options": [
+      "How",
+      "Who",
+      "Whose"
+    ],
+    "correctIndex": 1,
+    "explanation": "In this context, \"Who\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_130",
+    "area": "ingles",
+    "question": "Parte 7 (familia question_words, caso 4) - Complete: \"____ did the concert start? At eight.\"",
+    "options": [
+      "When",
+      "Where",
+      "What"
+    ],
+    "correctIndex": 0,
+    "explanation": "In this context, \"When\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_131",
+    "area": "ingles",
+    "question": "Parte 7 (familia question_words, caso 5) - Complete: \"____ book is this? It's Sara's.\"",
+    "options": [
+      "Who's",
+      "Which",
+      "Whose"
+    ],
+    "correctIndex": 2,
+    "explanation": "In this context, \"Whose\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_132",
+    "area": "ingles",
+    "question": "Parte 7 (familia question_words, caso 6) - Complete: \"____ much does the repair cost?\"",
+    "options": [
+      "What",
+      "How",
+      "Which"
+    ],
+    "correctIndex": 1,
+    "explanation": "In this context, \"How\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
+  },
+  {
+    "id": "gx37_parte_7___gramatical_y_lexical_133",
+    "area": "ingles",
+    "question": "Parte 7 (familia question_words, caso 7) - Complete: \"____ did you choose this design? Because it was cheaper.\"",
+    "options": [
+      "How",
+      "When",
+      "Why"
+    ],
+    "correctIndex": 2,
+    "explanation": "In this context, \"Why\" is the correct choice.",
+    "difficulty": 2,
+    "subcompetencia": "Parte 7 - Gramatical y lexical",
+    "competencia_icfes": "Parte 7 - Gramatical y lexical",
+    "source": "gen_audit_2026-09"
   }
 ]
