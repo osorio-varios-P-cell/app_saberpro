@@ -525,8 +525,9 @@ const App = (() => {
   function startPractice(areaId){
     switchTab('practica');
     const pool=state.questions.filter(q=>q.area===areaId);if(!pool.length){toast('No hay preguntas en esta area');return;}
-    const shuffled=[...pool].sort(()=>Math.random()-0.5);
-    state.practice={area:areaId,questions:shuffled.slice(0,Math.min(CONFIG.SESSION_SIZE,shuffled.length)),index:0,answers:[],selected:null,xp:0};
+    const nSes=Math.min(CONFIG.SESSION_SIZE,pool.length);
+    const questions=sampleArea(areaId,nSes);
+    state.practice={area:areaId,questions:questions,index:0,answers:[],selected:null,xp:0};
     document.getElementById('practica-area-view').style.display='none';document.getElementById('practica-q-view').style.display='block';
     const area=AREAS.find(a=>a.id===areaId);document.getElementById('pq-area-name').textContent=area.name;document.getElementById('pq-area-icon').textContent=area.icon;
     renderPQuestion();
@@ -599,9 +600,9 @@ const App = (() => {
   }
 
   function diagnoticoRapido(){
-    const pool=[];AREAS.forEach(a=>{const aq=state.questions.filter(q=>q.area===a.id),s=[...aq].sort(()=>Math.random()-0.5);pool.push(...s.slice(0,3));});
-    const shuffled=[...pool].sort(()=>Math.random()-0.5);
-    state.practice={area:'diagnostic',questions:shuffled,index:0,answers:[],selected:null,xp:0};
+    const areaB=AREAS.map(a=>({match:q=>q.area===a.id,share:OFFICIAL_SHARES[a.id]}));
+    const questions=sampleWeighted(state.questions,15,areaB);
+    state.practice={area:'diagnostic',questions:questions,index:0,answers:[],selected:null,xp:0};
     document.getElementById('practica-area-view').style.display='none';document.getElementById('practica-q-view').style.display='block';
     document.getElementById('pq-area-name').textContent='Diagnostico Rapido';document.getElementById('pq-area-icon').textContent='🎯';
     renderPQuestion();
@@ -613,9 +614,53 @@ const App = (() => {
     document.getElementById('sim-history').innerHTML=sims.length===0?'<p style="color:var(--text3);text-align:center;padding:20px">Aun no has hecho simulacros</p>':sims.slice(-5).reverse().map(s=>`<div style="display:flex;justify-content:space-between;padding:10px;background:var(--card);border:1px solid var(--border);border-radius:10px;margin-bottom:6px;font-size:12px"><span>${s.date}</span><span style="color:var(--coral);font-weight:700">${Math.round(s.score)} pts</span><span style="color:var(--text3)">${s.correct}/${s.totalQuestions}</span></div>`).join('');
   }
 
+  // ═══ MUESTREO PONDERADO CON PROPORCIONES OFICIALES ICFES 2026 ═══
+  function normK(v){return String(v||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');}
+  const OFFICIAL_SHARES={matematicas:.1969,lectura:.1614,ciencias:.2283,sociales:.1969,ingles:.2165};
+  const COMP_RULES={
+    matematicas:[{m:['interpretacion'],s:.34},{m:['formulacion'],s:.43},{m:['argumentacion'],s:.23}],
+    lectura:[{m:['locales','explicita'],s:.25},{m:['global','interpretacion'],s:.42},{m:['reflexionar'],s:.33}],
+    ciencias:[{m:['explicacion','representacion'],s:.30},{m:['indagacion','formulacion'],s:.40},{m:['uso comprensivo'],s:.30}],
+    sociales:[{m:['pensamiento social'],s:.30},{m:['analisis de perspectivas','representacion'],s:.40},{m:['pensamiento reflexivo'],s:.30}],
+    ingles:[{m:['parte 1','conocimiento lexical'],s:.11},{m:['parte 2','pragmatico'],s:.11},{m:['parte 3','comunicativo'],s:.11},{m:['parte 4'],s:.18},{m:['parte 5','comprension literal'],s:.16},{m:['parte 6','inferencial'],s:.11},{m:['parte 7','gramatico-lexical'],s:.22}]
+  };
+  function matchRule(q,rule){
+    const c=normK(q.competencia_icfes),s=normK(q.subcompetencia);
+    return rule.m.some(m=>c.indexOf(m)>-1||s.indexOf(m)>-1);
+  }
+  function sampleWeighted(pool,n,buckets){
+    const groups=buckets.map(b=>({qs:pool.filter(b.match),share:b.share,target:0}));
+    const tsum=groups.reduce((t,g)=>t+g.share,0)||1;
+    groups.forEach(g=>g.share=g.share/tsum);
+    groups.forEach(g=>g.target=Math.min(g.qs.length,Math.floor(n*g.share+0.5)));
+    let guard=0;
+    while(groups.reduce((t,g)=>t+g.target,0)<n&&guard<200){
+      guard++;
+      let best=null,bestDef=-1e9;
+      groups.forEach(g=>{
+        if(g.target<g.qs.length){const def=g.share*n-g.target;if(def>bestDef){bestDef=def;best=g;}}
+      });
+      if(!best)break;
+      best.target++;
+    }
+    const picked=[];
+    groups.forEach(g=>{const s=[...g.qs].sort(()=>Math.random()-0.5);picked.push(...s.slice(0,g.target));});
+    if(picked.length<n){
+      const used=new Set(picked);
+      const rest=[...pool].filter(q=>!used.has(q)).sort(()=>Math.random()-0.5);
+      picked.push(...rest.slice(0,n-picked.length));
+    }
+    return [...picked].sort(()=>Math.random()-0.5);
+  }
+  function sampleArea(areaId,n){
+    const aq=state.questions.filter(q=>q.area===areaId);
+    if(!aq.length)return[];
+    const rules=(COMP_RULES[areaId]||[]).map(r=>({match:q=>matchRule(q,r),share:r.s}));
+    return rules.length?sampleWeighted(aq,n,rules):[...aq].sort(()=>Math.random()-0.5).slice(0,n);
+  }
   function startSimulacro(qCount,simTime){
     qCount=qCount||CONFIG.SIM_SIZE;simTime=simTime||CONFIG.SIM_TIME;
-    const pool=[];AREAS.forEach(a=>{const aq=state.questions.filter(q=>q.area===a.id),per=Math.ceil(qCount/AREAS.length),s=[...aq].sort(()=>Math.random()-0.5);pool.push(...s.slice(0,per));});
+    const pool=[];AREAS.forEach(a=>{pool.push(...sampleArea(a.id,Math.round(qCount*OFFICIAL_SHARES[a.id])));});
     state.simulacro={questions:[...pool].sort(()=>Math.random()-0.5).slice(0,qCount),index:0,answers:[],selected:null,xp:0,timer:null,timeLeft:simTime};
     document.getElementById('sim-home-view').style.display='none';document.getElementById('sim-q-view').style.display='block';
     document.getElementById('timer-wrap').style.display='flex';startTimer();
