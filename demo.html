@@ -116,16 +116,16 @@
   <div class="welcome">
     <div class="logo-animate">S</div>
     <h1>Saber<span class="highlight">Pro</span> Demo</h1>
-    <p class="subtitle">5,011 preguntas ICFES • 5 áreas • Gamificación completa</p>
+    <p class="subtitle">10,189 preguntas ICFES • 5 áreas • Formatos ICFES reales</p>
     
     <div class="stats-preview">
-      <div class="stat-box"><div class="stat-num">5,011</div><div class="stat-label">Preguntas</div></div>
+      <div class="stat-box"><div class="stat-num">10,189</div><div class="stat-label">Preguntas</div></div>
       <div class="stat-box"><div class="stat-num">5</div><div class="stat-label">Áreas</div></div>
       <div class="stat-box"><div class="stat-num">11</div><div class="stat-label">Temas</div></div>
     </div>
 
     <p style="font-size:12px;color:var(--text3);margin:16px 0;line-height:1.5">
-      🔓 <strong style="color:var(--gold)">15 preguntas gratuitas</strong> (3 por área)<br>
+      🔓 <strong style="color:var(--gold)">16 preguntas reales gratuitas</strong> (3 por área)<br>
       ⏱️ Experiencia completa sin límite de tiempo<br>
       🏆 XP y niveles simulados<br>
       🔒 <strong>Contenido premium bloqueado</strong> al terminar el demo
@@ -175,14 +175,14 @@
     <div class="upgrade-icon">🔓</div>
     <h2>¡Demo Completado!</h2>
     <p class="msg">
-      Has respondido <strong style="color:var(--gold)">15 preguntas</strong> de 5,011.<br>
+      Has respondido <strong style="color:var(--gold)">16 preguntas reales</strong> de 10,189.<br>
       Acumulaste <strong style="color:var(--green)" id="final-xp">0 XP</strong> (se pierde al cerrar).
     </p>
 
     <div class="what-you-get">
       <p style="font-weight:700;margin-bottom:8px;color:var(--text)">Con SaberPro Premium obtienes:</p>
       <ul>
-        <li>✅ Acceso ilimitado a <strong>5,011 preguntas</strong></li>
+        <li>✅ Acceso ilimitado a <strong>10,189 preguntas</strong></li>
         <li>✅ Simulacros cronometrados de <strong>2 horas</strong></li>
         <li>✅ Sistema de <strong>XP, niveles y 15 insignias</strong></li>
         <li>✅ <strong>Rachas diarias</strong> y calendario de estudio</li>
@@ -303,7 +303,7 @@ function renderAreas() {
     const total = Math.min(questions.length, state.areaLimit);
     const done = answered >= total;
     const cls = done ? 'area-btn done' : 'area-btn';
-    const prog = done ? '✅ Completo' : `${answered}/${total} usadas`;
+    const prog = done ? '✅ Completada' : `${questions.length} preguntas con formato ICFES — toca para empezar →`;
     return `<button class="${cls}" onclick="selectArea('${a}')">
       <div>${AREA_NAMES[a]}</div>
       <div class="prog">${prog}</div>
@@ -327,8 +327,7 @@ function selectArea(area) {
 function renderQuestion() {
   const q = state.currentQ;
   document.getElementById('q-card').style.display = 'block';
-  document.getElementById('q-area').textContent = AREA_NAMES[q.area];
-  document.getElementById('q-mode-tag').textContent = q.mode || '';
+  document.getElementById('q-area').textContent = AREA_NAMES[q.area] + '  ·  ' + (q.mode || '');
   document.getElementById('q-text').innerHTML = mdToHTML(q.question);
   document.getElementById('q-options').innerHTML = q.options.map((o,i) =>
     `<button class="q-option" onclick="answer(${i})" id="opt-${i}"><span class="opt-letter">${String.fromCharCode(65+i)})</span><span class="opt-body">${mdToHTML(o)}</span></button>`
@@ -380,7 +379,7 @@ function nextQuestion() {
 }
 
 function updateProgress() {
-  const total = 15;
+  const total = DEMO_QUESTIONS.length;
   const done = state.totalAnswered;
   document.getElementById('q-current').textContent = done + 1;
   document.getElementById('q-total').textContent = total;
