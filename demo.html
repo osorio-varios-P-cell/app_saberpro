@@ -54,6 +54,11 @@
   .q-option.correct{background:rgba(0,200,150,0.15);border-color:var(--green);color:var(--green)}
   .q-option.wrong{background:rgba(255,45,85,0.15);border-color:#FF2D55;color:#FF2D55}
   .q-option:disabled{cursor:not-allowed}
+  @keyframes dpulse{0%{transform:scale(1)}40%{transform:scale(1.035)}100%{transform:scale(1)}}
+  @keyframes dshake{0%,100%{transform:translateX(0)}18%{transform:translateX(-7px)}36%{transform:translateX(6px)}54%{transform:translateX(-4px)}72%{transform:translateX(3px)}}
+  .q-option.correct{animation:dpulse .45s ease}
+  .q-option.wrong{animation:dshake .45s ease}
+
   .q-feedback{font-size:13px;padding:8px 0;display:none}
   .q-feedback.show{display:block}
   .q-next{display:none;width:100%;padding:12px;border:1px solid var(--gold);border-radius:12px;background:rgba(255,184,48,0.1);color:var(--gold);font-weight:700;cursor:pointer;font-size:14px;margin-top:8px}
@@ -338,13 +343,27 @@ function renderQuestion() {
   updateProgress();
 }
 
+let _ac=null;
+function sfx(t){
+  try{
+    _ac=_ac||new (window.AudioContext||window.webkitAudioContext)();
+    const o=_ac.createOscillator(),g=_ac.createGain();o.connect(g);g.connect(_ac.destination);
+    const n=_ac.currentTime;
+    if(t==='correct'){o.frequency.setValueAtTime(523,n);o.frequency.setValueAtTime(784,n+0.09);g.gain.setValueAtTime(0.08,n);g.gain.exponentialRampToValueAtTime(0.001,n+0.25);o.start(n);o.stop(n+0.25);}
+    else if(t==='wrong'){o.type='sawtooth';o.frequency.setValueAtTime(196,n);o.frequency.exponentialRampToValueAtTime(110,n+0.2);g.gain.setValueAtTime(0.07,n);g.gain.exponentialRampToValueAtTime(0.001,n+0.25);o.start(n);o.stop(n+0.25);}
+    else{o.frequency.setValueAtTime(523,n);o.frequency.setValueAtTime(659,n+0.08);o.frequency.setValueAtTime(784,n+0.16);o.frequency.setValueAtTime(1046,n+0.24);g.gain.setValueAtTime(0.06,n);g.gain.exponentialRampToValueAtTime(0.001,n+0.5);o.start(n);o.stop(n+0.5);}
+  }catch(e){}
+}
 function answer(idx) {
   const q = state.currentQ;
   const isCorrect = idx === q.correctIndex;
+  sfx(isCorrect ? 'correct' : 'wrong');
 
   // Highlight correct/wrong
   document.querySelectorAll('.q-option').forEach(b => b.disabled = true);
   document.getElementById('opt-' + q.correctIndex).classList.add('correct');
+  document.getElementById('opt-' + q.correctIndex).style.animation = 'dpulse .45s ease';
+  if (!isCorrect) document.getElementById('opt-' + idx).style.animation = 'dshake .45s ease';
   if (!isCorrect) document.getElementById('opt-' + idx).classList.add('wrong');
 
   // Show feedback
@@ -354,7 +373,7 @@ function answer(idx) {
   fb.classList.add('show');
 
   // XP (demo XP is shown but lost on exit)
-  if (isCorrect) { state.xp += 10; document.getElementById('xp-display').textContent = '⭐ ' + state.xp + ' XP (demo)'; }
+  if (isCorrect) { const gain = q.difficulty === 3 ? 15 : q.difficulty === 2 ? 10 : 8; state.xp += gain; document.getElementById('xp-display').textContent = '⭐ ' + state.xp + ' XP (demo) · +' + gain; }
 
   q._answered = true;
   state.totalAnswered++;

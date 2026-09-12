@@ -20,7 +20,7 @@ const App = (() => {
   const CONFIG = {
     VERSION: '2.1.0',
     UPDATE_URL: 'http://TU_IP:8001/updates/update.json',
-    XP_CORRECT:10, XP_WRONG:0, XP_SESSION:50, XP_SIMULACRO:200,
+    XP_EASY:8, XP_MED:10, XP_HARD:15, XP_CORRECT:10, XP_WRONG:0, XP_SESSION:50, XP_SIMULACRO:200, XP_STREAK_BONUS:10, XP_STREAK_CAP:50,
     XP_LEVEL:500, SESSION_SIZE:10, SIM_SIZE:20, SIM_TIME:7200
   };
 
@@ -479,7 +479,9 @@ const App = (() => {
     document.body.appendChild(f);setTimeout(()=>f.remove(),1200);
   }
 
-  function addXP(amount){
+  function xpGain(q,correct){if(!correct)return CONFIG.XP_WRONG;const base=q.difficulty===3?CONFIG.XP_HARD:q.difficulty===2?CONFIG.XP_MED:CONFIG.XP_EASY;const st=(state.progress&&state.progress.streak)||0;const mult=1+Math.min(st*CONFIG.XP_STREAK_BONUS,CONFIG.XP_STREAK_CAP)/100;return Math.round(base*mult);}
+    function levelTitle(lv){return lv>=50?'Élite':lv>=40?'Universitario':lv>=30?'Bachiller':lv>=20?'Avanzado':lv>=10?'Dedicado':'Aprendiz';}
+    function addXP(amount){
     const p=state.progress,oldLevel=p.level;p.xp+=amount;
     p.level=Math.floor(p.xp/CONFIG.XP_LEVEL)+1;
     const today=new Date().toDateString(),yesterday=new Date(Date.now()-86400000).toDateString();
@@ -494,7 +496,7 @@ const App = (() => {
   function checkBadges(){
     const p=state.progress,b=[...p.badges],add=id=>{if(!b.includes(id))b.push(id);};
     if(p.streak>=3)add('s3');if(p.streak>=7)add('s7');if(p.streak>=14)add('s14');if(p.streak>=30)add('s30');
-    if(p.xp>=1000)add('xp1k');if(p.xp>=5000)add('xp5k');
+    if(p.xp>=1000)add('xp1k');if(p.xp>=5000)add('xp5k');if(p.xp>=15000)add('xp15k');if(p.xp>=40000)add('xp40k');
     if(p.simulacros.length>=1)add('sim1');
     if(p.simulacros.some(s=>s.score>=300))add('sc300');if(p.simulacros.some(s=>s.score>=400))add('sc400');
     p.badges=b;
@@ -556,8 +558,8 @@ const App = (() => {
     const q=state.practice.questions[state.practice.index];
     const ci=typeof q.correctIndex==='number'?q.correctIndex:0;
     const correct=idx===ci;
-    state.practice.answers.push(correct);state.practice.xp+=correct?CONFIG.XP_CORRECT:CONFIG.XP_WRONG;
-    addXP(correct?CONFIG.XP_CORRECT:CONFIG.XP_WRONG);
+    state.practice.answers.push(correct);const gained=xpGain(q,correct);state.practice.xp+=gained;
+    addXP(gained);
     if(correct){sfxCorrect();document.getElementById('popt-'+idx).style.animation='pulse 0.4s ease';}
     else{sfxWrong();document.getElementById('popt-'+idx).style.animation='shake 0.4s ease';}
     document.getElementById('popt-'+idx).classList.add('selected');document.getElementById('popt-'+ci).classList.add('right');
@@ -565,7 +567,7 @@ const App = (() => {
     document.querySelectorAll('#pq-options .option-btn').forEach(b=>b.classList.add('locked'));
     document.getElementById('pq-expl').classList.add('show');document.getElementById('pq-expl-text').innerHTML=(q.competencia_icfes?'<div class="comp-tag">Competencia ICFES: '+q.competencia_icfes+'</div>':'')+mdToHTML(q.explanation);
     document.getElementById('pq-next').style.display='flex';document.getElementById('pq-next-label').textContent=state.practice.index<state.practice.questions.length-1?'Siguiente':'Ver resultados';
-    floatXP(correct?CONFIG.XP_CORRECT:CONFIG.XP_WRONG,document.getElementById('popt-'+idx));
+    floatXP(gained,document.getElementById('popt-'+idx));
     updateHeader();
   }
 
@@ -698,8 +700,8 @@ const App = (() => {
     const q=state.simulacro.questions[state.simulacro.index];
     const ci=typeof q.correctIndex==='number'?q.correctIndex:0;
     const correct=idx===ci;
-    state.simulacro.answers.push(correct);state.simulacro.xp+=correct?CONFIG.XP_CORRECT:CONFIG.XP_WRONG;
-    addXP(correct?CONFIG.XP_CORRECT:CONFIG.XP_WRONG);
+    state.simulacro.answers.push(correct);const gainedS=xpGain(q,correct);state.simulacro.xp+=gainedS;
+    addXP(gainedS);
     if(correct){sfxCorrect();document.getElementById('sopt-'+idx).style.animation='pulse 0.4s ease';}
     else{sfxWrong();document.getElementById('sopt-'+idx).style.animation='shake 0.4s ease';}
     document.getElementById('sopt-'+idx).classList.add('selected');document.getElementById('sopt-'+ci).classList.add('right');
@@ -707,7 +709,7 @@ const App = (() => {
     document.querySelectorAll('#sq-options .option-btn').forEach(b=>b.classList.add('locked'));
     document.getElementById('sq-expl').classList.add('show');document.getElementById('sq-expl-text').innerHTML=(q.competencia_icfes?'<div class="comp-tag">Competencia ICFES: '+q.competencia_icfes+'</div>':'')+mdToHTML(q.explanation);
     document.getElementById('sq-next').style.display='flex';document.getElementById('sq-next-label').textContent=state.simulacro.index<state.simulacro.questions.length-1?'Siguiente':'Ver puntaje';
-    floatXP(correct?CONFIG.XP_CORRECT:CONFIG.XP_WRONG,document.getElementById('sopt-'+idx));
+    floatXP(gainedS,document.getElementById('sopt-'+idx));
     updateHeader();
   }
 
@@ -750,7 +752,7 @@ const App = (() => {
     calHTML+='</div>';
     document.getElementById('streak-cal').innerHTML=calHTML;
     document.getElementById('streak-max').textContent=p.maxStreak+'d';
-    const badges=[{id:'s3',name:'Constante',desc:'3 dias',icon:'🔥'},{id:'s7',name:'Dedicado',desc:'7 dias',icon:'🔥'},{id:'s14',name:'Imparable',desc:'14 dias',icon:'⚡'},{id:'s30',name:'Leyenda',desc:'30 dias',icon:'👑'},{id:'sim1',name:'Primer Simulacro',desc:'1 simulacro',icon:'🏆'},{id:'sc300',name:'Candidato',desc:'300+ pts',icon:'⭐'},{id:'sc400',name:'Avanzado',desc:'400+ pts',icon:'🌟'},{id:'xp1k',name:'Explorador',desc:'1000 XP',icon:'✨'},{id:'xp5k',name:'Experto',desc:'5000 XP',icon:'💎'}];
+    const badges=[{id:'s3',name:'Constante',desc:'3 dias',icon:'🔥'},{id:'s7',name:'Dedicado',desc:'7 dias',icon:'🔥'},{id:'s14',name:'Imparable',desc:'14 dias',icon:'⚡'},{id:'s30',name:'Leyenda',desc:'30 dias',icon:'👑'},{id:'sim1',name:'Primer Simulacro',desc:'1 simulacro',icon:'🏆'},{id:'sc300',name:'Candidato',desc:'300+ pts',icon:'⭐'},{id:'sc400',name:'Avanzado',desc:'400+ pts',icon:'🌟'},{id:'xp1k',name:'Explorador',desc:'1000 XP',icon:'✨'},{id:'xp5k',name:'Experto',desc:'5000 XP',icon:'💎'},{id:'xp15k',name:'Élite',desc:'15000 XP',icon:'🚀'},{id:'xp40k',name:'Nivel ICFES',desc:'40000 XP',icon:'🎓'}];
     document.getElementById('badge-grid').innerHTML=badges.map(b=>`<div class="badge-card ${p.badges.includes(b.id)?'unlocked':'locked'}"><div class="badge-icon">${b.icon}</div><div class="badge-name">${b.name}</div><div class="badge-desc">${b.desc}</div></div>`).join('');
     // Saved questions count
     document.getElementById('saved-count').textContent=state.saved.length;
@@ -813,7 +815,7 @@ const App = (() => {
   function updateHeader(){
     const p=state.progress;if(!state.user)return;
     document.getElementById('h-name').textContent=state.user.name;document.getElementById('h-xp').textContent=p.xp;document.getElementById('h-streak').textContent=p.streak+'d';
-    document.getElementById('xp-level').textContent=p.level;document.getElementById('xp-level-txt').textContent=p.level;
+    document.getElementById('xp-level').textContent=p.level;document.getElementById('xp-level-txt').textContent=p.level+' · '+levelTitle(p.level);
     document.getElementById('xp-cur').textContent=p.xp%CONFIG.XP_LEVEL;document.getElementById('xp-max').textContent=CONFIG.XP_LEVEL;
     document.getElementById('xp-fill').style.width=((p.xp%CONFIG.XP_LEVEL)/CONFIG.XP_LEVEL*100)+'%';
   }
