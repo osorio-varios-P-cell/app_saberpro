@@ -1,4 +1,4 @@
-apply plugin: 'com.android.application'
+﻿apply plugin: 'com.android.application'
 
 android {
     namespace 'com.saberpro.app'
@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.saberpro.app"
-        minSdk 21       // Android 5.0 Lollipop — cubre 99%+ de dispositivos
+        minSdk 21       // Android 5.0 Lollipop â€” cubre 99%+ de dispositivos
         targetSdk 34    // Android 14
         versionCode 5
         versionName "2.3.0"
@@ -35,7 +35,7 @@ android {
         }
     }
 
-    // Universal APK — todas las arquitecturas en un solo archivo
+    // Universal APK â€” todas las arquitecturas en un solo archivo
     splits {
         abi {
             enable false
@@ -60,7 +60,7 @@ android {
 task copyPwaAssets(type: Copy) {
     from file('../..')
     include 'index.html', 'pago.html', 'demo.html', 'manifest.json', 'service-worker.js'
-    include 'css/**', 'js/**', 'data/**', 'assets/**'
+    include 'css/**', 'js/**', 'data/**', 'assets/**', 'icon-*.png'
     into 'src/main/assets'
 }
 preBuild.dependsOn copyPwaAssets

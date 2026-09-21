@@ -696,3 +696,54 @@ body{
 .login-icon,[data-theme] .login-icon{background:linear-gradient(135deg,#FF3B5C,#FFB830) !important;box-shadow:0 0 30px rgba(255,59,92,0.35) !important;}
 .login-title,[data-theme] .login-title{background:linear-gradient(135deg,#FF3B5C,#FFB830) !important;-webkit-background-clip:text !important;background-clip:text !important;-webkit-text-fill-color:transparent !important;}
 .logo-ring,[data-theme] .logo-ring{border-color:rgba(255,59,92,0.35) !important;}
+
+/* ===== LOGIN: proporcion aurea (escala Fibonacci 8-13-21-34-55-89) ===== */
+#login-screen.active{align-items:center;justify-content:center;padding:21px;overflow-y:auto;-webkit-overflow-scrolling:touch}
+#login-screen .login-card{width:100%;max-width:377px;padding:34px 34px 33px;border-radius:21px;
+  background:linear-gradient(180deg,rgba(18,18,40,.74),rgba(12,12,28,.88));
+  border:1px solid rgba(255,184,48,.18);
+  box-shadow:0 21px 55px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.05);
+  -webkit-backdrop-filter:blur(13px);backdrop-filter:blur(13px);text-align:center}
+#login-screen .login-icon{width:clamp(72px,22vw,89px);height:clamp(72px,22vw,89px);
+  font-size:clamp(30px,9vw,38px);border-radius:21px;margin:0 auto 21px}
+#login-screen .login-title{font-size:clamp(28px,8.6vw,34px);letter-spacing:.12em;margin:0 0 13px}
+#login-screen .login-rule{width:min(233px,68%);height:1px;margin:0 auto 21px;
+  background:linear-gradient(90deg,transparent,rgba(255,184,48,.8),transparent)}
+#login-screen .login-desc{font-size:13px;line-height:1.53;max-width:233px;margin:0 auto 34px;color:var(--text2)}
+#login-screen .input-premium{padding:13px 21px;margin-bottom:13px;border-radius:13px;font-size:15px}
+#login-screen #login-code{text-transform:uppercase;letter-spacing:3px;font-weight:700;text-align:center}
+#login-screen .status-msg{margin-bottom:13px}
+#login-screen .btn-premium{min-height:55px;border-radius:13px;margin:0 0 13px}
+#login-screen .lg-ghost,#login-screen .lg-buy{width:100%;min-height:55px;border-radius:13px;
+  font-family:var(--font);font-size:14.5px;font-weight:800;cursor:pointer;transition:var(--trans)}
+#login-screen .lg-ghost{background:transparent;border:1px solid rgba(255,184,48,.45);color:var(--gold);margin-bottom:13px}
+#login-screen .lg-ghost:hover{background:rgba(255,184,48,.1);transform:translateY(-2px)}
+#login-screen .lg-buy{border:none;background:linear-gradient(135deg,#FFB830,#FF3C5C);color:#1a0f00;font-weight:900;
+  box-shadow:0 13px 34px rgba(255,59,92,.3);margin-bottom:13px}
+#login-screen .lg-buy:hover{transform:translateY(-2px);box-shadow:0 21px 44px rgba(255,59,92,.4)}
+#login-screen .lg-buy-note{font-size:11.5px;line-height:1.5;color:var(--text3);max-width:233px;margin:0 auto}
+#login-screen .lg-install{margin-top:21px;padding-top:21px;border-top:1px solid rgba(255,255,255,.07)}
+#login-screen .lg-install-btn{display:flex;align-items:center;gap:13px;width:100%;min-height:55px;padding:8px 13px;
+  border-radius:13px;background:rgba(255,184,48,.07);border:1px dashed rgba(255,184,48,.5);color:var(--text);
+  cursor:pointer;font-family:var(--font);transition:var(--trans);text-align:left}
+#login-screen .lg-install-btn:hover{background:rgba(255,184,48,.14);transform:translateY(-2px)}
+#login-screen .lg-install-ico{flex:0 0 34px;height:34px;border-radius:10px;display:flex;align-items:center;
+  justify-content:center;font-size:19px;background:linear-gradient(135deg,#FFB830,#FF3C5C);color:#1a0f00;font-weight:900}
+#login-screen .lg-install-txt{display:flex;flex-direction:column;line-height:1.25}
+#login-screen .lg-install-txt b{font-size:14px}
+#login-screen .lg-install-txt i{font-style:normal;font-size:11.5px;color:var(--text3)}
+#login-screen .lg-install-hint{display:none;margin-top:13px;padding:13px;border-radius:13px;background:rgba(0,0,0,.28);
+  border:1px solid rgba(255,184,48,.2);font-size:12px;line-height:1.53;color:var(--text2);text-align:left}
+#login-screen .lg-install-hint.on{display:block}
+#login-screen .lg-install-hint b{color:var(--gold)}
+@media (max-height:560px){
+  #login-screen .login-card{padding:21px}
+  #login-screen .login-icon{width:55px;height:55px;font-size:24px;margin-bottom:13px}
+  #login-screen .login-desc{margin-bottom:21px}
+  #login-screen .lg-install{margin-top:13px;padding-top:13px}
+}
+/* pantallas angostas: nada se corta */
+@media (max-width:360px){
+  #login-screen .login-card{padding:21px}
+  #login-screen .login-title{letter-spacing:.08em}
+}

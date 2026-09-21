@@ -6,9 +6,14 @@
   <meta name="theme-color" content="#0a0a1a">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <link rel="manifest" href="/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="SaberPro">
+  <meta name="application-name" content="SaberPro">
+  <link rel="apple-touch-icon" href="./icon-180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
+  <link rel="manifest" href="./manifest.json">
   <title>SaberPro — Tu camino al 500</title>
-  <link rel="stylesheet" href="css/user.css?v=22">
+  <link rel="stylesheet" href="css/user.css?v=23">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23FF3B5C'/><stop offset='1' stop-color='%23FFB830'/></linearGradient></defs><rect width='100' height='100' rx='24' fill='url(%23g)'/><text x='50' y='72' text-anchor='middle' fill='white' font-size='62' font-weight='900'>S</text></svg>">
 <style id="ngi-intro-css">
 /* ===== BUMPER DE EMPRESA NOGATECH (se muestra al entrar; no altera el logo ni el intro de SaberPro) ===== */
@@ -103,22 +108,33 @@ body.ngi-lock{overflow:hidden}
   <div class="toast" id="toast"></div>
 
   <!-- ═══ LOGIN ═══ -->
-  <div class="screen" id="login-screen">
+    <div class="screen" id="login-screen">
     <div class="login-card">
       <div class="login-icon">S</div>
       <div class="login-title">SABERPRO</div>
-      <div class="login-desc">Preparate para el ICFES con la app mas completa</div>
+      <div class="login-rule"></div>
+      <div class="login-desc">Prepárate para el ICFES con la app más completa</div>
+
       <input type="text" class="input-premium" id="login-name" placeholder="Tu nombre" autocomplete="off">
-      <input type="text" class="input-premium" id="login-code" placeholder="CODIGO DE ACCESO" autocomplete="off" style="text-transform:uppercase;letter-spacing:3px;text-align:center;font-weight:700">
+      <input type="text" class="input-premium" id="login-code" placeholder="CÓDIGO DE ACCESO" autocomplete="off">
       <div class="status-msg" id="login-status"></div>
+
       <button class="btn-premium btn-coral" onclick="App.doLogin()">Ingresar a SaberPro</button>
-      <button class="btn-premium" style="background:transparent;border:1px solid var(--gold);color:var(--gold);margin-top:8px" onclick="window.location.href='demo.html'">🔮 Probar Demo Gratis — formatos ICFES reales</button>
-      <button class="btn-premium" style="background:linear-gradient(135deg,#FFB830,#FF3C5C);color:#1a0f00;font-weight:900;margin-top:12px;box-shadow:0 10px 28px rgba(255,59,92,.35)" onclick="window.location.href='pago.html'">🔓 Comprar licencia ·</button>
-      <div style="font-size:11.5px;color:var(--text3);margin-top:8px;line-height:1.5">Pago único de $29.900 · 6 meses de acceso · 9.543 preguntas · clave por correo y WhatsApp</div>
+      <button class="lg-ghost" onclick="window.location.href='demo.html'">🔮 Probar demo gratis · formatos ICFES reales</button>
+      <button class="lg-buy" onclick="window.location.href='pago.html'">🔓 Comprar licencia · $29.900</button>
+      <div class="lg-buy-note">Pago único · 6 meses de acceso · 9.543 preguntas · clave por correo y WhatsApp</div>
+
+      <div class="lg-install" id="lgInstall">
+        <button class="lg-install-btn" id="lgInstallBtn" type="button">
+          <span class="lg-install-ico">⤓</span>
+          <span class="lg-install-txt"><b>Instalar como app</b><i id="lgInstallSub">Celular o PC · sin tienda</i></span>
+        </button>
+        <div class="lg-install-hint" id="lgInstallHint"></div>
+      </div>
     </div>
   </div>
 
-  <!-- ═══ MAIN APP ═══ -->
+<!-- ═══ MAIN APP ═══ -->
   <div class="screen" id="app-screen">
     <!-- Header -->
     <div class="app-header">
@@ -465,5 +481,39 @@ body.ngi-lock{overflow:hidden}
 </script>
   <script>/* red de seguridad: si el intro no llega a dibujarse, se retira */
 setTimeout(function(){try{var o=document.getElementById("ngiIntro");if(o&&!o.firstChild){if(o.parentNode)o.parentNode.removeChild(o);document.body.classList.remove("ngi-lock");}}catch(e){}},2500);</script>
+<script id="pwa-install-js">
+/* Instalar como app (PWA): usa el aviso nativo y, si el navegador no lo da, explica los pasos */
+(function(){
+  var box=document.getElementById('lgInstall'), btn=document.getElementById('lgInstallBtn'),
+      hint=document.getElementById('lgInstallHint'), sub=document.getElementById('lgInstallSub');
+  if(!box||!btn){return;}
+  var diferido=null;
+  function instalada(){
+    if(window.matchMedia && window.matchMedia('(display-mode: standalone)').matches){return true;}
+    if(window.navigator.standalone===true){return true;}
+    if(document.referrer && document.referrer.indexOf('android-app://')===0){return true;}
+    return false;
+  }
+  function esApp(){ return location.protocol==='file:' || /SaberPro\//.test(navigator.userAgent); }
+  function ios(){ return /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform==='MacIntel' && navigator.maxTouchPoints>1); }
+  function android(){ return /Android/i.test(navigator.userAgent); }
+  function webview(){ return /\bwv\b/.test(navigator.userAgent) || (android() && /Version\/[\d.]+/.test(navigator.userAgent)); }
+  function decir(html){ if(hint){ hint.innerHTML=html; hint.classList.add('on'); } }
+  if(instalada()||esApp()){ box.style.display='none'; }
+  window.addEventListener('beforeinstallprompt', function(e){
+    e.preventDefault(); diferido=e;
+    if(sub){ sub.textContent='Un toque · queda en tu pantalla'; }
+  });
+  window.addEventListener('appinstalled', function(){ box.style.display='none'; });
+  btn.addEventListener('click', function(){
+    if(instalada()){ decir('<b>Ya está instalada</b> ✅ Ábrela desde el ícono de SaberPro.'); return; }
+    if(diferido){ diferido.prompt(); diferido.userChoice.then(function(r){ if(r && r.outcome==='accepted'){ box.style.display='none'; } diferido=null; }); return; }
+    if(ios()){ decir('<b>iPhone / iPad (usa Safari):</b> toca <b>Compartir</b> y luego <b>Añadir a pantalla de inicio</b>.'); return; }
+    if(webview()){ decir('<b>Estás dentro de otra app.</b> Abre esta dirección en Chrome y usa el menú ⋮ → <b>Instalar aplicación</b>.'); return; }
+    if(android()){ decir('<b>Android (Chrome):</b> menú <b>⋮</b> → <b>Instalar aplicación</b>, o «Añadir a pantalla principal».'); return; }
+    decir('<b>En PC:</b> usa el ícono <b>⤓</b> de la barra de direcciones (Chrome/Edge) o menú ⋮ → <b>Instalar SaberPro</b>.');
+  });
+})();
+</script>
 </body>
 </html>
