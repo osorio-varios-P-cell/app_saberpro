@@ -373,7 +373,7 @@ body.ngi-lock{overflow:hidden}
             '<svg class="ngi-frame" viewBox="0 0 377 233" role="img" aria-label="NOGATECH">'+
               '<defs><linearGradient id="ngiGold" x1="0" y1="0" x2="1" y2="1">'+
                 '<stop offset="0" stop-color="#F7E08A"/><stop offset="0.5" stop-color="#D4AF37"/><stop offset="1" stop-color="#8C6B1F"/>'+
-              '</linearGradient>'+'<linearGradient id="ngiGleamGrad" x1="0" y1="0" x2="1" y2="1">'+'<stop offset="0" stop-color="#FFF7D6"/><stop offset="0.45" stop-color="#FFFFFF"/>''<stop offset="1" stop-color="#FFD968"/></linearGradient>'+'<filter id="ngiGlow" x="-40%" y="-40%" width="180%" height="180%">'+'<feGaussianBlur stdDeviation="2.6" result="b"/>''<feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>'+'</defs>'+
+              '</linearGradient>'+'<linearGradient id="ngiGleamGrad" x1="0" y1="0" x2="1" y2="1">'+'<stop offset="0" stop-color="#FFF7D6"/><stop offset="0.45" stop-color="#FFFFFF"/>'+'<stop offset="1" stop-color="#FFD968"/></linearGradient>'+'<filter id="ngiGlow" x="-40%" y="-40%" width="180%" height="180%">'+'<feGaussianBlur stdDeviation="2.6" result="b"/>'+'<feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>'+'</defs>'+
               '<path class="ngi-spiral" d="'+SPIRAL+'" pathLength="1000" fill="none" stroke="url(#ngiGold)" stroke-width="1.4" opacity="0.45"/>'+
               '<rect class="ngi-rect" x="3" y="3" width="371" height="227" rx="55" fill="rgba(212,175,55,0.05)" stroke="url(#ngiGold)" stroke-width="4" pathLength="100"/>'+'<rect class="ngi-gleam" x="3" y="3" width="371" height="227" rx="55" fill="none" stroke="url(#ngiGleamGrad)" stroke-width="4.2" stroke-linecap="round" pathLength="1000" filter="url(#ngiGlow)"/>'+'<rect class="ngi-gleam2" x="16" y="16" width="345" height="201" rx="47" fill="none" stroke="url(#ngiGleamGrad)" stroke-width="1.6" stroke-linecap="round" pathLength="1000" filter="url(#ngiGlow)"/>'+
               '<rect class="ngi-hair" x="16" y="16" width="345" height="201" rx="47" fill="none" stroke="url(#ngiGold)" stroke-width="1" pathLength="100"/>'+
@@ -428,5 +428,7 @@ body.ngi-lock{overflow:hidden}
   }catch(e){ try{ var o=document.getElementById('ngiIntro'); if(o&&o.parentNode)o.parentNode.removeChild(o); document.body.classList.remove('ngi-lock'); }catch(_){} }
 })();
 </script>
+  <script>/* red de seguridad: si el intro no llega a dibujarse, se retira */
+setTimeout(function(){try{var o=document.getElementById("ngiIntro");if(o&&!o.firstChild){if(o.parentNode)o.parentNode.removeChild(o);document.body.classList.remove("ngi-lock");}}catch(e){}},2500);</script>
 </body>
 </html>
