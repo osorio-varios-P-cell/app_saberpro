@@ -12,7 +12,7 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23FF3B5C'/><stop offset='1' stop-color='%23FFB830'/></linearGradient></defs><rect width='100' height='100' rx='24' fill='url(%23g)'/><text x='50' y='72' text-anchor='middle' fill='white' font-size='62' font-weight='900'>S</text></svg>">
 <style id="ngi-intro-css">
 /* ===== BUMPER DE EMPRESA NOGATECH (se muestra al entrar; no altera el logo ni el intro de SaberPro) ===== */
-#ngiIntro{position:fixed;inset:0;z-index:9999;background:radial-gradient(120% 120% at 50% 0%, #1a1130 0%, #0d0b24 55%, #05050e 100%);color:#FFF7EA;display:flex;align-items:center;justify-content:center;transition:opacity .6s;overflow:hidden;font-family:inherit}
+#ngiIntro{position:fixed;inset:0;z-index:9999;background:radial-gradient(120% 120% at 50% 0%, #1a1130 0%, #0d0b24 55%, #05050e 100%);color:#FFF7EA;display:flex;align-items:center;justify-content:center;transition:opacity .85s ease;overflow:hidden;font-family:inherit}
 #ngiIntro.ngi-out{opacity:0;pointer-events:none}
 .ngi-stage{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:22px;opacity:0;pointer-events:none;transition:opacity .7s;text-align:center}
 .ngi-stage.on{opacity:1;pointer-events:auto}
@@ -27,8 +27,12 @@
 .ngi-spiral{stroke-dasharray:1000;stroke-dashoffset:1000;animation:ngiDraw 2.1s ease forwards .25s}
 .ngi-rect{stroke-dasharray:100;stroke-dashoffset:100;animation:ngiDraw 1.4s ease forwards}
 .ngi-gleam{stroke-dasharray:105 895;stroke-dashoffset:1000;animation:ngiGleam 5.2s linear infinite 1.5s}
-.ngi-gleam2{stroke-dasharray:60 940;stroke-dashoffset:1000;opacity:.55;animation:ngiGleam 5.2s linear infinite 1.9s}
-@keyframes ngiGleam{0%{stroke-dashoffset:1000;opacity:0}6%{opacity:1}52%{stroke-dashoffset:0;opacity:1}58%{opacity:0}100%{stroke-dashoffset:0;opacity:0}}
+.ngi-gleam2{stroke-dasharray:60 940;stroke-dashoffset:1000;opacity:.5;animation:ngiGleam 5.6s cubic-bezier(.45,.05,.55,.95) infinite 1.7s}
+.ngi-bloom{stroke-dasharray:190 810;stroke-dashoffset:1000;opacity:.32;animation:ngiGleam 5.6s cubic-bezier(.45,.05,.55,.95) infinite 1.7s}
+@keyframes ngiGleam{0%{stroke-dashoffset:1000;opacity:0}4%{opacity:1}50%{stroke-dashoffset:0;opacity:1}62%{opacity:0}100%{stroke-dashoffset:0;opacity:0}}
+.ngi-sheen{position:absolute;inset:0;border-radius:55px;overflow:hidden;pointer-events:none}
+.ngi-sheen i{position:absolute;top:-60%;left:-45%;width:34%;height:220%;transform:rotate(16deg);background:linear-gradient(90deg,transparent,rgba(255,244,200,.45),rgba(255,255,255,.85),rgba(255,244,200,.45),transparent);filter:blur(7px);opacity:0;animation:ngiSheen 5.6s ease-in-out infinite 1.9s}
+@keyframes ngiSheen{0%{left:-45%;opacity:0}8%{opacity:1}46%{left:105%;opacity:1}56%{opacity:0}100%{left:105%;opacity:0}}
 .ngi-hair{stroke-dasharray:100;stroke-dashoffset:100;animation:ngiDraw 1.4s ease forwards .5s}
 @keyframes ngiDraw{to{stroke-dashoffset:0}}
 .ngi-word{display:flex;gap:2px;font-weight:800;font-size:clamp(30px,8.4vw,44px);letter-spacing:.06em}
@@ -375,9 +379,9 @@ body.ngi-lock{overflow:hidden}
                 '<stop offset="0" stop-color="#F7E08A"/><stop offset="0.5" stop-color="#D4AF37"/><stop offset="1" stop-color="#8C6B1F"/>'+
               '</linearGradient>'+'<linearGradient id="ngiGleamGrad" x1="0" y1="0" x2="1" y2="1">'+'<stop offset="0" stop-color="#FFF7D6"/><stop offset="0.45" stop-color="#FFFFFF"/>'+'<stop offset="1" stop-color="#FFD968"/></linearGradient>'+'<filter id="ngiGlow" x="-40%" y="-40%" width="180%" height="180%">'+'<feGaussianBlur stdDeviation="2.6" result="b"/>'+'<feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>'+'</defs>'+
               '<path class="ngi-spiral" d="'+SPIRAL+'" pathLength="1000" fill="none" stroke="url(#ngiGold)" stroke-width="1.4" opacity="0.45"/>'+
-              '<rect class="ngi-rect" x="3" y="3" width="371" height="227" rx="55" fill="rgba(212,175,55,0.05)" stroke="url(#ngiGold)" stroke-width="4" pathLength="100"/>'+'<rect class="ngi-gleam" x="3" y="3" width="371" height="227" rx="55" fill="none" stroke="url(#ngiGleamGrad)" stroke-width="4.2" stroke-linecap="round" pathLength="1000" filter="url(#ngiGlow)"/>'+'<rect class="ngi-gleam2" x="16" y="16" width="345" height="201" rx="47" fill="none" stroke="url(#ngiGleamGrad)" stroke-width="1.6" stroke-linecap="round" pathLength="1000" filter="url(#ngiGlow)"/>'+
+              '<rect class="ngi-rect" x="3" y="3" width="371" height="227" rx="55" fill="rgba(212,175,55,0.05)" stroke="url(#ngiGold)" stroke-width="4" pathLength="100"/>'+'<rect class="ngi-bloom" x="3" y="3" width="371" height="227" rx="55" fill="none" stroke="url(#ngiGleamGrad)" stroke-width="7" stroke-linecap="round" pathLength="1000" filter="url(#ngiGlow)"/>'+'<rect class="ngi-gleam" x="3" y="3" width="371" height="227" rx="55" fill="none" stroke="url(#ngiGleamGrad)" stroke-width="4.2" stroke-linecap="round" pathLength="1000" filter="url(#ngiGlow)"/>'+'<rect class="ngi-gleam2" x="16" y="16" width="345" height="201" rx="47" fill="none" stroke="url(#ngiGleamGrad)" stroke-width="1.6" stroke-linecap="round" pathLength="1000" filter="url(#ngiGlow)"/>'+
               '<rect class="ngi-hair" x="16" y="16" width="345" height="201" rx="47" fill="none" stroke="url(#ngiGold)" stroke-width="1" pathLength="100"/>'+
-            '</svg>'+
+            '</svg>'+'<div class="ngi-sheen"><i></i></div>'+
             '<div class="ngi-word" id="ngiWord"></div>'+
             '<div class="ngi-sub">TECNOLOG\u00cdA EDUCATIVA</div>'+
           '</div>'+
@@ -408,9 +412,19 @@ body.ngi-lock{overflow:hidden}
       function finish(){
         clearTimers(); document.body.classList.remove('ngi-lock');
         try{ sessionStorage.setItem('ngiIntroShown','1'); }catch(e){}
+        var sp=document.getElementById('splash');
+        if(sp){ sp.style.transition='none'; sp.classList.remove('hide');
+          sp.style.visibility='visible'; sp.style.opacity='1';
+          var all=[sp].concat(Array.prototype.slice.call(sp.querySelectorAll('*')));
+          all.forEach(function(el){ el.style.animation='none'; }); void sp.offsetWidth;
+          all.forEach(function(el){ el.style.animation=''; }); void sp.offsetWidth;
+          sp.style.transition=''; }
         overlay.classList.add('ngi-out');
-        setTimeout(function(){ if(overlay.parentNode)overlay.parentNode.removeChild(overlay); },650);
-        try{ replaySaberSplash(); }catch(e){}
+        setTimeout(function(){ if(overlay.parentNode)overlay.parentNode.removeChild(overlay); },950);
+        if(sp){ var until=Date.now()+3600, iv=setInterval(function(){ var s=document.getElementById('splash');
+          if(!s){ clearInterval(iv); return; }
+          if(Date.now()<until){ s.classList.remove('hide'); } else { clearInterval(iv); s.classList.add('hide'); }
+        },200); }
       }
       overlay.querySelector('#ngiStart').addEventListener('click',function(){
         chEnsureAudio(); chRiser(); show('ngiBrand');
