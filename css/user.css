@@ -690,3 +690,9 @@ body{
 .picto-v{font-weight:700;color:var(--gold,#FFB830);}
 
 .comp-tag{display:inline-block;background:rgba(77,166,255,0.12);color:#4DA6FF;border:1px solid rgba(77,166,255,0.25);border-radius:20px;padding:3px 10px;font-size:10px;font-weight:700;margin-bottom:8px;}
+
+/* ===== Marca SaberPro: el logo del intro y del login SIEMPRE en rojo coral ===== */
+.splash-logo,[data-theme] .splash-logo{background:radial-gradient(ellipse at 40% 30%,#FF5570 0%,#FF2D55 25%,#C4203A 65%,#8B1025 100%) !important;box-shadow:0 0 0 2px rgba(255,180,180,0.18),0 0 0 4px rgba(0,0,0,0.25),0 0 0 5px rgba(255,255,255,0.06),0 1px 0 rgba(255,255,255,0.2) inset,0 -1px 0 rgba(0,0,0,0.3) inset,0 3px 12px rgba(0,0,0,0.5),0 6px 30px rgba(140,16,37,0.5),0 0 60px rgba(255,45,85,0.45),0 0 120px rgba(255,45,85,0.15) !important;}
+.login-icon,[data-theme] .login-icon{background:linear-gradient(135deg,#FF3B5C,#FFB830) !important;box-shadow:0 0 30px rgba(255,59,92,0.35) !important;}
+.login-title,[data-theme] .login-title{background:linear-gradient(135deg,#FF3B5C,#FFB830) !important;-webkit-background-clip:text !important;background-clip:text !important;-webkit-text-fill-color:transparent !important;}
+.logo-ring,[data-theme] .logo-ring{border-color:rgba(255,59,92,0.35) !important;}
