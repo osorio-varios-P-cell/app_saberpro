@@ -4,7 +4,7 @@ const LicenseClient = (() => {
   'use strict';
 
   // ⚙️ CONFIGURACIÓN: pega aquí la URL de tu Worker desplegado
-  const SERVER = localStorage.getItem('saberpro_license_server') || 'https://saberpro-licenses.saberpro-app.workers.dev';
+  const SERVER = 'https://saberpro-licenses.saberpro-app.workers.dev';
   // ⚙️ CLAVE PÚBLICA: pega aquí la clave pública generada con gen-keys.mjs
   const LICENSE_PUBLIC_KEY = ''; // vacia = confiar en la respuesta del servidor (valida codigo+dispositivo en D1)
   const KEY_B64URL = ''; // (opcional, si usas formato raw)
@@ -80,7 +80,7 @@ const LicenseClient = (() => {
     return { active: true, expiresAt: l.expiresAt };
   }
 
-  function setServer(url) { localStorage.setItem('saberpro_license_server', String(url || '').trim()); }
+  function setServer(url) { /* deshabilitado por seguridad: el servidor es fijo */ }
 
   return {
     enabled, fingerprint, activate, reactivate, checkExpiry, current, clear, setServer, verifyToken,

@@ -8,13 +8,9 @@ const CodeRegistry = (() => {
   const KEY = 'saberpro_code_registry';
 
   function getDefault() {
-    return {
-      'SABER2026': { code: 'SABER2026', status: 'active', deviceId: null, deviceName: null, activatedAt: null, userId: null, type: 'free', notes: 'Código demo' },
-      'ICFES2026': { code: 'ICFES2026', status: 'active', deviceId: null, deviceName: null, activatedAt: null, userId: null, type: 'free', notes: 'Código demo' },
-      'PREICFES':  { code: 'PREICFES',  status: 'active', deviceId: null, deviceName: null, activatedAt: null, userId: null, type: 'free', notes: 'Código demo' },
-      'ADMIN500':  { code: 'ADMIN500',  status: 'active', deviceId: null, deviceName: null, activatedAt: null, userId: null, type: 'admin', notes: 'Admin' },
-      'MASTER99':  { code: 'MASTER99',  status: 'active', deviceId: null, deviceName: null, activatedAt: null, userId: null, type: 'admin', notes: 'Admin' },
-    };
+    // La app del estudiante NO trae codigos maestros (evita puertas traseras):
+    // todos los codigos viven en el servidor de licencias (base D1).
+    return {};
   }
 
   function load() {

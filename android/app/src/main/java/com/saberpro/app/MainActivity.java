@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
         // User agent para identificar como app nativa
         settings.setUserAgentString(
-            settings.getUserAgentString() + " SaberPro/2.1.0"
+            settings.getUserAgentString() + " SaberPro/2.3.0"
         );
 
         // WebViewAssetLoader para cargar assets locales de forma segura
