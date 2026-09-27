@@ -1,5 +1,5 @@
 /* SaberPro Service Worker - PWA Support */
-const CACHE_NAME = 'saberpro-v3-2026-09-21';
+const CACHE_NAME = 'saberpro-v4-2026-09-27';
 const ASSETS = [
   './index.html',
   './css/user.css',

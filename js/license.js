@@ -73,6 +73,15 @@ const LicenseClient = (() => {
     return { ok: true, verified: v.verified };
   }
 
+  async function transfer(name, code) {
+    const r = await api('/api/transfer', { code, fingerprint: fingerprint(), deviceName: window.DeviceFingerprint ? DeviceFingerprint.getDeviceName() : 'Dispositivo', name });
+    if (!r.ok) return { ok: false, reason: r.reason, next: r.next_transfer_at, can_transfer: r.can_transfer };
+    const v = await verifyToken(r.token);
+    if (!v.ok) return { ok: false, reason: 'Firma de licencia inválida' };
+    store(r.token, r.expires_at, r.email || '');
+    return { ok: true, verified: v.verified, prev: r.prev_device || '' };
+  }
+
   async function checkExpiry() {
     const l = current();
     if (!l) return { active: false };
@@ -83,7 +92,7 @@ const LicenseClient = (() => {
   function setServer(url) { /* deshabilitado por seguridad: el servidor es fijo */ }
 
   return {
-    enabled, fingerprint, activate, reactivate, checkExpiry, current, clear, setServer, verifyToken,
+    enabled, fingerprint, activate, reactivate, transfer, checkExpiry, current, clear, setServer, verifyToken,
     SERVER_URL: () => SERVER
   };
 })();

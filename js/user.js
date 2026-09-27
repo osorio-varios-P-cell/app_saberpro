@@ -367,6 +367,25 @@ const App = (() => {
           state.user = { name, validated: true, code, deviceId: deviceId2, deviceName: deviceName2, loginDate: new Date().toISOString(), _uid: name + '_' + Date.now() };
           saveUser(state.user); updateAdminUserRecord(name, code, deviceId2, deviceName2);
           setTimeout(() => { showApp(); }, 800);
+        } else if (r.busy) {
+          const prev = r.device_name ? ' (' + r.device_name + ')' : '';
+          const extra = r.can_transfer ? '' : '\n\n' + (r.reason || '');
+          const msg = '¿Transferir tu clave a ESTE equipo?\n\nTu clave ya está activa en otro equipo' + prev + '. Si la transfieres, ese equipo quedará desactivado.\n\nReglas: 1 dispositivo a la vez · espera de 24 h entre transferencias · máximo 3 al mes.' + extra;
+          if (confirm(msg)) {
+            status.className = 'status-msg'; status.textContent = 'Transfiriendo la clave a este equipo...';
+            LicenseClient.transfer(name, code).then(t => {
+              if (t.ok) {
+                status.className = 'status-msg success'; status.textContent = 'Clave transferida! Bienvenido/a ' + name;
+                state.user = { name, validated: true, code, deviceId: deviceId2, deviceName: deviceName2, loginDate: new Date().toISOString(), _uid: name + '_' + Date.now() };
+                saveUser(state.user); updateAdminUserRecord(name, code, deviceId2, deviceName2);
+                setTimeout(() => { showApp(); }, 800);
+              } else {
+                status.className = 'status-msg error'; status.textContent = t.reason || 'No se pudo transferir la clave';
+              }
+            }).catch(() => { status.className = 'status-msg error'; status.textContent = 'Error de conexión al transferir'; });
+          } else {
+            status.className = 'status-msg error'; status.textContent = 'Transferencia cancelada: tu clave sigue en el equipo anterior.';
+          }
         } else { status.className = 'status-msg error'; status.textContent = r.reason; }
       }).catch(e => { status.className = 'status-msg error'; status.textContent = 'Error de conexión con el servidor de licencias'; });
       return;
